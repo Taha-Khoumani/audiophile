@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+}
+
+#navlinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+@media (max-width: 1115px) {
+  #navlinks {
+    gap: 25px;
+  }
+}
+@media (max-width: 980px) {
+  #navlinks {
+    gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  #navlinks {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+#navlinks a:link, #navlinks a:visited {
+  color: white;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 25px;
+  font-size: 13px;
+}
+#navlinks a:hover {
+  color: #D87D4A;
+}
+
+#navbar-container {
+  background-color: #0E0E0E;
+}
+
+#navbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  margin: 0 165px;
+}
+@media (max-width: 1115px) {
+  #navbar {
+    margin: 0 90px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 980px) {
+  #navbar {
+    margin: 0 25px;
+  }
+}
+#navbar #logo, #navbar #cart-icon {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+@media (max-width: 1115px) {
+  #navbar #logo, #navbar #cart-icon {
+    position: static;
+  }
+}
+#navbar #cart-icon {
+  left: auto;
+  right: 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 365px;
+  background-color: #101010;
+  padding: 0 165px;
+}
+@media (max-width: 1115px) {
+  footer {
+    padding: 0 90px;
+  }
+}
+@media (max-width: 980px) {
+  footer {
+    padding: 0 25px;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    height: auto;
+    align-items: center;
+  }
+}
+footer #footer-orange-top {
+  background-color: #D87D4A;
+  width: 101px;
+  height: 4px;
+  border: none;
+  margin: 0;
+  margin-bottom: 69px;
+}
+@media (max-width: 767px) {
+  footer #footer-orange-top {
+    margin-bottom: 56px;
+  }
+}
+footer #footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+@media (max-width: 767px) {
+  footer #footer-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+footer #footer-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 767px) {
+  footer #footer-about {
+    position: relative;
+  }
+}
+@media (max-width: 480px) {
+  footer #footer-about {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer #footer-about #footer-about-main {
+  width: 50%;
+}
+@media (max-width: 1115px) {
+  footer #footer-about #footer-about-main {
+    width: 60%;
+  }
+}
+@media (max-width: 980px) {
+  footer #footer-about #footer-about-main {
+    width: 75%;
+  }
+}
+@media (max-width: 767px) {
+  footer #footer-about #footer-about-main {
+    width: 100%;
+  }
+}
+footer #footer-about #footer-about-main #about-text, footer #footer-about #footer-about-main #about-copywrite {
+  color: white;
+  font-size: 15px;
+  font-family: "Manrope", sans-serif;
+  opacity: 0.5;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 56px;
+}
+@media (max-width: 767px) {
+  footer #footer-about #footer-about-main #about-text, footer #footer-about #footer-about-main #about-copywrite {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 480px) {
+  footer #footer-about #footer-about-main #about-text, footer #footer-about #footer-about-main #about-copywrite {
+    text-align: center;
+  }
+}
+footer #footer-about #footer-about-main #about-copywrite {
+  font-weight: 700;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  footer #footer-about #footer-about-main #about-copywrite {
+    margin-bottom: 0;
+  }
+}
+footer #footer-about #footer-about-contacts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 90px;
+}
+@media (max-width: 767px) {
+  footer #footer-about #footer-about-contacts {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  footer #footer-about #footer-about-contacts {
+    position: static;
+    margin: 48px;
+  }
+}
+footer #footer-about #footer-about-contacts > i {
+  color: white;
+  font-size: 24px;
+}
+footer #footer-about #footer-about-contacts > i:hover {
+  color: #D87D4A;
+}/*# sourceMappingURL=style.css.map */
