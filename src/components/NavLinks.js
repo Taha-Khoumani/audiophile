@@ -15,7 +15,7 @@ export default function NavLinks(props){
                 isText 
                 ?
                 <div className="navlinks-text">
-                    <Link to="/audiophile">HOME</Link>
+                    <Link to="audiophile">HOME</Link>
                     <Link to="audiophile/headphones" >HEADPHONES</Link>
                     <Link to="audiophile/speakers" >SPEAKERS</Link>
                     <Link to="audiophile/earphones" >EARPHONES</Link>
