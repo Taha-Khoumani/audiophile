@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     isMenuOpen:false,
-    isMenuCollapsed:true,
+    isMenuCollapsed: window.innerWidth <= 767,
 }
 
 const navSlice = createSlice({
