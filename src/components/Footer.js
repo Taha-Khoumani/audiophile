@@ -8,7 +8,7 @@ export default function Footer(){
             <hr id="footer-orange-top" />
             <div id="footer-nav">
                 <img src="./assets/shared/desktop/logo.svg" alt="audiophile" />
-                <NavLinks/>
+                <NavLinks isText={true} />
             </div>
             <div id="footer-about">
                 <div id="footer-about-main">
