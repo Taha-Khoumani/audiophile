@@ -1,5 +1,8 @@
+//components
 import NavLinks from "./NavLinks";
 
+//images
+import audiophile from "../imgs/logo.svg"
 
 export default function Footer(){
 
@@ -7,7 +10,7 @@ export default function Footer(){
         <footer>
             <hr id="footer-orange-top" />
             <div id="footer-nav">
-                <img src="./assets/shared/desktop/logo.svg" alt="audiophile" />
+                <img src={audiophile} alt="audiophile" />
                 <NavLinks isText={true} />
             </div>
             <div id="footer-about">

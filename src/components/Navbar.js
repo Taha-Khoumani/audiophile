@@ -10,6 +10,9 @@ import { useSelector, useDispatch} from "react-redux"
 //reducers
 import { toggleMenu,setMenuColl } from "../features/nav/navSlice"
 
+//images
+import audiophile from "../imgs/logo.svg"
+import cart from "../imgs/icon-cart.svg"
 
 export default function Navbar(){
     const dispatch = useDispatch()
@@ -31,9 +34,9 @@ export default function Navbar(){
                     >
                     </i>
                 }
-                <img id="logo" src="./assets/shared/desktop/logo.svg" alt="audiophile-logo" /> 
+                <img id="logo" src={audiophile} alt="audiophile-logo" /> 
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
-                <img id="cart-icon" src="./assets/shared/desktop/icon-cart.svg" alt="cart-icon" />
+                <img id="cart-icon" src={cart} alt="cart-icon" />
             </nav> 
             { isMenuCollapsed && isMenuOpen && <NavLinks isText={false} />}
         </div>
