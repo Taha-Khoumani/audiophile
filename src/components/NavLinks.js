@@ -15,17 +15,17 @@ export default function NavLinks(props){
                 isText 
                 ?
                 <div className="navlinks-text">
-                    <Link to="/">HOME</Link>
-                    <Link to="headphones" >HEADPHONES</Link>
-                    <Link to="speakers" >SPEAKERS</Link>
-                    <Link to="earphones" >EARPHONES</Link>
+                    <Link to="/audiophile">HOME</Link>
+                    <Link to="audiophile/headphones" >HEADPHONES</Link>
+                    <Link to="audiophile/speakers" >SPEAKERS</Link>
+                    <Link to="audiophile/earphones" >EARPHONES</Link>
                 </div>
                 :
                 <div className="navlinks-img">
                     <div className="category">
                         <img className="category-img" src={headphonesCat} alt="headphones-cat" />
                         <p>HEADPHONES</p>
-                        <Link to="headphones" style={{textDecoration: "none",}}>
+                        <Link to="audiophile/headphones" style={{textDecoration: "none",}}>
                             <div className="shop">
                                 <p>SHOP</p>
                                 <img src={arrow} alt="shop-arrow" />
@@ -35,7 +35,7 @@ export default function NavLinks(props){
                     <div className="category">
                         <img className="category-img" src={speakersCat} alt="speakers-cat" />
                         <p>SPEAKERS</p>
-                        <Link to="speakers" style={{textDecoration: "none",}}>
+                        <Link to="audiophile/speakers" style={{textDecoration: "none",}}>
                             <div className="shop">
                                 <p>SHOP</p>
                                 <img src={arrow} alt="shop-arrow" />
@@ -45,7 +45,7 @@ export default function NavLinks(props){
                     <div className="category">
                         <img className="category-img" src={earphonesCat} alt="earphones-cat" />
                         <p>EARPHONES</p>
-                        <Link to="earphones" style={{textDecoration: "none",}}>
+                        <Link to="audiophile/earphones" style={{textDecoration: "none",}}>
                             <div className="shop">
                                 <p>SHOP</p>
                                 <img src={arrow} alt="shop-arrow" />
