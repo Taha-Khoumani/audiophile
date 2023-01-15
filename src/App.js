@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-    <Navbar />
+    <Navbar />        
     <Routes>
       <Route path="/audiophile" element={<h1>home</h1>} />
       <Route path='/audiophile/headphones' element={<h1>headphones</h1>} />
