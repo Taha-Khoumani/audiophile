@@ -9,7 +9,11 @@ $primaryBrown:#D87D4A;
     $mtablet:625px;
     $tablet:767px;
     $sdesktop:980px;
-    $mdesktop:1115px;
+    $mdesktop:1195px;
+    //menu-heights
+    $sMenu:240px;
+    $mMenu:340px;
+    $bMenu:675px;
 
 //mixings
 @mixin media($level){
@@ -25,6 +29,8 @@ body{
 
 //NAV-LINKS:
 .navlinks{
+    position: relative;
+    z-index: 5;
     .navlinks-text{
 
         display: flex;
@@ -48,63 +54,130 @@ body{
         }
     }
 
-    .navlinks-img{
-        display: flex;
-        align-items: flex-end;
-        gap: 10px;
-        height: 217px;
-        background-color: white;
-        padding:56px 39px 67px 39px;
-        @include media($mobile){
-            flex-direction: column;
-            height: auto;
-            gap:68px;
-            align-items: center;
-            padding:84px 24px 35px 24px;
-        }
-        @include media($mtablet){padding: 60px 20px 40px 20px;height: auto;}
-        .category{
-            height: 165px;
-            width: 223px;
-            background-color: #F1F1F1;
-            border-radius: 8px;
-            position: relative;
+    #navlink-img-container{
+        height: calc(100vh - 96px);
+        background-color:rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        right: 0;
+        .navlinks-img{
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 17px;
-            @include media($mobile){width: 85%;}
-            @include media ($mtablet){height: 140px;gap:9px;}
-            .category-img{
-                position: absolute;
-                margin:auto;
-                top:-52px;
-                left: 0;
-                right: 0;
-                filter: drop-shadow(0px 30px 16px gray);
-                @include media($mtablet){filter: drop-shadow(0px 15px 8px gray);height: 80px;top:-40px;}
+            align-items: flex-end;
+            gap: 10px;
+            height: 217px;
+            background-color: white;
+            padding:56px 39px 67px 39px;
+            border-radius: 0 0 8px 8px;
+
+            @include media($mtablet){
+                padding: 60px 20px 40px 20px;
+                height: auto;
             }
-            p{
-                font-family: $manrope;
-                font-weight: $weightOne;
-                font-size: 15px;
-                margin:0;
-            }
-            p:visited{
-                text-decoration: none;
-            }
-            .shop{
-                display: flex;
+            @include media($mobile){
+                flex-direction: column;
+                height: auto;
+                gap:68px;
                 align-items: center;
-                gap:13px;
-                margin-bottom: 22px;
+                padding:84px 24px 35px 24px;
+            }
+            .category{
+                height: 165px;
+                width: 223px;
+                background-color: #F1F1F1;
+                border-radius: 8px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 17px;
+                @include media($mobile){width: 85%;}
+                @include media ($mtablet){height: 140px;gap:9px;}
+                .category-img{
+                    position: absolute;
+                    margin:auto;
+                    top:-52px;
+                    left: 0;
+                    right: 0;
+                    filter: drop-shadow(0px 30px 16px gray);
+                    @include media($mtablet){filter: drop-shadow(0px 15px 8px gray);height: 80px;top:-40px;}
+                }
                 p{
-                    opacity: 0.5;
-                    color: black;
+                    font-family: $manrope;
+                    font-weight: $weightOne;
+                    font-size: 15px;
+                    margin:0;
+                }
+                p:visited{
+                    text-decoration: none;
+                }
+                .shop{
+                    display: flex;
+                    align-items: center;
+                    gap:13px;
+                    margin-bottom: 22px;
+                    p{
+                        opacity: 0.5;
+                        color: black;
+                    }
                 }
             }
         }
+    }
+    .sliding-menu{
+        position: relative;
+        bottom: $mMenu;
+        animation-fill-mode: forwards;
+        animation-duration: 0.6s;
+        @include media($mtablet){bottom: $sMenu;}
+        @include media($mobile){bottom:$bMenu;animation-duration: 0.8s;}
+    }
+    .sliding-menu-open{
+        animation-name: slide-open;
+        @keyframes slide-open {
+            100%{
+                bottom: 0;
+            }
+        };
+        @include media($mtablet){
+            @keyframes slide-open {
+                100%{
+                    bottom: 0;
+                }
+            };
+        };
+        @include media($mobile){
+            @keyframes slide-open {
+                100%{
+                    bottom: 0;
+                }
+            };
+        };
+    }
+    .sliding-menu-close{
+        animation-name: slide-close;
+        @keyframes slide-close {
+            0%{bottom: 0;}
+            100%{
+                bottom: $mMenu;
+            }
+        };
+        @include media($mtablet){
+            @keyframes slide-close {
+                0%{bottom: 0;}
+                100%{
+                    bottom: $sMenu;
+                }
+            };
+        };
+        @include media($mobile){
+            @keyframes slide-close {
+                0%{bottom: 0;}
+                100%{
+                    bottom:$bMenu;
+                }
+            };
+        };
     }
 }
 //NAVBAR:
@@ -112,18 +185,20 @@ body{
     background-color: #0E0E0E;
 }
 #navbar{
+    background-color: #0E0E0E;
     display: flex;
     position: relative;
+    z-index: 10;
     align-items: center;
     justify-content: center;
     height: 96px;
-    margin:0 165px;
-    @include media($mdesktop){margin:0 90px;justify-content: space-between;}
-    @include media($sdesktop) {margin:0 25px;}
+    padding:0 165px;
+    @include media($mdesktop){padding:0 90px;justify-content: space-between;}
+    @include media($sdesktop) {padding:0 25px;}
     #logo{
         position:absolute;
         margin:auto;
-        left: 0;
+        left: 165px;
         top:0;
         bottom:0;
         @include media($mdesktop){position:static;margin:0;}
@@ -131,7 +206,7 @@ body{
     #cart-icon{
         @extend #logo;
         left:auto;
-        right: 0;
+        right: 165px;
         margin: auto 0;
     }
     #menu{
@@ -218,8 +293,8 @@ footer{
     }
 }
 h1{
-    background-color: black;
-    color:$primaryBrown;
-    margin:0;
+    background-color: $primaryBrown;
+    color:white;
+    margin:500px 0;
     padding:20px;
 }

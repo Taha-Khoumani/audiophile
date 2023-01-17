@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     isMenuOpen:false,
     isMenuCollapsed: window.innerWidth <= 767,
+    winWidth:window.innerWidth,
 }
 
 const navSlice = createSlice({
@@ -14,9 +15,12 @@ const navSlice = createSlice({
         },
         setMenuColl:(state,{payload})=>{
             state.isMenuCollapsed = payload
+        },
+        setWinWidth:(state,{payload})=>{
+            state.winWidth = payload
         }
     }
 })
 
 export default  navSlice.reducer
-export const {toggleMenu,setMenuColl} = navSlice.actions
+export const {toggleMenu,setMenuColl,setWinWidth} = navSlice.actions
