@@ -1,5 +1,5 @@
 //react-router
-import { Link } from "react-router-dom"
+import { Link,NavLink } from "react-router-dom"
 
 //redux
 import {useDispatch} from "react-redux"
@@ -23,11 +23,17 @@ export default function NavLinks(props){
             { 
                 isText 
                 ?
+                // <div className="navlinks-text">
+                //     <NavLink to="audiophile">HOME</NavLink>
+                //     <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
+                //     <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
+                //     <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
+                // </div>
                 <div className="navlinks-text">
-                    <Link to="audiophile">HOME</Link>
-                    <Link to="audiophile/headphones" >HEADPHONES</Link>
-                    <Link to="audiophile/speakers" >SPEAKERS</Link>
-                    <Link to="audiophile/earphones" >EARPHONES</Link>
+                    <NavLink to="/">HOME</NavLink>
+                    <NavLink to="headphones" >HEADPHONES</NavLink>
+                    <NavLink to="speakers" >SPEAKERS</NavLink>
+                    <NavLink to="earphones" >EARPHONES</NavLink>
                 </div>
                 :
                 <div 

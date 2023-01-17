@@ -42,12 +42,15 @@ export default function Navbar(){
                         className="fa-sharp fa-solid fa-bars"
                         onClick={()=>{
                             if(isMenuOpen){
+                                //remove-black-opace-background
+                                document.querySelector("#navlink-img-container").style.backgroundColor = "transparent"
+
                                 document.querySelector(".sliding-menu").classList.remove("sliding-menu-open")
                                 document.querySelector(".sliding-menu").classList.add("sliding-menu-close")
                                 setTimeout(()=>dispatch(toggleMenu(!isMenuOpen)),
                                     winWidth > 480 ?
                                     500:
-                                    700
+                                    500
                                 )
                             }
                             else{

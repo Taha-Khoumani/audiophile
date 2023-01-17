@@ -1,3 +1,7 @@
+.active {
+  color: #D87D4A !important;
+}
+
 body {
   margin: 0;
 }
@@ -124,6 +128,7 @@ body {
   align-items: center;
   gap: 13px;
   margin-bottom: 22px;
+  box-sizing: border-box;
 }
 .navlinks #navlink-img-container .navlinks-img .category .shop p {
   opacity: 0.5;
@@ -144,9 +149,15 @@ body {
 }
 @media (max-width: 480px) {
   .navlinks .sliding-menu {
+    box-sizing: border-box;
+    padding-top: 65px !important;
     bottom: 675px;
     -webkit-animation-duration: 0.8s;
             animation-duration: 0.8s;
+    max-height: calc(100vh - 135px);
+  }
+  .navlinks .sliding-menu .category-img {
+    filter: none !important;
   }
 }
 .navlinks .sliding-menu-open {
@@ -444,6 +455,6 @@ footer #footer-about #footer-about-contacts > i:hover {
 h1 {
   background-color: #D87D4A;
   color: white;
-  margin: 500px 0;
+  margin: 0px 0;
   padding: 20px;
 }/*# sourceMappingURL=style.css.map */
