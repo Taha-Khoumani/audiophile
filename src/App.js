@@ -24,10 +24,10 @@ function App() {
     <Navbar />        
     <Routes>
       <Route path="/audiophile" element={<Home/>} />
-      <Route path='/audiophile/headphones' element={<Headphones/>} />
-      <Route path='/audiophile/speakers' element={<Speakers/>} />
-      <Route path='/audiophile/earphones' element={<Earphones/>} />
-      <Route path='/audiophile/checkout' element={<Checkout/>} />
+        <Route path='/audiophile/headphones' element={<Headphones/>} />
+        <Route path='/audiophile/speakers' element={<Speakers/>} />
+        <Route path='/audiophile/earphones' element={<Earphones/>} />
+        <Route path='/audiophile/checkout' element={<Checkout/>} /> 
     </Routes>
     <Footer />
     </>

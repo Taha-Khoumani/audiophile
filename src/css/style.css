@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: "Manrope", sans-serif;
 }
 
 .navlinks .navlinks-text {
@@ -32,7 +33,6 @@ body {
 .navlinks .navlinks-text a:link, .navlinks .navlinks-text a:visited {
   color: white;
   text-decoration: none;
-  font-family: "Manrope", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 25px;
@@ -111,7 +111,6 @@ body {
   }
 }
 .navlinks #navlink-img-container .navlinks-img .category p {
-  font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 15px;
   margin: 0;
@@ -401,7 +400,6 @@ footer #footer-about #footer-about-main {
 footer #footer-about #footer-about-main #about-text, footer #footer-about #footer-about-main #about-copywrite {
   color: white;
   font-size: 15px;
-  font-family: "Manrope", sans-serif;
   opacity: 0.5;
   font-weight: 500;
   margin: 0;
@@ -458,4 +456,29 @@ h1 {
   color: white;
   margin: 0px 0;
   padding: 20px;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin: 0 165px;
+}
+.about .about-text .about-text-title {
+  margin: 0 0 32px 0;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 44px;
+}
+.about .about-text .about-text-title span {
+  color: #D87D4A;
+}
+.about .about-text .about-text-text {
+  margin: 0;
+  font-weight: 500;
+  line-height: 25px;
+}
+.about .about-picture {
+  width: 480px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

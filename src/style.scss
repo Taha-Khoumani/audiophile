@@ -30,12 +30,11 @@ $primaryBrown:#D87D4A;
 //body
 body{
     margin:0;
+    font-family: $manrope;
 }
 
 //NAV-LINKS:
 .navlinks{
-    // position: relative;
-    // z-index: 100;
     .navlinks-text{
 
         display: flex;
@@ -48,7 +47,6 @@ body{
         a:link , a:visited{
             color: white;
             text-decoration: none;
-            font-family: $manrope;
             font-weight: $weightOne;
             letter-spacing: 2px;
             line-height: 25px;
@@ -108,7 +106,6 @@ body{
                     @include media($mtablet){filter: drop-shadow(0px 15px 8px gray);height: 80px;top:-40px;}
                 }
                 p{
-                    font-family: $manrope;
                     font-weight: $weightOne;
                     font-size: 15px;
                     margin:0;
@@ -277,7 +274,6 @@ footer{
             #about-text{
                 color:white;
                 font-size: 15px;
-                font-family: $manrope;
                 opacity:0.5;
                 font-weight: $weightTwo;
                 margin:0;
@@ -316,4 +312,34 @@ h1{
     color:white;
     margin:00px 0;
     padding:20px;
+}
+
+
+//About:
+.about{
+    display: flex;
+    align-items: center;
+    gap:80px;
+    margin: 0 165px;
+    // @include media($tablet){flex-direction: column-reverse;margin:;}
+    .about-text{
+        .about-text-title{
+            margin:0 0 32px 0;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 44px;
+            span{
+                color:$primaryBrown ;
+            }
+        }
+        .about-text-text{
+            margin:0;
+            font-weight: 500;
+            line-height: 25px;
+        }
+    }
+    .about-picture{
+        width: 480px;
+        border-radius: 10px;
+    }
 }
