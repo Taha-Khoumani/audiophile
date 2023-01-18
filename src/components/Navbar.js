@@ -62,9 +62,10 @@ export default function Navbar(){
                 }
                 <img id="logo" src={audiophile} alt="audiophile-logo" /> 
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
+                {/* {  !isMenuCollapsed && <NavLinks style={{position:"relative",zIndex: 5}} isText={true} />} */}
                 <img id="cart-icon" src={cart} alt="cart-icon" />
             </nav> 
-            { isMenuCollapsed && isMenuOpen && <NavLinks isText={false} class={"sliding-menu-open sliding-menu"}/>}
+            { isMenuCollapsed && isMenuOpen && <NavLinks id="navbar-links" isText={false} class={"sliding-menu-open sliding-menu"}/>}
         </div>
     )
 }

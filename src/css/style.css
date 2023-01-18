@@ -6,10 +6,6 @@ body {
   margin: 0;
 }
 
-.navlinks {
-  position: relative;
-  z-index: 5;
-}
 .navlinks .navlinks-text {
   display: flex;
   align-items: center;
@@ -257,6 +253,11 @@ body {
 
 #navbar-container {
   background-color: #0E0E0E;
+}
+
+#navbar-links {
+  position: relative;
+  z-index: 5;
 }
 
 #navbar {

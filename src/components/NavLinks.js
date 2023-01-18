@@ -1,5 +1,5 @@
 //react-router
-import { Link,NavLink } from "react-router-dom"
+import { Link,NavLink,useLocation } from "react-router-dom"
 
 //redux
 import {useDispatch} from "react-redux"
@@ -14,26 +14,20 @@ import earphonesCat from "../imgs/earphones-img.png"
 import headphonesCat from "../imgs/headphones-img.png"
 
 export default function NavLinks(props){
-    
+    const location = useLocation()
     const {isText} = props
     const dispatch = useDispatch()
 
     return(
-        <div className="navlinks">
+        <div className="navlinks" id={props.id ? props.id : ""}>
             { 
                 isText 
                 ?
-                // <div className="navlinks-text">
-                //     <NavLink to="audiophile">HOME</NavLink>
-                //     <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
-                //     <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
-                //     <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
-                // </div>
                 <div className="navlinks-text">
-                    <NavLink to="/">HOME</NavLink>
-                    <NavLink to="headphones" >HEADPHONES</NavLink>
-                    <NavLink to="speakers" >SPEAKERS</NavLink>
-                    <NavLink to="earphones" >EARPHONES</NavLink>
+                    <Link style={location.pathname === "/audiophile" ? {color:"#D87D4A"}:{}} to="audiophile">HOME</Link>
+                    <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
+                    <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
+                    <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
                 </div>
                 :
                 <div 
