@@ -8,6 +8,7 @@ $primaryBrown:#D87D4A;
     $mobile:480px;
     $mtablet:625px;
     $tablet:767px;
+    $ssdesktop:870px;
     $sdesktop:980px;
     $mdesktop:1195px;
     //menu-heights
@@ -58,6 +59,7 @@ body{
         }
     }
 
+    //navbar
     #navlink-img-container{
         height: calc(100vh - 96px);
         background-color:rgba(0, 0, 0, 0.5);
@@ -128,6 +130,8 @@ body{
             }
         }
     }
+
+    //normal
     .sliding-menu{
         position: relative;
         bottom: $mMenu;
@@ -315,32 +319,51 @@ h1{
     padding:20px;
 }
 
+//all-elements-padding/margin
+#all{
+    margin:0 165px;
+    @include media($mdesktop){margin: 0 120px;}
+    @include media($sdesktop){margin: 0 90px;}
+    @include media($ssdesktop){margin:0 60px;}
+}
 
 //About:
 .about{
+    @extend #all;
     display: flex;
     align-items: center;
     gap:80px;
-    margin: 0 165px;
-    // @include media($tablet){flex-direction: column-reverse;margin:;}
+    margin-block: 160px;
+    @include media($mdesktop){gap:50px;}
+    @include media($sdesktop){gap:30px;}
+    @include media($tablet){flex-direction: column-reverse;gap:40px;}
     .about-text{
         .about-text-title{
             margin:0 0 32px 0;
             font-weight: bold;
             font-size: 40px;
             line-height: 44px;
+            @include media($mdesktop){font-size: 35px;}
+            @include media($sdesktop){font-size: 32px;}
+            @include media($tablet){text-align: center;font-size: 32px;}
             span{
                 color:$primaryBrown ;
             }
         }
         .about-text-text{
             margin:0;
+            opacity: 0.5;
             font-weight: 500;
             line-height: 25px;
+            @include media($tablet){text-align: center;}
+            // @include media($sdesktop){font-size: 15px;}
         }
     }
     .about-picture{
         width: 480px;
         border-radius: 10px;
+        @include media($mdesktop){width: 350px;}
+        @include media($sdesktop){width:300px;}
+        @include media($tablet){width: 100%;}
     }
 }

@@ -1,5 +1,6 @@
 //components
 import About from "../../components/About"
+import NavLinks from "../../components/NavLinks"
 
 export default function Speakers(){
 
@@ -7,6 +8,7 @@ export default function Speakers(){
         <div id="speakers">
             <h1>Speakers</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni officiis, accusantium iste repudiandae itaque eaque voluptatem eos necessitatibus! Dolores velit iusto consequuntur reiciendis quasi, placeat ducimus. Magni consequatur ullam accusamus!</p>
+            <NavLinks isText={false}/>
             <About/>
         </div>
     )
