@@ -66,136 +66,140 @@ body{
         position: absolute;
         left: 0;
         right: 0;
-        .navlinks-img{
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-            height: 217px;
-            background-color: white;
-            padding:56px 39px 67px 39px;
-            border-radius: 0 0 8px 8px;
 
-            @include media($mtablet){
-                padding: 60px 20px 40px 20px;
-                height: auto;
-            }
+        .sliding-menu{
+            position: relative;
+            bottom: $mMenu;
+            animation-fill-mode: forwards;
+            animation-duration: 0.6s;
+            border-radius: 0 0 8px 8px;
+            @include media($mtablet){bottom: $sMenu;}
             @include media($mobile){
-                flex-direction: column;
-                height: auto;
-                gap:68px;
-                align-items: center;
-                padding:84px 24px 35px 24px;
-            }
-            .category{
-                height: 165px;
-                width: 223px;
-                background-color: #F1F1F1;
-                border-radius: 8px;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 17px;
-                @include media($mobile){width: 85%;}
-                @include media ($mtablet){height: 140px;gap:9px;}
+                box-sizing: border-box;
+                padding-top: 65px !important;
+                bottom:$bMenu;
+                animation-duration: 0.8s;
+                max-height: calc(100vh - 135px);
                 .category-img{
-                    position: absolute;
-                    margin:auto;
-                    top:-52px;
-                    left: 0;
-                    right: 0;
-                    filter: drop-shadow(0px 30px 16px gray);
-                    @include media($mtablet){filter: drop-shadow(0px 15px 8px gray);height: 80px;top:-40px;}
-                }
-                p{
-                    font-weight: $weightOne;
-                    font-size: 15px;
-                    margin:0;
-                }
-                p:visited{
-                    text-decoration: none;
-                }
-                .shop{
-                    display: flex;
-                    align-items: center;
-                    gap:13px;
-                    margin-bottom: 22px;
-                    box-sizing: border-box;
-                    p{
-                        opacity: 0.5;
-                        color: black;
-                    }
+                    filter: none !important;
                 }
             }
+        }
+
+        .sliding-menu-open{
+            animation-name: slide-open;
+            @keyframes slide-open {
+                100%{
+                    bottom: 0;
+                }
+            };
+            @include media($mtablet){
+                @keyframes slide-open {
+                    100%{
+                        bottom: 0;
+                    }
+                };
+            };
+            @include media($mobile){
+                @keyframes slide-open {
+                    100%{
+                        bottom: 0;
+                    }
+                };
+            };
+        }
+
+        .sliding-menu-close{
+            animation-name: slide-close;
+            @keyframes slide-close {
+                0%{bottom: 0;}
+                100%{
+                    bottom: $mMenu;
+                }
+            };
+            @include media($mtablet){
+                @keyframes slide-close {
+                    0%{bottom: 0;}
+                    100%{
+                        bottom: $sMenu;
+                    }
+                };
+            };
+            @include media($mobile){
+                @keyframes slide-close {
+                    0%{bottom: 0;}
+                    100%{
+                        bottom:$bMenu;
+                    }
+                };
+            };
         }
     }
 
     //normal
-    .sliding-menu{
-        position: relative;
-        bottom: $mMenu;
-        animation-fill-mode: forwards;
-        animation-duration: 0.6s;
-        @include media($mtablet){bottom: $sMenu;}
+    .navlinks-img{
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 217px;
+        background-color: white;
+        padding:56px 39px 67px 39px;
+
+        @include media($mtablet){
+            padding: 60px 20px 40px 20px;
+            height: auto;
+        }
         @include media($mobile){
-            box-sizing: border-box;
-            padding-top: 65px !important;
-            bottom:$bMenu;
-            animation-duration: 0.8s;
-            max-height: calc(100vh - 135px);
+            flex-direction: column;
+            height: auto;
+            gap:68px;
+            align-items: center;
+            padding:84px 24px 35px 24px;
+        }
+        .category{
+            height: 165px;
+            width: 223px;
+            background-color: #F1F1F1;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 17px;
+            @include media($mobile){width: 85%;}
+            @include media ($mtablet){height: 140px;gap:9px;}
             .category-img{
-                filter: none !important;
+                position: absolute;
+                margin:auto;
+                top:-52px;
+                left: 0;
+                right: 0;
+                filter: drop-shadow(0px 30px 16px gray);
+                @include media($mtablet){filter: drop-shadow(0px 15px 8px gray);height: 80px;top:-40px;}
+            }
+            p{
+                font-weight: $weightOne;
+                font-size: 15px;
+                margin:0;
+            }
+            p:visited{
+                text-decoration: none;
+            }
+            .shop{
+                display: flex;
+                align-items: center;
+                gap:13px;
+                margin-bottom: 22px;
+                box-sizing: border-box;
+                p{
+                    opacity: 0.5;
+                    color: black;
+                }
             }
         }
     }
-    .sliding-menu-open{
-        animation-name: slide-open;
-        @keyframes slide-open {
-            100%{
-                bottom: 0;
-            }
-        };
-        @include media($mtablet){
-            @keyframes slide-open {
-                100%{
-                    bottom: 0;
-                }
-            };
-        };
-        @include media($mobile){
-            @keyframes slide-open {
-                100%{
-                    bottom: 0;
-                }
-            };
-        };
-    }
-    .sliding-menu-close{
-        animation-name: slide-close;
-        @keyframes slide-close {
-            0%{bottom: 0;}
-            100%{
-                bottom: $mMenu;
-            }
-        };
-        @include media($mtablet){
-            @keyframes slide-close {
-                0%{bottom: 0;}
-                100%{
-                    bottom: $sMenu;
-                }
-            };
-        };
-        @include media($mobile){
-            @keyframes slide-close {
-                0%{bottom: 0;}
-                100%{
-                    bottom:$bMenu;
-                }
-            };
-        };
-    }
+
 }
 //NAVBAR:
 #navbar-container{
@@ -312,13 +316,6 @@ footer{
         }
     }
 }
-h1{
-    background-color: $primaryBrown;
-    color:white;
-    margin:00px 0;
-    padding:20px;
-}
-
 //all-elements-padding/margin
 #all{
     margin:0 165px;
@@ -366,4 +363,18 @@ h1{
         @include media($sdesktop){width:300px;}
         @include media($tablet){width: 100%;}
     }
+}
+
+//category:
+.cat-h{
+    @extend #all;
+    background-color: black;
+    color: white;
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 239px;
+    @include media($tablet){height: 246px;}
+    @include media($mobile){height: 102px;}
 }

@@ -15,38 +15,21 @@ import headphonesCat from "../imgs/headphones-img.png"
 
 export default function NavLinks(props){
     const location = useLocation()
-    const {isText} = props
+    const {isText,isNav} = props
     const dispatch = useDispatch()
 
-    return(
-        <div className="navlinks" id={props.id ? props.id : ""}>
-            { 
-                isText 
-                ?
-                <div className="navlinks-text">
-                    <Link style={location.pathname === "/audiophile" ? {color:"#D87D4A"}:{}} to="audiophile">HOME</Link>
-                    <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
-                    <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
-                    <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
-                </div>
-                :
-                <div 
-                    id="navlink-img-container"
-                    onClick={()=>{
-                        dispatch(toggleMenu(false))
-                    }}
-                >
-                    <div 
-                        className={`navlinks-img ${props.class ? props.class : null}`}
-                        onClick={(e)=>{
-                            e.stopPropagation()
-                        }}
-                    >
+  
+    const LinkImgs =    (<div 
+                            className={`navlinks-img ${props.class ? props.class : null}`}
+                            onClick={(e)=>{
+                                e.stopPropagation()
+                            }}
+                        >
                         <div className="category">
                             <img className="category-img" src={headphonesCat} alt="headphones-cat" />
                             <p>HEADPHONES</p>
                             <Link 
-                                to="audiophile/headphones" 
+                                to="/audiophile/headphones"
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
                                     document.body.style.position = "static"
@@ -63,7 +46,7 @@ export default function NavLinks(props){
                             <img className="category-img" src={speakersCat} alt="speakers-cat" />
                             <p>SPEAKERS</p>
                             <Link 
-                                to="audiophile/speakers" 
+                                to="/audiophile/speakers" 
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
                                     document.body.style.position = "static"
@@ -80,7 +63,7 @@ export default function NavLinks(props){
                             <img className="category-img" src={earphonesCat} alt="earphones-cat" />
                             <p>EARPHONES</p>
                             <Link 
-                                to="audiophile/earphones" 
+                                to="/audiophile/earphones" 
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
                                     document.body.style.position = "static"
@@ -93,8 +76,34 @@ export default function NavLinks(props){
                                 </div>
                             </Link>
                         </div>
-                    </div>
+                        </div>)
+
+    return(
+        <div className="navlinks" id={props.id ? props.id : ""}>
+            {   isText 
+                ?
+                <div className="navlinks-text">
+                    <Link style={location.pathname === "/audiophile" ? {color:"#D87D4A"}:{}} to="audiophile">HOME</Link>
+                    <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
+                    <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
+                    <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
                 </div>
+                :
+                    isNav
+                    ?
+                        <div 
+                            id="navlink-img-container"
+                            onClick={()=>{
+                                dispatch(toggleMenu(false))
+                            }}
+                        >
+                            {LinkImgs}
+                        </div> 
+                    :
+                    <div>
+                        {LinkImgs}
+                    </div>
+                
             }
         </div>
     )

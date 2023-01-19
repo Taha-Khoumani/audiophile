@@ -25,8 +25,14 @@ function App() {
     <Routes>
       <Route path="/audiophile" element={<Home/>} />
         <Route path='/audiophile/headphones' element={<Headphones/>} />
+            <Route path='/audiophile/headphones/:productSlug' element={<h1>hhhhh</h1>}/>
+        
         <Route path='/audiophile/speakers' element={<Speakers/>} />
+            <Route path='/audiophile/speakers/:productSlug' element={<h1>sssssss</h1>}/>
+
         <Route path='/audiophile/earphones' element={<Earphones/>} />
+            <Route path='/audiophile/earphones/:productSlug' element={<h1>eeeeee</h1>}/>
+
         <Route path='/audiophile/checkout' element={<Checkout/>} /> 
     </Routes>
     <Footer />

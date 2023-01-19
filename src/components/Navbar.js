@@ -13,6 +13,7 @@ import { toggleMenu,setMenuColl,setWinWidth} from "../features/nav/navSlice"
 //images
 import audiophile from "../imgs/logo.svg"
 import cart from "../imgs/icon-cart.svg"
+import { Link } from "react-router-dom"
 
 export default function Navbar(){
     const dispatch = useDispatch()
@@ -63,12 +64,12 @@ export default function Navbar(){
                     >
                     </i>
                 }
-                <img id="logo" src={audiophile} alt="audiophile-logo" /> 
+                <Link to="/audiophile"><img id="logo" src={audiophile} alt="audiophile-logo" /></Link>
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
                 {/* {  !isMenuCollapsed && <NavLinks style={{position:"relative",zIndex: 5}} isText={true} />} */}
                 <img id="cart-icon" src={cart} alt="cart-icon" />
             </nav> 
-            { isMenuCollapsed && isMenuOpen && <NavLinks id="navbar-links" isText={false} class={"sliding-menu-open sliding-menu"}/>}
+            { isMenuCollapsed && isMenuOpen && <NavLinks id="navbar-links" isText={false} class={"sliding-menu-open sliding-menu"} isNav={true}/>}
         </div>
     )
 }

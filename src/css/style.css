@@ -49,102 +49,22 @@ body {
   left: 0;
   right: 0;
 }
-.navlinks #navlink-img-container .navlinks-img {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  height: 217px;
-  background-color: white;
-  padding: 56px 39px 67px 39px;
-  border-radius: 0 0 8px 8px;
-}
-@media (max-width: 625px) {
-  .navlinks #navlink-img-container .navlinks-img {
-    padding: 60px 20px 40px 20px;
-    height: auto;
-  }
-}
-@media (max-width: 480px) {
-  .navlinks #navlink-img-container .navlinks-img {
-    flex-direction: column;
-    height: auto;
-    gap: 68px;
-    align-items: center;
-    padding: 84px 24px 35px 24px;
-  }
-}
-.navlinks #navlink-img-container .navlinks-img .category {
-  height: 165px;
-  width: 223px;
-  background-color: #F1F1F1;
-  border-radius: 8px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 17px;
-}
-@media (max-width: 480px) {
-  .navlinks #navlink-img-container .navlinks-img .category {
-    width: 85%;
-  }
-}
-@media (max-width: 625px) {
-  .navlinks #navlink-img-container .navlinks-img .category {
-    height: 140px;
-    gap: 9px;
-  }
-}
-.navlinks #navlink-img-container .navlinks-img .category .category-img {
-  position: absolute;
-  margin: auto;
-  top: -52px;
-  left: 0;
-  right: 0;
-  filter: drop-shadow(0px 30px 16px gray);
-}
-@media (max-width: 625px) {
-  .navlinks #navlink-img-container .navlinks-img .category .category-img {
-    filter: drop-shadow(0px 15px 8px gray);
-    height: 80px;
-    top: -40px;
-  }
-}
-.navlinks #navlink-img-container .navlinks-img .category p {
-  font-weight: 700;
-  font-size: 15px;
-  margin: 0;
-}
-.navlinks #navlink-img-container .navlinks-img .category p:visited {
-  text-decoration: none;
-}
-.navlinks #navlink-img-container .navlinks-img .category .shop {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  margin-bottom: 22px;
-  box-sizing: border-box;
-}
-.navlinks #navlink-img-container .navlinks-img .category .shop p {
-  opacity: 0.5;
-  color: black;
-}
-.navlinks .sliding-menu {
+.navlinks #navlink-img-container .sliding-menu {
   position: relative;
   bottom: 340px;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s;
+  border-radius: 0 0 8px 8px;
 }
 @media (max-width: 625px) {
-  .navlinks .sliding-menu {
+  .navlinks #navlink-img-container .sliding-menu {
     bottom: 240px;
   }
 }
 @media (max-width: 480px) {
-  .navlinks .sliding-menu {
+  .navlinks #navlink-img-container .sliding-menu {
     box-sizing: border-box;
     padding-top: 65px !important;
     bottom: 675px;
@@ -152,11 +72,11 @@ body {
             animation-duration: 0.8s;
     max-height: calc(100vh - 135px);
   }
-  .navlinks .sliding-menu .category-img {
+  .navlinks #navlink-img-container .sliding-menu .category-img {
     filter: none !important;
   }
 }
-.navlinks .sliding-menu-open {
+.navlinks #navlink-img-container .sliding-menu-open {
   -webkit-animation-name: slide-open;
           animation-name: slide-open;
 }
@@ -194,7 +114,7 @@ body {
     }
   }
 }
-.navlinks .sliding-menu-close {
+.navlinks #navlink-img-container .sliding-menu-close {
   -webkit-animation-name: slide-close;
           animation-name: slide-close;
 }
@@ -249,6 +169,86 @@ body {
       bottom: 675px;
     }
   }
+}
+.navlinks .navlinks-img {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 217px;
+  background-color: white;
+  padding: 56px 39px 67px 39px;
+}
+@media (max-width: 625px) {
+  .navlinks .navlinks-img {
+    padding: 60px 20px 40px 20px;
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .navlinks .navlinks-img {
+    flex-direction: column;
+    height: auto;
+    gap: 68px;
+    align-items: center;
+    padding: 84px 24px 35px 24px;
+  }
+}
+.navlinks .navlinks-img .category {
+  height: 165px;
+  width: 223px;
+  background-color: #F1F1F1;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 17px;
+}
+@media (max-width: 480px) {
+  .navlinks .navlinks-img .category {
+    width: 85%;
+  }
+}
+@media (max-width: 625px) {
+  .navlinks .navlinks-img .category {
+    height: 140px;
+    gap: 9px;
+  }
+}
+.navlinks .navlinks-img .category .category-img {
+  position: absolute;
+  margin: auto;
+  top: -52px;
+  left: 0;
+  right: 0;
+  filter: drop-shadow(0px 30px 16px gray);
+}
+@media (max-width: 625px) {
+  .navlinks .navlinks-img .category .category-img {
+    filter: drop-shadow(0px 15px 8px gray);
+    height: 80px;
+    top: -40px;
+  }
+}
+.navlinks .navlinks-img .category p {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0;
+}
+.navlinks .navlinks-img .category p:visited {
+  text-decoration: none;
+}
+.navlinks .navlinks-img .category .shop {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+  box-sizing: border-box;
+}
+.navlinks .navlinks-img .category .shop p {
+  opacity: 0.5;
+  color: black;
 }
 
 #navbar-container {
@@ -452,28 +452,21 @@ footer #footer-about #footer-about-contacts > i:hover {
   color: #D87D4A;
 }
 
-h1 {
-  background-color: #D87D4A;
-  color: white;
-  margin: 0px 0;
-  padding: 20px;
-}
-
-#all, .about {
+#all, .cat-h, .about {
   margin: 0 165px;
 }
 @media (max-width: 1195px) {
-  #all, .about {
+  #all, .cat-h, .about {
     margin: 0 120px;
   }
 }
 @media (max-width: 980px) {
-  #all, .about {
+  #all, .cat-h, .about {
     margin: 0 90px;
   }
 }
 @media (max-width: 870px) {
-  #all, .about {
+  #all, .cat-h, .about {
     margin: 0 60px;
   }
 }
@@ -553,5 +546,25 @@ h1 {
 @media (max-width: 767px) {
   .about .about-picture {
     width: 100%;
+  }
+}
+
+.cat-h {
+  background-color: black;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 239px;
+}
+@media (max-width: 767px) {
+  .cat-h {
+    height: 246px;
+  }
+}
+@media (max-width: 480px) {
+  .cat-h {
+    height: 102px;
   }
 }/*# sourceMappingURL=style.css.map */
