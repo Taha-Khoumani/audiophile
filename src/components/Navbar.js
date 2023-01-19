@@ -29,9 +29,12 @@ export default function Navbar(){
     },[])
 
     useEffect(()=>{
-        isMenuOpen ?
-        document.body.style.position = "fixed":
-        document.body.style.position = "static"
+        if (isMenuOpen) {
+            document.body.style.position = "fixed"
+        } else{
+            document.body.style.position = "static"
+        }
+
     },[isMenuOpen])
 
     return(

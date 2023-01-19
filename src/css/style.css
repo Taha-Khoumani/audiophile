@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: "Manrope", sans-serif;
+  max-width: 100%;
 }
 
 .navlinks .navlinks-text {
