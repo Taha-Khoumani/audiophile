@@ -2,8 +2,12 @@
 import About from "../../components/About"
 import NavLinks from "../../components/NavLinks"
 
-export default function Earphones(){
+//redux
+import { useSelector } from "react-redux"
 
+export default function Earphones(){
+    const {productsList} = useSelector(store=>store.products)
+    
     return(
         <div id="earphones">
             <h1 className="cat-h">EARPHONES</h1>
