@@ -20,7 +20,7 @@ export default function NavLinks(props){
 
   
     const LinkImgs =    (<div 
-                            className={`navlinks-img ${props.class ? props.class : null}${!isNav ?" notNav": ""}`}
+                            className={`${props.class ? props.class : null}${!isNav ?" notNav": " navlinks-img"}`}
                             onClick={(e)=>{
                                 e.stopPropagation()
                             }}
