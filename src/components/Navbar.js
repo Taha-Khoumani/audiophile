@@ -13,6 +13,8 @@ import { toggleMenu,setMenuColl,setWinWidth} from "../features/nav/navSlice"
 //images
 import audiophile from "../imgs/logo.svg"
 import cart from "../imgs/icon-cart.svg"
+
+//react-router
 import { Link } from "react-router-dom"
 
 export default function Navbar(){

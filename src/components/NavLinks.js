@@ -25,10 +25,8 @@ export default function NavLinks(props){
                                 e.stopPropagation()
                             }}
                         >
-                        <div className="category">
-                            <img className="category-img" src={headphonesCat} alt="headphones-cat" />
-                            <p>HEADPHONES</p>
                             <Link 
+                                className="category"
                                 to="/audiophile/headphones"
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
@@ -36,16 +34,15 @@ export default function NavLinks(props){
                                     dispatch(toggleMenu(false))
                                 }}
                             >
+                                <img className="category-img" src={headphonesCat} alt="headphones-cat" />
+                                <p style={{}}>HEADPHONES</p>
                                 <div className="shop">
                                     <p>SHOP</p>
                                     <img src={arrow} alt="shop-arrow" />
                                 </div>
                             </Link>
-                        </div>
-                        <div className="category">
-                            <img className="category-img" src={speakersCat} alt="speakers-cat" />
-                            <p>SPEAKERS</p>
                             <Link 
+                                className="category"
                                 to="/audiophile/speakers" 
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
@@ -53,16 +50,15 @@ export default function NavLinks(props){
                                     dispatch(toggleMenu(false))
                                 }}
                             >
-                                <div className="shop">
+                                <img className="category-img" src={speakersCat} alt="speakers-cat" />
+                                <p>SPEAKERS</p>
+                                    <div className="shop">
                                     <p>SHOP</p>
                                     <img src={arrow} alt="shop-arrow" />
-                                </div>
+                                    </div>
                             </Link>
-                        </div>
-                        <div className="category">
-                            <img className="category-img" src={earphonesCat} alt="earphones-cat" />
-                            <p>EARPHONES</p>
-                            <Link 
+                            <Link
+                                className="category" 
                                 to="/audiophile/earphones" 
                                 style={{textDecoration: "none",}}
                                 onClick={()=>{
@@ -70,12 +66,13 @@ export default function NavLinks(props){
                                     dispatch(toggleMenu(false))
                                 }}
                             >
+                                <img className="category-img" src={earphonesCat} alt="earphones-cat" />
+                                <p>EARPHONES</p>
                                 <div className="shop">
                                     <p>SHOP</p>
                                     <img src={arrow} alt="shop-arrow" />
                                 </div>
                             </Link>
-                        </div>
                         </div>)
 
     return(

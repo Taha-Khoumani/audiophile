@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import data from "../../data.json"
 
 const initialState={
-    productsList:data,
+    allProductsList:data,
 }
 
 const productsSlice = createSlice(

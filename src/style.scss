@@ -13,6 +13,18 @@ $ssdesktop:870px;
 $sdesktop:980px;
 $mdesktop:1195px;
 
+/*  
+    @include media($desktop){}
+    @include media($mdesktop){}
+    @include media($sdesktop){}
+    @include media($ssdesktop){}
+    @include media($tablet){}
+    @include media($mablet){}
+    @include media($mobile){}
+*/
+
+
+
 //menu-heights
 $sMenu:240px;
 $mMenu:340px;
@@ -52,9 +64,18 @@ body{
     @include media($tablet){margin: 0 40px;}
     @include media($mobile){margin: 0 24px;}
 }
+#all-padding{
+    padding:0 165px;
+    @include media($mdesktop){padding: 0 120px;}
+    @include media($sdesktop){padding: 0 90px;}
+    @include media($ssdesktop){padding:0 60px;}
+    @include media($tablet){padding: 0 40px;}
+    @include media($mobile){padding: 0 24px;}
+}
 
 //NAV-LINKS:
 .navlinks{
+    max-width: 100%;
     //desktop-mode-text
     .navlinks-text{
         display: flex;
@@ -79,6 +100,7 @@ body{
 
     //tablet/mobile-mode
     #navlink-img-container{
+        max-width: 100%;
         height: calc(100vh - 96px);
         background-color:rgba(0, 0, 0, 0.5);
         position: absolute;
@@ -155,6 +177,7 @@ body{
 
     //actual-styling
     .navlinks-img{
+        max-width: 100%;
         display: flex;
         align-items: flex-end;
         gap: 10px;
@@ -165,7 +188,7 @@ body{
         @include media($mdesktop){margin: 0 120px;padding-right: 0;padding-left: 0;gap:20px;}
         @include media($sdesktop){margin: 0 90px;padding-right: 0;padding-left: 0;}
         @include media($ssdesktop){padding:56px 39px 67px 39px;margin:0;}
-        @include media($mtablet){padding: 60px 20px 40px 20px;height: auto;}
+        @include media($mtablet){padding: 60px 20px 40px 20px;height: 170px;}
         @include media($mobile){flex-direction: column;height: auto;gap:68px;align-items: center;padding:84px 24px 35px 24px;}
         .category{
             height: 165px;
@@ -198,9 +221,6 @@ body{
                 font-size: 15px;
                 margin:0;
             }
-            p:visited{
-                text-decoration: none;
-            }
             .shop{
                 display: flex;
                 align-items: center;
@@ -213,19 +233,25 @@ body{
                 }
             }
         }
+        a:visited{
+            color: black;
+        }
+        a:hover .shop>p{
+            opacity: 1;
+            color: #D87D4A;
+        }
     }
 
     //notNavbar-navlinks "basically the same "actual styling that's about but with some changes"
     .notNav{
         @extend .navlinks-img;
-        padding-left: 0;
-        padding-right: 0 ;
+        padding: 0px 0 0 0;
         margin:0 165px ;
         @include media($mdesktop){margin: 0 120px ;}
         @include media($sdesktop){margin: 0 90px ;}
         @include media($ssdesktop){margin:0 60px ;}
         @include media($tablet){margin: 0 40px ;}
-        @include media($mobile){margin: 0 24px ;}
+        @include media($mobile){margin: 0 24px ;padding: 35px 0 0 0}
         .category{
             @include media ($mtablet){height: 130px ;gap:9px;}
             .category-img{
@@ -238,23 +264,24 @@ body{
 
 //NAVBAR:
 #navbar-container{
-    background-color: #0E0E0E;
+    background-color: black;
 }
 #navbar-links{
     position: relative;
     z-index: 5;
 }
 #navbar{
-    background-color: #0E0E0E;
+    @extend #all-padding;
+    background-color:black;
     display: flex;
     position: relative;
     z-index: 10;
     align-items: center;
     justify-content: center;
     height: 96px;
-    padding:0 165px;
-    @include media($mdesktop){padding:0 90px;justify-content: space-between;}
-    @include media($sdesktop) {padding:0 25px;}
+
+    @include media($mdesktop){justify-content: space-between;}
+    @include media($sdesktop) {}
     #logo{
         position:absolute;
         margin:auto;
@@ -393,6 +420,19 @@ footer{
 }
 
 //CATEGORYS:
+//header
+.hr-container{
+    background-color: black;
+    .hr{
+        @extend #all;
+        margin-block: 0;
+        opacity: 0.2;
+        background-color: #979797;
+        height: 1px;
+        border:none;
+        mix-blend-mode: normal;
+    }
+}
 .cat-h{
     @extend #all;
     background-color: black;
@@ -404,4 +444,76 @@ footer{
     height: 239px;
     @include media($tablet){height: 246px;}
     @include media($mobile){height: 102px;}
+}
+
+//category-products-list
+.headphonesListElContainer{
+    @extend #all;
+    margin-block:100px 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+    @include media($sdesktop){margin-block:100px 145px;}
+    @include media($tablet){margin-block:60px 130px;gap:120px;}
+    
+    .category-product{
+        display: flex;
+        gap:125px;
+        align-items: center;
+        @include media($mdesktop){gap:60px;}
+        @include media($sdesktop){gap:50px;}
+        @include media($ssdesktop){gap:40px;}
+        @include media($tablet){flex-direction: column;gap:20px;}
+        @include media($mtablet){gap:25px;}
+        .category-product-img{
+            width: 50%;
+            border-radius: 8px;
+            @include media($tablet){width: 100%;}
+        }
+        .category-product-text{
+            .category-product-text-new{
+                color: #D87D4A;
+                letter-spacing: 10px;
+                font-size: 14px;
+                margin: 0 0 16px 0;
+                @include media($sdesktop){margin: 0 0 9px 0;}
+                @include media($ssdesktop){margin:0 0 5px 0;}
+                @include media($tablet){margin:0 0 10px 0;}
+            }
+
+            .category-product-text-name{
+                margin: 0 0 32px 0;
+                font-weight: bold;
+                font-size: 40px;
+                line-height: 44px;
+                letter-spacing: 1.42857px;
+                @include media($sdesktop){font-size: 33px;margin: 0 0 15px 0;}
+                @include media($tablet){margin:0 0 15px 0;}
+                // @include media($mtablet){margin:0 0 15px 0;}
+
+            }
+
+            .category-product-text-description{
+                margin:  0 0 40px 0;
+                opacity: 0.5;
+                font-weight: 500;
+                @include media($sdesktop){margin: 0 0 28px 0;}
+                @include media($ssdesktop){margin:0 0 23px 0;}
+                @include media($tablet){margin:0 0 30px 0;}
+            }
+
+            button{
+                background-color: $primaryBrown;
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+            button:hover{
+                background-color: #FBAF85;
+            }
+            @include media($tablet){text-align: center;}
+        }
+    }
 }
