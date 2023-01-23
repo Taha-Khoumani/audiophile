@@ -28,7 +28,6 @@ export default function ProductView(props){
             return  `.${img.mobile}`
         }
     }
-
     function reverse(width){
         if(width > 767 && props.isImgRight){
             return{flexDirection:"row-reverse"}
