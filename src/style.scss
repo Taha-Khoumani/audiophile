@@ -492,8 +492,10 @@ footer{
             margin: 0 0 16px 0;
             @include media($sdesktop){margin: 0 0 9px 0;}
             @include media($ssdesktop){margin:0 0 5px 0;}
-            @include media($tablet){margin:0 0 0px 0;}
-            @include media($mtablet){margin:0 0 5px 0;font-size: 10px;letter-spacing: 5px;}
+            @include media($tablet){margin:0 0 5px 0;}
+            @include media(600px){font-size: 12px;letter-spacing: 5px;}
+            @include media(550px){font-size: 10px;letter-spacing: 5px;}
+            // @include media($mtablet){margin:0 0 5px 0;font-size: 10px;letter-spacing: 5px;}
         }
         .category-product-text-name{
             margin: 0 0 32px 0;
@@ -514,10 +516,9 @@ footer{
             letter-spacing: 1.42857px;
             @include media($sdesktop){font-size: 33px;margin: 0 0 10px 0;}
             @include media($tablet){margin:0 0 10px 0;font-size: 26px;line-height: 25px;}
-            @include media($mtablet){margin:0 0 6px 0;font-size: 20px;line-height: 20px;}
-            // @include media($mtablet){margin:0 0 32px 0;font-size: 33px;line-height: 37px;}
-            // @include media($mobile){margin:0 0 10px 0;}
-            // @include media($mtablet){margin:0 0 15px 0;}
+            @include media(600px){margin:0 0 6px 0;font-size: 23px;line-height: 22.5px;}
+            @include media(550px){margin:0 0 6px 0;font-size: 20px;line-height: 20px;}
+            // @include media($mtablet){margin:0 0 6px 0;font-size: 20px;line-height: 20px;}
 
         }
         .category-product-text-description{
@@ -535,7 +536,9 @@ footer{
             @include media($sdesktop){margin: 0 0 15px 0;}
             @include media($ssdesktop){margin:0 0 10px 0;}
             @include media($tablet){margin:0 0 10px 0;font-size: 16px;}
-            @include media($mtablet){margin:0 0 10px 0;font-size: 14px;}
+            @include media(600px){margin:0 0 10px 0;font-size: 15px;}
+            @include media(550px){margin:0 0 10px 0;font-size: 14px;}
+            // @include media($mtablet){margin:0 0 10px 0;font-size: 14px;}
         }
         .button{
             background-color: $primaryBrown;
@@ -546,8 +549,8 @@ footer{
             letter-spacing: 1px;
             font-size: 13px;
             height: 48px;
-            // @include media($tablet){letter-spacing: 0;padding: 10px 10px;height: 35px;}
-            @include media($mtablet){letter-spacing: 0;padding: 10px 10px;height: 35px;}
+            @include media(600px){letter-spacing: 0;padding: 10px 10px;height: 35px;}
+            // @include media($mtablet){letter-spacing: 0;padding: 10px 10px;height: 35px;}
             @include media($mobile){letter-spacing: 0;}
         }
         .button:hover{
@@ -561,17 +564,17 @@ footer{
             width:auto;
             height: 48px;
             margin-right: 16px;
-            // @include media($tablet){height: 35px;}
-            @include media($mtablet){height: 35px;}
+            @include media(600px){height: 35px;}
+            // @include media($mtablet){height: 35px;}
             @include media($mobile){margin-right: 10px;}
-            // width: auto;
             p{
                 margin:0;
                 width: 40px;
                 text-align: center;
                 font-weight: bold;
                 font-size: 14px;
-                @include media($mtablet){width: 30px;}
+                @include media(600px){width: 30px;}
+                // @include media($mtablet){width: 30px;}
             }
             button{
                 font-weight: bold;
@@ -580,8 +583,8 @@ footer{
                 width: 40px;
                 opacity: 0.5;
                 font-size: 13px;
-                @include media($mtablet){width: 30px;}
-                // @include media($mobile){width: 45px;}
+                @include media(600px){width: 30px;}
+                // @include media($mtablet){width: 30px;}
             }
             p,button{
                 @include media($mobile){width:35px;}
@@ -596,7 +599,7 @@ footer{
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 15px;
-            @include media($tablet){margin-bottom: 10px;}
+            @include media(600px){margin-bottom: 10px;}
         }
     }
 }
@@ -604,6 +607,7 @@ footer{
     @extend .category-product;
     @include media($ssdesktop){gap:30px;}
     @include media($tablet){flex-direction: row;gap:40px;}
+    @include media(652px){gap:21px;}
     @include media($mtablet){gap:17px}
     @include media($mobile){flex-direction: column;}
     .category-product-img{
