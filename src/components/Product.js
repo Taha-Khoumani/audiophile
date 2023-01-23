@@ -6,13 +6,14 @@ import { useSelector } from "react-redux";
 
 //components
 import ProductView from "./ProductView.js";
+import Also from "./Also.js";
 
 
 export default function Product(){
     const {productSlug} = useParams();
     const {allProductsList} = useSelector(store=>store.products)
     const {winWidth} = useSelector(store=>store.nav)
-    const {name,description,image,isNew,price,gallery,features,includes} = allProductsList.find(product=>product.slug===productSlug)
+    const {name,description,image,isNew,price,gallery,features,includes,others} = allProductsList.find(product=>product.slug===productSlug)
     function wichImg(width,img){
         if(width > 767){
             return  `.${img.desktop}`
@@ -59,6 +60,7 @@ export default function Product(){
                 <img className="gallery-second" src={wichImg(winWidth,gallery.second)} alt="gallery-imgs" />
                 <img className="gallery-third" src={wichImg(winWidth,gallery.third)} alt="gallery-imgs" />
             </section>
+            <Also data={others}/>
         </div>
         :
         <h1>error 404 :/</h1>

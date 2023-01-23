@@ -67,3 +67,13 @@ export default function ProductView(props){
         </div>
     )
 }  
+
+export function wichImg(width,img){
+    if(width > 767){
+        return  `.${img.desktop}`
+    } else if(width > 480){
+        return  `.${img.tablet}`
+    } else{
+        return  `.${img.mobile}`
+    }
+}
