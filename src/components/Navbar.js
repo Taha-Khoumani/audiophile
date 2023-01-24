@@ -15,11 +15,11 @@ import audiophile from "../imgs/logo.svg"
 import cart from "../imgs/icon-cart.svg"
 
 //react-router
-import { Link } from "react-router-dom"
+import { Link ,useLocation} from "react-router-dom"
 
 export default function Navbar(){
     const dispatch = useDispatch()
-
+    const location = useLocation()
     const {isMenuOpen,isMenuCollapsed,winWidth} = useSelector(store=>store.nav)
 
     useEffect(()=>{
@@ -39,10 +39,9 @@ export default function Navbar(){
         }
 
     },[isMenuOpen])
-
     return(
-        <div id="navbar-container">
-            <nav id="navbar">
+        <div id="navbar-container" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
+            <nav id="navbar" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
                 {   isMenuCollapsed && 
                     <i  id="menu" 
                         className="fa-sharp fa-solid fa-bars"
