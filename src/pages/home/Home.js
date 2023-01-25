@@ -8,9 +8,9 @@ import { useSelector } from "react-redux"
 import { wichImg } from "../../components/ProductView"
 
 //imgs
-import heroD from "../../imgs/image-hero-d.jpg"
-import heroT from "../../imgs/image-hero-t.jpg"
-import heroM from "../../imgs/image-hero-m.jpg"
+// import heroD from "../../imgs/image-hero-d.jpg"
+// import heroT from "../../imgs/image-hero-t.jpg"
+// import heroM from "../../imgs/image-hero-m.jpg"
 import circle from "../../imgs/pattern-circles.svg"
 import speakerD from "../../imgs/image-speaker-d.png"
 import speakerT from "../../imgs/image-speaker-t.png"
@@ -23,11 +23,11 @@ import yx1T from "../../imgs/yx1T.jpg"
 import yx1M from "../../imgs/yx1M.jpg"
 export default function Home(){
     const {winWidth} = useSelector(store=>store.nav)
-    let landingItemImgs = {
-        desktop:heroD,
-        tablet:heroT,
-        mobile:heroM,
-    }
+    // let landingItemImgs = {
+    //     desktop:heroD,
+    //     tablet:heroT,
+    //     mobile:heroM,
+    // }
     let speakerImgs ={
         desktop:speakerD,
         tablet:speakerT,
@@ -55,17 +55,17 @@ export default function Home(){
                         <p className={"category-product-text-description"}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast</p>
                         <Link to={"headphones/xx99-mark-two-headphones"} ><button className="button">SEE PRODUCT</button></Link>
                     </div>
-                </section> */}
+                </section> */} 
                 <NavLinks isText={false} isNav={false}/>
-                {/* <section className="landing-item-2" style={{backgroundImage:`url("${circle}")`}}>
-                    <img src={wichImg(winWidth,speakerImgs)} alt="speaker-img" />
-                    <div className="category-product-text-2">
-                        <p className={"category-product-text-name"}>ZX9 SPEAKER</p>
-                        <p className={"category-product-text-description"}>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                        <Link to={"headphones/xx99-mark-two-headphones"} ><button className="button">SEE PRODUCT</button></Link>
-                    </div>
-                </section> */}
                 <section className="landing-products">
+                    <section className="landing-item-1" style={{backgroundImage:`url("${circle}")`}}>
+                        <img src={wichImg(winWidth,speakerImgs)} alt="speaker-img" />
+                        <div className="category-product-text-1">
+                            <p className={"category-product-text-name"}>ZX9 SPEAKER</p>
+                            <p className={"category-product-text-description"}>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                            <Link to={"headphones/xx99-mark-two-headphones"} ><button className="button">SEE PRODUCT</button></Link>
+                        </div>
+                    </section>
                     <section className="landing-item-2">
                         <img src={wichImg(winWidth,zx7Imgs)} alt="zx7-img" />
                         <div className="item-2-text">
