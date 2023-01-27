@@ -10,7 +10,7 @@ import { useState } from "react"
 
 export default function ProductView(props){
 
-    const {slug,name,description,categoryImage,isNew,price,image,cartImg} = props.data
+    const {slug,name,description,categoryImage,isNew,price,image} = props.data
     // console.log(cartImg)
 
     const [currentQuantity,setCurrentQuantity] = useState(1)
@@ -85,8 +85,7 @@ export default function ProductView(props){
                         <button 
                             className="button" 
                             onClick={()=>{
-                                console.log(cartImg)
-                                props.functions.handleClickAdd(slug,name,price,currentQuantity,cartImg)
+                                props.functions.handleClickAdd(slug,name,price,currentQuantity)
                                 setCurrentQuantity(1)
                             }}
                         >

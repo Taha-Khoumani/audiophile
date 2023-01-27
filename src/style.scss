@@ -36,6 +36,11 @@
 
 
 //SHARED-STYLING:
+    //root
+    #root{
+        max-width: 100%;
+        background-color: white;
+    }
     //navlinks-active-class
     .active{
         color: $primaryBrown !important;
@@ -45,6 +50,10 @@
         margin:0;
         font-family: $manrope;
         max-width: 100%;
+        background-image: url("../imgs/nav-placeholder.jpg");
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-color: rgba($color: black, $alpha: 0.4);
     }
     //all-elements-padding/margin:
     #all{
@@ -100,7 +109,7 @@
         #navlink-img-container{
             max-width: 100%;
             height: calc(100vh - 96px);
-            background-color:rgba(0, 0, 0, 0.5);
+            background-color:rgba(0, 0, 0, 0.4);
             position: absolute;
             left: 0;
             right: 0;
@@ -112,9 +121,13 @@
                 animation-fill-mode: forwards;
                 animation-duration: 0.6s;
                 border-radius: 0 0 8px 8px;
-                @include media($mtablet){bottom: $sMenu;}
+                @include media($tablet){width: calc(100% - 63px);};
+                @include media($mtablet){bottom: $sMenu;width:calc(100% - 25px)}
                 @include media($mobile){
-                    box-sizing: border-box;
+                    width: calc(100% - 34px);
+                    // left: 10px;
+
+                    // box-sizing: border-box;
                     padding-top: 65px !important;
                     bottom:$bMenu;
                     animation-duration: 0.8s;
@@ -291,11 +304,31 @@
             bottom:0;
             @include media($mdesktop){position:static;margin:0;}
         }
-        #cart-icon{
-            @extend #logo;
-            left:auto;
-            right: 165px;
-            margin: auto 0;
+        .cart-container{
+            position:relative;
+            #cart-icon{
+                @extend #logo;
+                left:auto;
+                right: 165px;
+                margin: auto 0;
+            }
+            p{
+                margin:0;
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+                background-color: $primaryBrown;
+                text-align: center;
+                border-radius: 100%;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: -7px;
+                right: -8px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
         #menu{
             color:white;
@@ -425,14 +458,14 @@
         height: calc(100vh - 96px);
         right: 0;
         left: 0;
-        background-color: rgba($color: black, $alpha: 0.3);
+        background-color: rgba($color: black, $alpha: 0.4);
 
     }
     .cart-content{
         padding:30px;
         position:relative;
         z-index: 4;
-        width: 375px;
+        width: 365px;
         min-height: 100px;
         background-color: white;
         margin-left: auto;
@@ -441,6 +474,30 @@
         bottom:calc(100% + 32px);
         @keyframes down {to{bottom:0;}};
         @keyframes up{0%{top:0;}100%{top: calc(0px - 100% - 32px);}}
+        .cart-top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            .cart-count{
+                margin-block: 0 ;
+                font-weight: bold;
+                letter-spacing: 1.3px;
+                font-size:18px;
+                display: inline;
+            }
+            .remove-all{
+                margin: 0;
+                font-size: 15px;
+                font-weight: 500;
+                display: inline;
+                opacity: 0.5;
+                text-decoration-line: underline;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
         .cart-items{
             .cart-item{
                 display: flex;
@@ -466,7 +523,7 @@
                     }
                 }
                 .product-nums-cart{
-                    margin-left: auto;
+                    margin: 0 0 0 auto !important ;
                     @extend .product-nums;
                     height: 32px !important;
                     width: 96px !important; 
@@ -476,6 +533,27 @@
 
                 }
             }
+        }
+        .total{
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px 0 10px;
+            .total-word{
+                opacity: 0.5;
+                font-weight: 500;
+            }
+            .total-number{
+                font-weight: bold;
+                font-size:18px;
+            }
+            p{
+                margin:0;
+            }
+        }
+        .to-checkout{
+            width: 100%;
         }
     }
     .cart-content-down{

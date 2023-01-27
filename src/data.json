@@ -88,8 +88,7 @@
           "desktop": "./assets/shared/desktop/image-zx9-speaker.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-yx1-earphones.jpg"
+    ]
   },
   {
     "id": 2,
@@ -176,8 +175,7 @@
           "desktop": "./assets/shared/desktop/image-zx9-speaker.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-xx59-headphones.jpg"
+    ]
   },
   {
     "id": 3,
@@ -264,8 +262,7 @@
           "desktop": "./assets/shared/desktop/image-zx9-speaker.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-xx99-mark-one-headphones.jpg"
+    ]
   },
   {
     "id": 4,
@@ -356,8 +353,7 @@
           "desktop": "./assets/shared/desktop/image-zx9-speaker.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-xx99-mark-two-headphones.jpg"
+    ]
   },
   {
     "id": 5,
@@ -448,8 +444,7 @@
           "desktop": "./assets/shared/desktop/image-xx59-headphones.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-zx7-speaker.jpg"
+    ]
   },
   {
     "id": 6,
@@ -540,7 +535,6 @@
           "desktop": "./assets/shared/desktop/image-xx59-headphones.jpg"
         }
       }
-    ],
-    "cartImg":"../assets/cart/image-zx9-speaker.jpg"
+    ]
   }
 ]
