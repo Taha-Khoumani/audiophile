@@ -1,14 +1,15 @@
 //components
 import NavLinks from "./NavLinks"
+import Cart from "./Cart"
 
 //react
-import { useEffect } from "react"
+import { useEffect ,useState} from "react"
 
 //redux
 import { useSelector, useDispatch} from "react-redux"
 
 //reducers
-import { toggleMenu,setMenuColl,setWinWidth} from "../features/navSlice"
+import { toggleMenu,setMenuColl,setWinWidth,clickCart} from "../features/navSlice"
 
 //images
 import audiophile from "../imgs/logo.svg"
@@ -20,7 +21,7 @@ import { Link ,useLocation} from "react-router-dom"
 export default function Navbar(){
     const dispatch = useDispatch()
     const location = useLocation()
-    const {isMenuOpen,isMenuCollapsed,winWidth} = useSelector(store=>store.nav)
+    const {isMenuOpen,isMenuCollapsed,winWidth,isCartCliked} = useSelector(store=>store.nav)
 
     useEffect(()=>{
         window.addEventListener("resize",()=>{
@@ -67,9 +68,22 @@ export default function Navbar(){
                 }
                 <Link to="/audiophile"><img id="logo" src={audiophile} alt="audiophile-logo" /></Link>
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
-                {/* {  !isMenuCollapsed && <NavLinks style={{position:"relative",zIndex: 5}} isText={true} />} */}
-                <img id="cart-icon" src={cart} alt="cart-icon" />
+                <img 
+                    id="cart-icon" 
+                    src={cart} 
+                    alt="cart-icon"
+                    onClick={()=>{
+                        if(isCartCliked){
+                            document.querySelector(".cart-content").classList.remove("cart-content-down")
+                            document.querySelector(".cart-content").classList.add("cart-content-up")
+                            setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
+                        }else{
+                            dispatch(clickCart(!isCartCliked))
+                        }
+                    }}
+                    />
             </nav> 
+            { isCartCliked && <Cart/>}
             { isMenuCollapsed && isMenuOpen && <NavLinks id="navbar-links" isText={false} class={"sliding-menu-open sliding-menu"} isNav={true}/>}
         </div>
     )

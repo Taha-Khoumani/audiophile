@@ -4,6 +4,7 @@ const initialState={
     isMenuOpen:false,
     isMenuCollapsed: window.innerWidth <= 767,
     winWidth:window.innerWidth,
+    isCartCliked:false,
 }
 
 const navSlice = createSlice({
@@ -18,9 +19,12 @@ const navSlice = createSlice({
         },
         setWinWidth:(state,{payload})=>{
             state.winWidth = payload
+        },
+        clickCart:(state,{payload})=>{
+            state.isCartCliked=payload
         }
     }
 })
 
 export default  navSlice.reducer
-export const {toggleMenu,setMenuColl,setWinWidth} = navSlice.actions
+export const {toggleMenu,setMenuColl,setWinWidth,clickCart} = navSlice.actions

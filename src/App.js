@@ -17,7 +17,7 @@ import Headphones from "./pages/Headphones"
 import Earphones from "./pages/Earphones"
 import Speakers from "./pages/Speakers"
 import Checkout from "./pages/Checkout"
-import Product from './components/Product';
+import Product from './components/Product'; 
 
 function App() {
   return (
