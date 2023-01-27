@@ -1,16 +1,17 @@
 //components
-import About from "../../components/About"
-import NavLinks from "../../components/NavLinks"
-import ProductView from "../../components/ProductView"
+import About from "../components/About"
+import NavLinks from "../components/NavLinks"
+import ProductView from "../components/ProductView"
 
 //redux
 import { useSelector } from "react-redux"
 
-export default function Speakers(){
+export default function Earphones(){
     const {allProductsList} = useSelector(store=>store.products)
-    let speakersList = allProductsList.filter(product => product.category === "speakers")
-    speakersList = [...speakersList.filter(product => product.isNew),...speakersList.filter(product=>!product.isNew)]
-    const speakersListEl = speakersList.map((product,index) =>
+
+    let earphonesList = allProductsList.filter(product => product.category === "earphones")
+    earphonesList = [...earphonesList.filter(product => product.isNew),...earphonesList.filter(product=>!product.isNew)]
+    const earphonesListEl = earphonesList.map((product,index) =>
         <ProductView
             key={product.id} 
             data={{
@@ -26,13 +27,13 @@ export default function Speakers(){
     )
     
     return(
-        <div id="speakers">
+        <div id="earphones">
             <div className="hr-container"><hr className="hr" /></div>
-            <h1 className="cat-h">SPEAKERS</h1>
+            <h1 className="cat-h">EARPHONES</h1>
             <div className="productsListElContainer">
-                {speakersListEl}
+                {earphonesListEl}
             </div>
-            <NavLinks isText={false} isNav={false} />
+            <NavLinks isText={false} isNav={false}/>
             <About/>
         </div>
     )

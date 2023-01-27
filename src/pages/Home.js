@@ -2,25 +2,25 @@
 import { Link } from "react-router-dom"
 
 //components
-import About from "../../components/About"
-import NavLinks from "../../components/NavLinks"
+import About from "../components/About"
+import NavLinks from "../components/NavLinks"
 import { useSelector } from "react-redux"
-import { wichImg } from "../../components/ProductView"
+import { wichImg } from "../components/ProductView"
 
 //imgs
-import heroD from "../../imgs/image-hero-d.jpg"
-import heroT from "../../imgs/image-hero-t.jpg"
-import heroM from "../../imgs/image-hero-m.jpg"
-import circle from "../../imgs/pattern-circles.svg"
-import speakerD from "../../imgs/image-speaker-d.png"
-import speakerT from "../../imgs/image-speaker-t.png"
-import speakerM from "../../imgs/image-speaker-m.png"
-import zx7D from "../../imgs/zx7D.jpg"
-import zx7T from "../../imgs/zx7T.jpg"
-import zx7M from "../../imgs/zx7M.jpg"
-import yx1D from "../../imgs/yx1D.png"
-import yx1T from "../../imgs/yx1T.jpg"
-import yx1M from "../../imgs/yx1M.jpg"
+import heroD from "../imgs/image-hero-d.jpg"
+import heroT from "../imgs/image-hero-t.jpg"
+import heroM from "../imgs/image-hero-m.jpg"
+import circle from "../imgs/pattern-circles.svg"
+import speakerD from "../imgs/image-speaker-d.png"
+import speakerT from "../imgs/image-speaker-t.png"
+import speakerM from "../imgs/image-speaker-m.png"
+import zx7D from "../imgs/zx7D.jpg"
+import zx7T from "../imgs/zx7T.jpg"
+import zx7M from "../imgs/zx7M.jpg"
+import yx1D from "../imgs/yx1D.png"
+import yx1T from "../imgs/yx1T.jpg"
+import yx1M from "../imgs/yx1M.jpg"
 export default function Home(){
     const {winWidth} = useSelector(store=>store.nav)
     let landingItemImgs = {

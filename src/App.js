@@ -12,11 +12,11 @@ import Navbar from "./components/Navbar"
 import Footer from './components/Footer';
 
 //pages
-import Home from "./pages/home/Home"
-import Headphones from "./pages/headphones/Headphones"
-import Earphones from "./pages/earphones/Earphones"
-import Speakers from "./pages/speakers/Speakers"
-import Checkout from "./pages/checkout/Checkout"
+import Home from "./pages/Home"
+import Headphones from "./pages/Headphones"
+import Earphones from "./pages/Earphones"
+import Speakers from "./pages/Speakers"
+import Checkout from "./pages/Checkout"
 import Product from './components/Product';
 
 function App() {

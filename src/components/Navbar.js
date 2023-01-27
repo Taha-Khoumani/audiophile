@@ -8,7 +8,7 @@ import { useEffect } from "react"
 import { useSelector, useDispatch} from "react-redux"
 
 //reducers
-import { toggleMenu,setMenuColl,setWinWidth} from "../features/nav/navSlice"
+import { toggleMenu,setMenuColl,setWinWidth} from "../features/navSlice"
 
 //images
 import audiophile from "../imgs/logo.svg"

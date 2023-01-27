@@ -5,7 +5,7 @@ import { Link,NavLink,useLocation } from "react-router-dom"
 import {useDispatch} from "react-redux"
 
 //reducers
-import { toggleMenu} from "../features/nav/navSlice"
+import { toggleMenu} from "../features/navSlice"
 
 //images
 import arrow from "../imgs/icon-arrow-right.svg"

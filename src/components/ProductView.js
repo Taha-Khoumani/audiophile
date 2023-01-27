@@ -4,8 +4,19 @@ import { useSelector } from "react-redux"
 //react-router
 import { Link } from "react-router-dom"
 
+//react
+import { useState } from "react"
+
+
 export default function ProductView(props){
+    console.log(useSelector(store=>store.cart.items))
+
     const {slug,name,description,categoryImage,isNew,price,image} = props.data
+
+    const [currentQuantity,setCurrentQuantity] = useState(1)
+
+    // const {handleClickAdd} = props.functions
+    
 
     const {winWidth} = useSelector(store=>store.nav)
 
@@ -41,7 +52,6 @@ export default function ProductView(props){
             <img 
                 className="category-product-img"
                 src={props.isCat?wichCatImg(winWidth,categoryImage):wichImg(winWidth,image)}
-                // src={wichImg(winWidth,props.isCat?categoryImage:image)}
                 alt="product-img" 
             />
             <div className="category-product-text">
@@ -56,11 +66,31 @@ export default function ProductView(props){
                     <>
                         <p className="price">$ {price.toLocaleString()}</p>
                         <div className="product-nums">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
+                            <button
+                                onClick={()=>{
+                                    if(currentQuantity > 1){
+                                        setCurrentQuantity(prevQ=>prevQ-1)
+                                    }
+                                }}
+                            >
+                                -
+                            </button>
+                            <p>{currentQuantity}</p>
+                            <button
+                                onClick={()=>setCurrentQuantity(prevQ=>prevQ+1)}
+                            >
+                                +
+                            </button>
                         </div>
-                        <button className="button">ADD TO CART</button>
+                        <button 
+                            className="button" 
+                            onClick={()=>{
+                                props.functions.handleClickAdd(slug,name,price,currentQuantity)
+                                setCurrentQuantity(1)
+                            }}
+                        >
+                            ADD TO CART
+                        </button>
                     </>
                 }
             </div>

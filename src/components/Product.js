@@ -2,18 +2,21 @@
 import { useParams } from "react-router-dom"
 
 //redux
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 
 //components
 import ProductView from "./ProductView.js";
 import Also from "./Also.js";
 
+//reducers
+import { addItem } from "../features/cartSlice.js";
 
 export default function Product(){
+    const dispatch = useDispatch()
     const {productSlug} = useParams();
     const {allProductsList} = useSelector(store=>store.products)
     const {winWidth} = useSelector(store=>store.nav)
-    const {name,description,image,isNew,price,gallery,features,includes,others} = allProductsList.find(product=>product.slug===productSlug)
+    const {name,description,image,isNew,price,gallery,features,includes,others,slug} = allProductsList.find(product=>product.slug===productSlug)
     function wichImg(width,img){
         if(width > 767){
             return  `.${img.desktop}`
@@ -24,11 +27,14 @@ export default function Product(){
         }
     }
     const inBox = includes.map((thing,index)=>
-            <div className="thing-con" key={index}>
-                <span>{thing.quantity}x</span>
-                <p className="details-text" >{thing.item}</p>
-            </div>
-        )
+        <div className="thing-con" key={index}>
+            <span>{thing.quantity}x</span>
+            <p className="details-text" >{thing.item}</p>
+        </div>
+    )
+    function handleClickAdd(slug,name,price,quantity){
+        dispatch(addItem({slug,name,price,quantity}))
+    }
     return(
         allProductsList.some(product => product.slug === productSlug)
         ?
@@ -40,8 +46,12 @@ export default function Product(){
                     description,
                     name,
                     price,
+                    slug,
                 }}
                 isCat={false}
+                functions={{
+                    handleClickAdd,
+                }}
             />
             <section className="product-details">
                 <div className="features">
