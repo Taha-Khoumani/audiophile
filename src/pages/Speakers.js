@@ -24,7 +24,7 @@ export default function Speakers(){
             isImgRight={index%2!==0}
         />
     )
-    
+    // console.log(speakersList[0].cartImg)
     return(
         <div id="speakers">
             <div className="hr-container"><hr className="hr" /></div>

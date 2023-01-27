@@ -11,7 +11,8 @@ const cartSlice = createSlice({
     initialState,
     reducers:{
         addItem:(state,{payload})=>{
-            const {slug,name,price,quantity} = payload
+            const {slug,name,price,quantity,cartImg} = payload
+            console.log(payload)
             if(state.items.some(item=>item.itemslug===slug)){
                 return{
                     items:state.items.map(item=>
@@ -25,6 +26,7 @@ const cartSlice = createSlice({
                     itemName:name,
                     itemPrice:price,
                     itemQuantity:quantity,
+                    itemImg:cartImg,
                 })
             }
         }

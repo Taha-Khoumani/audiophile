@@ -16,7 +16,7 @@ export default function Product(){
     const {productSlug} = useParams();
     const {allProductsList} = useSelector(store=>store.products)
     const {winWidth} = useSelector(store=>store.nav)
-    const {name,description,image,isNew,price,gallery,features,includes,others,slug} = allProductsList.find(product=>product.slug===productSlug)
+    const {name,description,image,isNew,price,gallery,features,includes,others,slug,cartImg} = allProductsList.find(product=>product.slug===productSlug)
     function wichImg(width,img){
         if(width > 767){
             return  `.${img.desktop}`
@@ -32,8 +32,8 @@ export default function Product(){
             <p className="details-text" >{thing.item}</p>
         </div>
     )
-    function handleClickAdd(slug,name,price,quantity){
-        dispatch(addItem({slug,name,price,quantity}))
+    function handleClickAdd(slug,name,price,quantity,cartImg){
+        dispatch(addItem({slug,name,price,quantity,cartImg}))
     }
     return(
         allProductsList.some(product => product.slug === productSlug)
@@ -47,6 +47,7 @@ export default function Product(){
                     name,
                     price,
                     slug,
+                    cartImg,
                 }}
                 isCat={false}
                 functions={{

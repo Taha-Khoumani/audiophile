@@ -33,13 +33,13 @@ export default function Navbar(){
     },[])
 
     useEffect(()=>{
-        if (isMenuOpen) {
-            document.body.style.position = "fixed"
+        if (isMenuOpen || isCartCliked) {
+            document.querySelector("#root").style.position = "fixed"
         } else{
-            document.body.style.position = "static"
+            document.querySelector("#root").style.position = "static"
         }
 
-    },[isMenuOpen])
+    },[isMenuOpen,isCartCliked])
     return(
         <div id="navbar-container" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
             <nav id="navbar" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
@@ -74,6 +74,7 @@ export default function Navbar(){
                     alt="cart-icon"
                     onClick={()=>{
                         if(isCartCliked){
+                            document.querySelector(".cart").style.backgroundColor = "transparent"
                             document.querySelector(".cart-content").classList.remove("cart-content-down")
                             document.querySelector(".cart-content").classList.add("cart-content-up")
                             setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)

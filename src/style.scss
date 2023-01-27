@@ -429,14 +429,54 @@
 
     }
     .cart-content{
+        padding:30px;
         position:relative;
         z-index: 4;
-        width: 377px;
-        height: 500px;
+        width: 375px;
+        min-height: 100px;
         background-color: white;
         margin-left: auto;
         animation-duration: 500ms;
         animation-fill-mode: forwards;
+        bottom:calc(100% + 32px);
+        @keyframes down {to{bottom:0;}};
+        @keyframes up{0%{top:0;}100%{top: calc(0px - 100% - 32px);}}
+        .cart-items{
+            .cart-item{
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                img{
+                    width:64px;
+                    margin-right: 16px;
+                    border-radius: 8px;
+                }
+                .name-price{
+                    display: flex;
+                    flex-direction: column;
+                    gap:5px;
+                    p{
+                        display: inline;
+                        margin:0;
+                        font-weight: bold;
+                    }
+                    p:last-child{
+                        opacity: 0.5;
+                        font-size: 14px;
+                    }
+                }
+                .product-nums-cart{
+                    margin-left: auto;
+                    @extend .product-nums;
+                    height: 32px !important;
+                    width: 96px !important; 
+                    p,button{
+                        width: 32px !important;
+                    }
+
+                }
+            }
+        }
     }
     .cart-content-down{
         animation-name: down;
@@ -603,49 +643,50 @@
             // @include media($mtablet){margin:0 0 10px 0;font-size: 14px;}
         }
         @include media($tablet){text-align: center;}
-        .product-nums{
-            display: inline-flex;
-            align-items: center;
-            background-color: #F1F1F1;
-            width:auto;
-            height: 48px;
-            margin-right: 16px;
-            @include media(600px){height: 35px;}
-            // @include media($mtablet){height: 35px;}
-            @include media($mobile){margin-right: 10px;}
-            p{
-                margin:0;
-                width: 40px;
-                text-align: center;
-                font-weight: bold;
-                font-size: 14px;
-                @include media(600px){width: 30px;}
-                // @include media($mtablet){width: 30px;}
-            }
-            button{
-                font-weight: bold;
-                border: none;
-                height: 100%;
-                width: 40px;
-                opacity: 0.5;
-                font-size: 13px;
-                @include media(600px){width: 30px;}
-                // @include media($mtablet){width: 30px;}
-            }
-            p,button{
-                @include media($mobile){width:35px;}
-            }
-            button:hover{
-                color: $primaryBrown;
-                opacity: 1;
-            }
-        }
         .price{
             font-size: 18px;
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 15px;
             @include media(600px){margin-bottom: 10px;}
+        }
+    }
+    //add&minus-buttons
+    .product-nums{
+        display: inline-flex;
+        align-items: center;
+        background-color: #F1F1F1;
+        width:auto;
+        height: 48px;
+        margin-right: 16px;
+        @include media(600px){height: 35px;}
+        // @include media($mtablet){height: 35px;}
+        @include media($mobile){margin-right: 10px;}
+        p{
+            margin:0;
+            width: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            @include media(600px){width: 30px;}
+            // @include media($mtablet){width: 30px;}
+        }
+        button{
+            font-weight: bold;
+            border: none;
+            height: 100%;
+            width: 40px;
+            opacity: 0.5;
+            font-size: 13px;
+            @include media(600px){width: 30px;}
+            // @include media($mtablet){width: 30px;}
+        }
+        p,button{
+            @include media($mobile){width:35px;}
+        }
+        button:hover{
+            color: $primaryBrown;
+            opacity: 1;
         }
     }
 //

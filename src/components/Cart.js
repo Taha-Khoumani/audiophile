@@ -1,38 +1,42 @@
-import { useRef,useState,useEffect } from "react"
+//redux
 import { useSelector } from "react-redux"
 
 export default function Cart(){
-    const [height, setHeight] = useState(0)
-    const ref = useRef(null)
-    useEffect(() => {
-        setHeight(ref.current.clientHeight)
-    })
     const {isCartCliked} = useSelector(store=>store.nav)
-    
-    //dynamic-styles
-    let dynamicStyles = null;
-
-function addAnimation(body) {
-    if (!dynamicStyles) {
-        dynamicStyles = document.createElement('style');
-        dynamicStyles.type = 'text/css';
-        document.head.appendChild(dynamicStyles);
-    }
-
-    dynamicStyles.sheet.insertRule(body, dynamicStyles.length);
-    }
-
-    addAnimation(`@keyframes down {to{bottom:0;}}`);
-    addAnimation(`@keyframes up{0%{top:0;}100%{top: calc(0px - ${height}px - 32px);}}`);
-
+    const {items} = useSelector(store=>store.cart)
+    console.log(items)
+    const cartItemsEls = items.map((item,index)=>
+        <div className="cart-item" key={index} >
+            <img src={item.itemImg} alt="product-img" />
+            <div className="name-price">
+                <p>{item.itemName}</p>
+                <p>$ {item.itemPrice}</p>
+            </div>
+            <div className="product-nums-cart">
+                            <button
+                                // onClick={()=>{
+                                //     if(currentQuantity > 1){
+                                //         setCurrentQuantity(prevQ=>prevQ-1)
+                                //     }
+                                // }}
+                            >
+                                -
+                            </button>
+                            <p>{item.itemQuantity}</p>
+                            <button
+                                // onClick={()=>setCurrentQuantity(prevQ=>prevQ+1)}
+                            >
+                                +
+                            </button>
+            </div>
+        </div>
+    )
     return(
         <section className="cart" >
-            <div
-                className={`cart-content ${isCartCliked?"cart-content-down":""}`} 
-                ref={ref}
-                style={{bottom:`calc(${height}px + 32px)`,}}
-            >
-                {height}
+            <div className={`cart-content ${isCartCliked?"cart-content-down":""}`}>
+                <div className="cart-items">
+                    {cartItemsEls}
+                </div>
             </div>
         </section>
     )
