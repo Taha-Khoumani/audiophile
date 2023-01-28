@@ -35,22 +35,24 @@ export default function Cart(){
                 <p>{item.itemName}</p>
                 <p>$ {item.itemPrice.toLocaleString()}</p>
             </div>
-            <div className="product-nums-cart">
-                            <button
-                                onClick={()=>{
-                                    dispatch(modifyByOne({isAdding:false,slug:item.itemslug}))
-                                }}
-                            >
-                                -
-                            </button>
-                            <p>{item.itemQuantity}</p>
-                            <button
-                                onClick={()=>{
-                                    dispatch(modifyByOne({isAdding:true,slug:item.itemslug}))
-                                }}
-                            >
-                                +
-                            </button>
+            <div className="product-nums-cart-1">
+                <div className="product-nums-cart">
+                    <button
+                        onClick={()=>{
+                            dispatch(modifyByOne({isAdding:false,slug:item.itemslug}))
+                        }}
+                    >
+                        -
+                    </button>
+                    <p>{item.itemQuantity}</p>
+                    <button
+                        onClick={()=>{
+                            dispatch(modifyByOne({isAdding:true,slug:item.itemslug}))
+                        }}
+                    >
+                        +
+                    </button>
+                </div>
             </div>
         </div>
     )
@@ -65,11 +67,13 @@ export default function Cart(){
                 <div className="cart-items">
                     {cartItemsEls}
                 </div>
-                <div className="total">
-                    <p className="total-word">TOTAL</p>
-                    <p className="total-number">$ {items.reduce((total,item)=>total+item.itemPrice*item.itemQuantity,0).toLocaleString()}</p>
+                <div className="cart-bottom">
+                    <div className="total">
+                        <p className="total-word">TOTAL</p>
+                        <p className="total-number">$ {items.reduce((total,item)=>total+item.itemPrice*item.itemQuantity,0).toLocaleString()}</p>
+                    </div>
+                    <button className="to-checkout button">CHECKOUT</button>
                 </div>
-                <button className="to-checkout button">CHECKOUT</button>
             </div>
         </section>
     )

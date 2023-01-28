@@ -59,10 +59,11 @@ export default function Navbar(){
     useEffect(()=>{
         if (isMenuOpen || isCartCliked) {
             document.querySelector("#navbar").style.paddingRight = `${padding()+scrollWidth}px`
-            // document.querySelector("#navbar").style.paddingRight = `99px`
+            document.querySelector(".cart-container-1").style.right = `${padding()+scrollWidth}px`
             document.querySelector("#root").style.position = "fixed"
         }
-    },[isMenuOpen,isCartCliked])
+    },[isMenuOpen,isCartCliked,winWidth])
+
     return(
         <div id="navbar-container" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
             <nav id="navbar" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
@@ -71,7 +72,8 @@ export default function Navbar(){
                         className="fa-sharp fa-solid fa-bars"
                         onClick={()=>{
                             if(isMenuOpen){
-                                document.querySelector("#navbar").style.paddingRight = `${padding()}px`
+                                document.querySelector("#navbar").style.paddingRight = ``
+                                document.querySelector(".cart-container-1").style.right = `${padding()}px`
                                 document.querySelector("#root").style.position = "static"
                                 document.querySelector("#navlink-img-container").style.backgroundColor = "transparent"
                                 document.querySelector(".sliding-menu").classList.remove("sliding-menu-open")
@@ -91,25 +93,28 @@ export default function Navbar(){
                 }
                 <Link to="/audiophile"><img id="logo" src={audiophile} alt="audiophile-logo" /></Link>
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
-                <div className="cart-container">
-                    <img 
-                        id="cart-icon"
-                        src={cart} 
-                        alt="cart-icon"
-                        onClick={()=>{
-                            if(isCartCliked){
-                                document.querySelector("#navbar").style.paddingRight = `${padding()}px`
-                                document.querySelector("#root").style.position = "static"
-                                document.querySelector(".cart").style.backgroundColor = "transparent"
-                                document.querySelector(".cart-content").classList.remove("cart-content-down")
-                                document.querySelector(".cart-content").classList.add("cart-content-up")
-                                setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
-                            }else{
-                                dispatch(clickCart(!isCartCliked))
-                            }
-                        }}
-                    />
-                    { items.length && <p>{items.length}</p>}
+                <div className="cart-container-1">
+                    <div className="cart-container-0">
+                        <img 
+                            id="cart-icon"
+                            src={cart} 
+                            alt="cart-icon"
+                            onClick={()=>{
+                                if(isCartCliked){
+                                    document.querySelector("#navbar").style.paddingRight = ``
+                                    document.querySelector(".cart-container-1").style.right = `${padding()}px`
+                                    document.querySelector("#root").style.position = "static"
+                                    document.querySelector(".cart").style.backgroundColor = "transparent"
+                                    document.querySelector(".cart-content").classList.remove("cart-content-down")
+                                    document.querySelector(".cart-content").classList.add("cart-content-up")
+                                    setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
+                                }else{
+                                    dispatch(clickCart(!isCartCliked))
+                                }
+                            }}
+                        />
+                        { items.length && <p>{items.length}</p>}
+                    </div>
                 </div>
             </nav> 
             { isCartCliked && <Cart/>}
