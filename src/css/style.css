@@ -143,20 +143,14 @@ body {
           animation-duration: 0.6s;
   border-radius: 0 0 8px 8px;
 }
-@media (max-width: 767px) {
-  .navlinks #navlink-img-container .sliding-menu {
-    width: calc(100% - 63px);
-  }
-}
 @media (max-width: 625px) {
   .navlinks #navlink-img-container .sliding-menu {
     bottom: 240px;
-    width: calc(100% - 25px);
   }
 }
 @media (max-width: 480px) {
   .navlinks #navlink-img-container .sliding-menu {
-    width: calc(100% - 34px);
+    box-sizing: border-box;
     padding-top: 65px !important;
     bottom: 675px;
     -webkit-animation-duration: 0.8s;

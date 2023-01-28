@@ -25,8 +25,22 @@ export default function Navbar(){
     const {items} = useSelector(store=>store.cart)
     const [scrollWidth,setScrollWidth] = useState(0)
 
+    const padding =()=>{
+        if(winWidth > 1195){
+            return 165
+        }else if(winWidth>980){
+            return 120
+        }else if(winWidth>870){
+            return 90
+        }else if(winWidth>767){
+            return 60
+        }else if(winWidth<767){
+            return 40
+        }
+    }
+
     useEffect(()=>{
-        let scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+        let scrollbarWidth = (window.innerWidth - document.body.clientWidth);
         setScrollWidth(scrollbarWidth)
         console.log(scrollbarWidth)
     },[])
@@ -40,9 +54,12 @@ export default function Navbar(){
         // eslint-disable-next-line
     },[])
 
+
+
     useEffect(()=>{
         if (isMenuOpen || isCartCliked) {
-            document.querySelector("#root").style.marginRight = scrollWidth
+            document.querySelector("#navbar").style.paddingRight = `${padding()+scrollWidth}px`
+            // document.querySelector("#navbar").style.paddingRight = `99px`
             document.querySelector("#root").style.position = "fixed"
         }
     },[isMenuOpen,isCartCliked])
@@ -54,7 +71,7 @@ export default function Navbar(){
                         className="fa-sharp fa-solid fa-bars"
                         onClick={()=>{
                             if(isMenuOpen){
-                                document.querySelector("#root").style.marginRight = "0px"
+                                document.querySelector("#navbar").style.paddingRight = `${padding()}px`
                                 document.querySelector("#root").style.position = "static"
                                 document.querySelector("#navlink-img-container").style.backgroundColor = "transparent"
                                 document.querySelector(".sliding-menu").classList.remove("sliding-menu-open")
@@ -81,7 +98,7 @@ export default function Navbar(){
                         alt="cart-icon"
                         onClick={()=>{
                             if(isCartCliked){
-                                document.querySelector("#root").style.marginRight = "0px"
+                                document.querySelector("#navbar").style.paddingRight = `${padding()}px`
                                 document.querySelector("#root").style.position = "static"
                                 document.querySelector(".cart").style.backgroundColor = "transparent"
                                 document.querySelector(".cart-content").classList.remove("cart-content-down")

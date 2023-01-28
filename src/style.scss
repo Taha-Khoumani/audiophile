@@ -121,13 +121,9 @@
                 animation-fill-mode: forwards;
                 animation-duration: 0.6s;
                 border-radius: 0 0 8px 8px;
-                @include media($tablet){width: calc(100% - 63px);};
-                @include media($mtablet){bottom: $sMenu;width:calc(100% - 25px)}
+                @include media($mtablet){bottom: $sMenu;}
                 @include media($mobile){
-                    width: calc(100% - 34px);
-                    // left: 10px;
-
-                    // box-sizing: border-box;
+                    box-sizing: border-box;
                     padding-top: 65px !important;
                     bottom:$bMenu;
                     animation-duration: 0.8s;
