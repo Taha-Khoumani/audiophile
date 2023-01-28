@@ -15,6 +15,9 @@ import xx99_1 from "../imgs/image-xx99-mark-one-headphones.jpg"
 import xx99_2 from "../imgs/image-xx99-mark-two-headphones.jpg"
 import xx59 from "../imgs/image-xx59-headphones.jpg"
 
+//reducers
+import {clickCart} from "../features/navSlice"
+
 const cartImgs = {
     "zx9-speaker":zx9,
     "zx7-speaker":zx7,
@@ -26,8 +29,11 @@ const cartImgs = {
 
 export default function Cart(){
     const dispatch = useDispatch()
-    const {isCartCliked} = useSelector(store=>store.nav)
+
+    const {isCartCliked,winWidth} = useSelector(store=>store.nav)
+
     const {items} = useSelector(store=>store.cart)
+    items = items.reverse()
     const cartItemsEls = items.map((item,index)=>
         <div className="cart-item" key={index} >
             <img src={cartImgs[item.itemslug]} alt="product-img" />
@@ -57,23 +63,65 @@ export default function Cart(){
         </div>
     )
 
+    function closeCart(){
+        const padding =()=>{
+            if(winWidth > 1195){
+                return 165
+            }else if(winWidth>980){
+                return 120
+            }else if(winWidth>870){
+                return 90
+            }else if(winWidth>767){
+                return 60
+            }else if(winWidth<767){
+                return 40
+            }
+        }
+        if(isCartCliked){
+            document.querySelector("#navbar").style.paddingRight = ``
+            document.querySelector(".cart-container-1").style.right = `${padding()}px`
+            document.querySelector("#root").style.position = "static"
+            document.querySelector(".cart").style.backgroundColor = "transparent"
+            document.querySelector(".cart-content").classList.remove("cart-content-down")
+            document.querySelector(".cart-content").classList.add("cart-content-up")
+            setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
+        }else{
+            dispatch(clickCart(!isCartCliked))
+        }
+    
+    }
+
     return(
-        <section className="cart" >
-            <div className={`cart-content ${isCartCliked?"cart-content-down":""}`}>
+        <section 
+            className="cart" 
+            onClick={()=>closeCart()}    
+        >
+            <div 
+                className={`cart-content ${isCartCliked?"cart-content-down":""}`}
+                onClick={(e)=>{e.stopPropagation()}}
+            >
                 <div className="cart-top">
                     <p className="cart-count">CART ({items.length})</p>
-                    <p className="remove-all" onClick={()=>dispatch(removeAll())} >Remove all</p>
+                    {items.length !== 0 && <p className="remove-all" onClick={()=>dispatch(removeAll())} >Remove all</p>}
                 </div>
-                <div className="cart-items">
-                    {cartItemsEls}
-                </div>
-                <div className="cart-bottom">
-                    <div className="total">
-                        <p className="total-word">TOTAL</p>
-                        <p className="total-number">$ {items.reduce((total,item)=>total+item.itemPrice*item.itemQuantity,0).toLocaleString()}</p>
-                    </div>
-                    <button className="to-checkout button">CHECKOUT</button>
-                </div>
+                {
+                    items.length
+                    ?
+                    <>
+                        <div className="cart-items">
+                            {cartItemsEls}
+                        </div>
+                        <div className="cart-bottom">
+                            <div className="total">
+                                <p className="total-word">TOTAL</p>
+                                <p className="total-number">$ {items.reduce((total,item)=>total+item.itemPrice*item.itemQuantity,0).toLocaleString()}</p>
+                            </div>
+                            <button className="to-checkout button">CHECKOUT</button>
+                        </div> 
+                    </>
+                    :
+                    <p id="zero-items">You cart is empty</p>
+                }
             </div>
         </section>
     )

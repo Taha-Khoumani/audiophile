@@ -64,54 +64,74 @@ export default function Navbar(){
         }
     },[isMenuOpen,isCartCliked,winWidth])
 
+    function closeCart(){
+        if(isCartCliked){
+            document.querySelector("#navbar").style.paddingRight = ``
+            document.querySelector(".cart-container-1").style.right = `${padding()}px`
+            document.querySelector("#root").style.position = "static"
+            document.querySelector(".cart").style.backgroundColor = "transparent"
+            document.querySelector(".cart-content").classList.remove("cart-content-down")
+            document.querySelector(".cart-content").classList.add("cart-content-up")
+            setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
+        }else{
+            dispatch(clickCart(!isCartCliked))
+        }
+    
+    }
+    
+
+    function closeMenu(){
+        if(isMenuOpen){
+            document.querySelector("#navbar").style.paddingRight = ``
+            document.querySelector(".cart-container-1").style.right = `${padding()}px`
+            document.querySelector("#root").style.position = "static"
+            document.querySelector("#navlink-img-container").style.backgroundColor = "transparent"
+            document.querySelector(".sliding-menu").classList.remove("sliding-menu-open")
+            document.querySelector(".sliding-menu").classList.add("sliding-menu-close")
+            setTimeout(()=>dispatch(toggleMenu(!isMenuOpen)),
+                winWidth > 480 ?
+                500:
+                500
+            )
+        }
+        else{
+            dispatch(toggleMenu(!isMenuOpen))
+        }
+    }
+
     return(
         <div id="navbar-container" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
-            <nav id="navbar" style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}>
+            <nav 
+                id="navbar" 
+                style={location.pathname === "/audiophile" ? {backgroundColor:"#191919"} : {}}  
+                onClick={()=>{
+                    if(isMenuOpen){
+                        document.querySelector("#navbar-links").style.zIndex="4"
+                        closeMenu()
+                    } else if(isCartCliked){
+                        document.querySelector(".cart").style.zIndex="4"
+                        closeCart()
+                    }
+                }}
+            >
                 {   isMenuCollapsed && 
                     <i  id="menu" 
                         className="fa-sharp fa-solid fa-bars"
-                        onClick={()=>{
-                            if(isMenuOpen){
-                                document.querySelector("#navbar").style.paddingRight = ``
-                                document.querySelector(".cart-container-1").style.right = `${padding()}px`
-                                document.querySelector("#root").style.position = "static"
-                                document.querySelector("#navlink-img-container").style.backgroundColor = "transparent"
-                                document.querySelector(".sliding-menu").classList.remove("sliding-menu-open")
-                                document.querySelector(".sliding-menu").classList.add("sliding-menu-close")
-                                setTimeout(()=>dispatch(toggleMenu(!isMenuOpen)),
-                                    winWidth > 480 ?
-                                    500:
-                                    500
-                                )
-                            }
-                            else{
-                                dispatch(toggleMenu(!isMenuOpen))
-                            }
-                        }}
+                        onClick={()=>closeMenu()}
                     >
                     </i>
                 }
                 <Link to="/audiophile"><img id="logo" src={audiophile} alt="audiophile-logo" /></Link>
                 {  !isMenuCollapsed && <NavLinks isText={true} />}
                 <div className="cart-container-1">
-                    <div className="cart-container-0">
+                    <div 
+                        className="cart-container-0"
+                        onClick={()=>closeCart()}
+                    >
                         <img 
                             id="cart-icon"
                             src={cart} 
                             alt="cart-icon"
-                            onClick={()=>{
-                                if(isCartCliked){
-                                    document.querySelector("#navbar").style.paddingRight = ``
-                                    document.querySelector(".cart-container-1").style.right = `${padding()}px`
-                                    document.querySelector("#root").style.position = "static"
-                                    document.querySelector(".cart").style.backgroundColor = "transparent"
-                                    document.querySelector(".cart-content").classList.remove("cart-content-down")
-                                    document.querySelector(".cart-content").classList.add("cart-content-up")
-                                    setTimeout(()=>dispatch(clickCart(!isCartCliked)),500)
-                                }else{
-                                    dispatch(clickCart(!isCartCliked))
-                                }
-                            }}
                         />
                         { items.length && <p>{items.length}</p>}
                     </div>

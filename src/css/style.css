@@ -502,6 +502,9 @@ body {
 #navbar .cart-container-0 {
   position: relative;
 }
+#navbar .cart-container-0:hover {
+  cursor: pointer;
+}
 #navbar .cart-container-0 p {
   margin: 0;
   color: white;
@@ -527,6 +530,9 @@ body {
   #navbar #menu {
     font-size: 22px;
   }
+}
+#navbar #menu:hover {
+  cursor: pointer;
 }
 
 footer {
@@ -757,6 +763,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart {
+  z-index: 5;
   padding-block: 20px;
   position: absolute;
   top: 96px;
@@ -765,6 +772,17 @@ footer #footer-about #footer-about-contacts > i:hover {
   right: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 480px) {
+  .cart {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 370px) {
+  .cart {
+    padding-top: 0;
+  }
 }
 
 .cart-content {
@@ -809,12 +827,33 @@ footer #footer-about #footer-about-contacts > i:hover {
     top: calc(0px - 100% - 32px);
   }
 }
+@media (max-width: 480px) {
+  .cart-content {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 420px) {
+  .cart-content {
+    width: 345px;
+  }
+}
+@media (max-width: 370px) {
+  .cart-content {
+    width: 100%;
+  }
+}
 .cart-content .cart-top {
   padding: 25px 25px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 420px) {
+  .cart-content .cart-top {
+    padding: 20px 20px 0;
+  }
 }
 .cart-content .cart-top .cart-count {
   margin-block: 0;
@@ -836,15 +875,20 @@ footer #footer-about #footer-about-contacts > i:hover {
   cursor: pointer;
 }
 .cart-content .cart-items {
-  padding: 0 25px;
+  padding: 15px 25px;
   padding-right: 10px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: 127px;
-  max-height: calc(100% - 160px);
+  max-height: calc(100% - 192px);
   gap: 15px;
   overflow-y: auto;
+}
+@media (max-width: 420px) {
+  .cart-content .cart-items {
+    padding: 0 20px;
+  }
 }
 .cart-content .cart-items .cart-item {
   display: flex;
@@ -856,6 +900,11 @@ footer #footer-about #footer-about-contacts > i:hover {
   margin-right: 16px;
   border-radius: 8px;
 }
+@media (max-width: 420px) {
+  .cart-content .cart-items .cart-item img {
+    width: 55px;
+  }
+}
 .cart-content .cart-items .cart-item .name-price {
   display: flex;
   flex-direction: column;
@@ -866,9 +915,19 @@ footer #footer-about #footer-about-contacts > i:hover {
   margin: 0;
   font-weight: bold;
 }
+@media (max-width: 420px) {
+  .cart-content .cart-items .cart-item .name-price p:first-child {
+    font-size: 15px;
+  }
+}
 .cart-content .cart-items .cart-item .name-price p:last-child {
   opacity: 0.5;
   font-size: 14px;
+}
+@media (max-width: 420px) {
+  .cart-content .cart-items .cart-item .name-price p:last-child {
+    font-size: 13px;
+  }
 }
 .cart-content .cart-items .cart-item .product-nums-cart-1 {
   margin: 0 0 0 auto !important;
@@ -877,6 +936,11 @@ footer #footer-about #footer-about-contacts > i:hover {
   background-color: white !important;
   padding-left: 10px;
   width: 96px !important;
+}
+@media (max-width: 420px) {
+  .cart-content .cart-items .cart-item .product-nums-cart {
+    width: 80px !important;
+  }
 }
 .cart-content .cart-items .cart-item .product-nums-cart p, .cart-content .cart-items .cart-item .product-nums-cart button {
   height: 32px !important;
@@ -893,13 +957,23 @@ footer #footer-about #footer-about-contacts > i:hover {
   justify-content: center;
 }
 .cart-content .cart-bottom {
+  margin-top: 1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
   position: absolute;
-  bottom: 25px;
-  left: 25px;
-  right: 25px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 0 25px 25px;
+}
+@media (max-width: 420px) {
+  .cart-content .cart-bottom {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
 }
 .cart-content .cart-bottom .total {
-  margin-block: 15px;
+  margin-block: 14px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -920,6 +994,13 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 100%;
   height: 48px !important;
 }
+.cart-content #zero-items {
+  margin: 0;
+  padding: 18px 25px 25px;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
 
 .cart-content-down {
   -webkit-animation-name: down;
@@ -932,7 +1013,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .hr-container, #home .hr-container-2 {
-  background-color: #101010;
+  background-color: black;
 }
 .hr-container .hr, #home .hr-container-2 .hr {
   margin-block: 0;

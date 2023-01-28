@@ -27,7 +27,6 @@ export default function Headphones(){
     )
     return(
         <div id="headphones">
-            
             <div className="hr-container"><hr className="hr" /></div>
             <h1 className="cat-h">HEADPHONES</h1>
             <div className="productsListElContainer">
