@@ -1,8 +1,8 @@
 //redux
-import { useSelector,useDispatch } from "react-redux"
+import { useSelector,useDispatch} from "react-redux"
 
-//react
-import { useEffect } from "react"
+//react-router
+import { Link } from "react-router-dom"
 
 //reducers
 import { removeAll ,modifyByOne,setPreviousCart} from "../features/cartSlice"
@@ -32,8 +32,8 @@ export default function Cart(){
 
     const {isCartCliked,winWidth} = useSelector(store=>store.nav)
 
-    const {items} = useSelector(store=>store.cart)
-    items = items.reverse()
+    let {items} = useSelector(store=>store.cart)
+    items = [...items].reverse()
     const cartItemsEls = items.map((item,index)=>
         <div className="cart-item" key={index} >
             <img src={cartImgs[item.itemslug]} alt="product-img" />
@@ -116,7 +116,10 @@ export default function Cart(){
                                 <p className="total-word">TOTAL</p>
                                 <p className="total-number">$ {items.reduce((total,item)=>total+item.itemPrice*item.itemQuantity,0).toLocaleString()}</p>
                             </div>
-                            <button className="to-checkout button">CHECKOUT</button>
+                            <Link 
+                                to={"/audiophile/checkout"}
+                                onClick={()=>closeCart()}
+                            ><button className="to-checkout button">CHECKOUT</button></Link>
                         </div> 
                     </>
                     :

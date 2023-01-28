@@ -15,10 +15,6 @@ body {
   margin: 0;
   font-family: "Manrope", sans-serif;
   max-width: 100%;
-  background-image: url("../imgs/nav-placeholder.jpg");
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #all, #home .landing-products, .productsListElContainer, .product, .cat-h, .hr-container .hr, #home .hr-container-2 .hr, .about {
@@ -786,6 +782,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart-content {
+  border-radius: 5px;
   max-height: 100%;
   display: flex;
   flex-direction: column;
