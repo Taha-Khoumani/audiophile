@@ -1,8 +1,11 @@
 //redux
 import { useSelector,useDispatch } from "react-redux"
 
+//react
+import { useEffect } from "react"
+
 //reducers
-import { removeAll ,modifyByOne} from "../features/cartSlice"
+import { removeAll ,modifyByOne,setPreviousCart} from "../features/cartSlice"
 
 //cart-imgs
 import zx9 from "../imgs/image-zx9-speaker.jpg"
@@ -51,6 +54,7 @@ export default function Cart(){
             </div>
         </div>
     )
+
     return(
         <section className="cart" >
             <div className={`cart-content ${isCartCliked?"cart-content-down":""}`}>

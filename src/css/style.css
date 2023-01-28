@@ -746,20 +746,24 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart {
-  padding-top: 32px;
+  padding-block: 20px;
   position: absolute;
   top: 96px;
   height: calc(100vh - 96px);
+  box-sizing: border-box;
   right: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .cart-content {
-  padding: 30px;
+  max-height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
   position: relative;
   z-index: 4;
-  width: 365px;
+  width: 355px;
   min-height: 100px;
   background-color: white;
   margin-left: auto;
@@ -799,7 +803,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .cart-content .cart-top .cart-count {
   margin-block: 0;
@@ -820,10 +824,17 @@ footer #footer-about #footer-about-contacts > i:hover {
 .cart-content .cart-top .remove-all:hover {
   cursor: pointer;
 }
+.cart-content .cart-items {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+}
 .cart-content .cart-items .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  width: 100%;
 }
 .cart-content .cart-items .cart-item img {
   width: 64px;
@@ -853,7 +864,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 32px !important;
 }
 .cart-content .total {
-  margin-bottom: 24px;
+  margin-block: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,5 +1,9 @@
 //react
 import React from 'react';
+import { useEffect } from 'react';
+
+//redux
+import { useSelector } from 'react-redux';
 
 //react-router
 import { Routes,Route } from 'react-router-dom';
@@ -20,6 +24,13 @@ import Checkout from "./pages/Checkout"
 import Product from './components/Product'; 
 
 function App() {
+  const {items} = useSelector(store=>store.cart)
+
+  useEffect(()=>{
+    localStorage.setItem("items",JSON.stringify(items))
+    console.log("items-changed")
+  },[items])
+
   return (
     <>
     <Navbar />          

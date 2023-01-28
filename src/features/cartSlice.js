@@ -1,10 +1,15 @@
 //redux
-import { createSlice,current } from "@reduxjs/toolkit";
+import { createSlice,} from "@reduxjs/toolkit";
 
+const persistedState = localStorage.getItem('items') 
+                       ? JSON.parse(localStorage.getItem('items'))
+                       : []
+                       
 const initialState={
-    items:[],
+    items:persistedState,
     total:0,
 }
+
 
 const cartSlice = createSlice({
     name:"cart",
@@ -49,9 +54,12 @@ const cartSlice = createSlice({
                     items:state.items.filter(t=>t.itemslug !== slug)
                 }
             }
+        },
+        setPreviousCart:(state,{payload})=>{
+            state.items = payload
         }
     }
 })
 
 export default cartSlice.reducer
-export const {addItem,removeAll,modifyByOne} = cartSlice.actions
+export const {addItem,removeAll,modifyByOne,setPreviousCart} = cartSlice.actions
