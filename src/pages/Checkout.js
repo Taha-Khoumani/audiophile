@@ -1,4 +1,28 @@
+//redux
+import { useSelector } from "react-redux";
+
+//imgs
+import { cartImgs } from "../components/Cart";
+
 export default function Checkout() {
+  let { items } = useSelector((store) => store.cart);
+  items = [...items].reverse();
+  const cartItemsEls = items.map((item, index) => (
+    <div className="cart-item" key={index}>
+      <img src={cartImgs[item.itemslug]} alt="product-img" />
+      <div className="name-price">
+        <p>{item.itemName}</p>
+        <p>$ {item.itemPrice.toLocaleString()}</p>
+      </div>
+      <p className="checkout-item-quantity">x {item.itemQuantity}</p>
+    </div>
+  ));
+
+  let total = items.reduce(
+    (total, item) => total + item.itemPrice * item.itemQuantity,
+    0
+  );
+
   return (
     <div id="checkout-page">
       <section id="checkout">
@@ -99,7 +123,29 @@ export default function Checkout() {
           </div>
         </form>
       </section>
-      <section id="summary"></section>
+      <section id="summary">
+        <p>SUMMARY</p>
+        <div className="cart-items">{cartItemsEls}</div>
+        <div id="total-review">
+          <p id="total">
+            TOTAL
+            <span>{` $ ${total}`}</span>
+          </p>
+          <p id="shipping">
+            SHIPPING
+            <span> $ 50</span>
+          </p>
+          <p id="vat">
+            VAT (INCLUDED)
+            <span> $ {((total * 20) / 100).toLocaleString()}</span>
+          </p>
+          <p id="grand-total">
+            GRAND TOTAL
+            <span> $ {(total + 50).toLocaleString()}</span>
+          </p>
+        </div>
+        <button className="button">CONTINUE & PAY</button>
+      </section>
     </div>
   );
 }
