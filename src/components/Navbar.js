@@ -62,6 +62,7 @@ export default function Navbar(){
             document.querySelector(".cart-container-1").style.right = `${padding()+scrollWidth}px`
             document.querySelector("#root").style.position = "fixed"
         }
+        // eslint-disable-next-line
     },[isMenuOpen,isCartCliked,winWidth])
 
     function closeCart(){
@@ -133,7 +134,7 @@ export default function Navbar(){
                             src={cart} 
                             alt="cart-icon"
                         />
-                        { items.length && <p>{items.length}</p>}
+                        { items.length !==0  && <p>{items.length}</p>}
                     </div>
                 </div>
             </nav> 

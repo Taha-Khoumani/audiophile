@@ -5,7 +5,7 @@ import { useSelector,useDispatch} from "react-redux"
 import { Link } from "react-router-dom"
 
 //reducers
-import { removeAll ,modifyByOne,setPreviousCart} from "../features/cartSlice"
+import { removeAll ,modifyByOne} from "../features/cartSlice"
 
 //cart-imgs
 import zx9 from "../imgs/image-zx9-speaker.jpg"
@@ -102,7 +102,7 @@ export default function Cart(){
             >
                 <div className="cart-top">
                     <p className="cart-count">CART ({items.length})</p>
-                    {items.length !== 0 && <p className="remove-all" onClick={()=>dispatch(removeAll())} >Remove all</p>}
+                    {0 !== items.length && <p className="remove-all" onClick={()=>dispatch(removeAll())} >Remove all</p>}
                 </div>
                 {
                     items.length
