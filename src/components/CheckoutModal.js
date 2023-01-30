@@ -16,7 +16,7 @@ export default function CheckoutModal(props) {
         <div id="checkout-modal">
             <div>
                 <img src="assets/checkout/icon-order-confirmation.svg" alt="orange-checkMark" />
-                <p id="tnx">THANK YOU FOR YOUR ORDER</p>
+                <p id="tnx">THANK YOU<br></br> FOR YOUR ORDER</p>
                 <p id="confirmation">You will receive an email confirmation shortly.</p>
                 <div id="recap">
                     <div id="recap-items">
@@ -25,7 +25,7 @@ export default function CheckoutModal(props) {
                             xOthers !== 0 &&
                             <>
                             <hr />
-                            <p>and {xOthers} other item{xOthers === 1 ? "" : "s"}</p>
+                            <p id="others">and {xOthers} other item{xOthers === 1 ? "" : "s"}</p>
                             </>
                         }
                     </div>

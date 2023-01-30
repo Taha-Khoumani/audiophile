@@ -2307,13 +2307,12 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 #checkout-page #checkout-modal > div {
   background-color: white;
-  width: 540px;
   padding: 48px;
   margin: 0 auto;
   border-radius: 8px;
 }
 #checkout-page #checkout-modal > div img {
-  margin-bottom: 33px;
+  margin-bottom: 11px;
 }
 #checkout-page #checkout-modal > div #tnx {
   font-weight: bold;
@@ -2341,11 +2340,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-radius: 8px 0 0 8px;
 }
 #checkout-page #checkout-modal > div #recap #recap-items div:first-child {
-  align-items: flex-start;
+  align-items: center;
 }
 #checkout-page #checkout-modal > div #recap #recap-items div:first-child img {
-  margin: 0 16px 0 0;
-  width: 50px;
+  margin: 0 15px 0 0;
 }
 #checkout-page #checkout-modal > div #recap #recap-items div:first-child .name-price {
   margin-top: 5px;
@@ -2358,6 +2356,17 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 #checkout-page #checkout-modal > div #recap #recap-items div:first-child .checkout-item-quantity span {
   padding-left: 30px;
+}
+#checkout-page #checkout-modal > div #recap #recap-items hr {
+  width: 100%;
+  opacity: 0.4;
+}
+#checkout-page #checkout-modal > div #recap #recap-items #others {
+  margin: 0;
+  font-weight: bold;
+  opacity: 0.5;
+  font-size: 14px;
+  text-align: center;
 }
 #checkout-page #checkout-modal > div #recap #grand-total-container {
   display: flex;

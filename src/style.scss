@@ -1913,13 +1913,13 @@ footer {
     //modal-content
     &>div{
       background-color: white;
-      width:540px;
+      // width:540px;
       padding:48px;
       margin:0 auto;
       border-radius: 8px;
 
       img{
-        margin-bottom: 33px;
+        margin-bottom: 11px;
       }
 
       #tnx{
@@ -1952,8 +1952,8 @@ footer {
           border-radius:  8px 0 0 8px;
 
           div:first-child{
-            align-items: flex-start;
-            img{margin:0 16px 0 0;width:50px;}
+            align-items: center;
+            img{margin:0 15px 0 0;}
             .name-price{margin-top: 5px;}
             .checkout-item-quantity{
               margin: 8px 10px 0 auto;
@@ -1965,6 +1965,19 @@ footer {
               }
 
             }
+          }
+
+          hr{
+            width: 100%;
+            opacity: 0.4;
+          }
+
+          #others{
+            margin:0;
+            font-weight: bold;
+            opacity: 0.5;
+            font-size: 14px;
+            text-align: center;
           }
 
         }
