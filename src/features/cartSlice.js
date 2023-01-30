@@ -7,7 +7,7 @@ const persistedState = localStorage.getItem("items")
 
 const initialState = {
   items: persistedState,
-  total: 0,
+  isModalOpen:false,
 };
 
 const cartSlice = createSlice({
@@ -69,9 +69,12 @@ const cartSlice = createSlice({
     setPreviousCart: (state, { payload }) => {
       state.items = payload;
     },
+    toggleModal:(state,{payload}) =>{
+      state.isModalOpen = payload
+    }
   },
 });
 
 export default cartSlice.reducer;
-export const { addItem, removeAll, modifyByOne, setPreviousCart } =
+export const { addItem, removeAll, modifyByOne, setPreviousCart,toggleModal } =
   cartSlice.actions;

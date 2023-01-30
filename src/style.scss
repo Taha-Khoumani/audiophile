@@ -786,66 +786,67 @@ footer {
   @include media(420px) {
     padding: 10px 20px;
   }
-  .cart-item {
+}
+//excluded from nesting for outside use
+.cart-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  img {
+    width: 64px;
+    margin-right: 16px;
+    border-radius: 8px;
+    @include media(420px) {
+      width: 55px;
+    }
+  }
+  .name-price {
     display: flex;
-    align-items: center;
-    width: 100%;
-    img {
-      width: 64px;
-      margin-right: 16px;
-      border-radius: 8px;
+    flex-direction: column;
+    gap: 5px;
+    p {
+      display: inline;
+      margin: 0;
+      font-weight: bold;
+    }
+    p:first-child {
       @include media(420px) {
-        width: 55px;
+        font-size: 15px;
       }
     }
-    .name-price {
+    p:last-child {
+      opacity: 0.5;
+      font-size: 14px;
+      @include media(420px) {
+        font-size: 13px;
+      }
+    }
+  }
+  .product-nums-cart-1 {
+    margin: 0 0 0 auto !important ;
+  }
+  .product-nums-cart {
+    background-color: white !important;
+    padding-left: 10px;
+    @extend .product-nums;
+    width: 96px !important;
+    @include media(420px) {
+      width: 80px !important;
+    }
+    p,
+    button {
+      height: 32px !important;
+      width: 32px !important;
+      background-color: #f1f1f1;
+    }
+    button {
+      opacity: 1 !important;
+      color: rgba($color: black, $alpha: 0.5);
+    }
+    p {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      p {
-        display: inline;
-        margin: 0;
-        font-weight: bold;
-      }
-      p:first-child {
-        @include media(420px) {
-          font-size: 15px;
-        }
-      }
-      p:last-child {
-        opacity: 0.5;
-        font-size: 14px;
-        @include media(420px) {
-          font-size: 13px;
-        }
-      }
-    }
-    .product-nums-cart-1 {
-      margin: 0 0 0 auto !important ;
-    }
-    .product-nums-cart {
-      background-color: white !important;
-      padding-left: 10px;
-      @extend .product-nums;
-      width: 96px !important;
-      @include media(420px) {
-        width: 80px !important;
-      }
-      p,
-      button {
-        height: 32px !important;
-        width: 32px !important;
-        background-color: #f1f1f1;
-      }
-      button {
-        opacity: 1 !important;
-        color: rgba($color: black, $alpha: 0.5);
-      }
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -1899,6 +1900,107 @@ footer {
       width: 100%;
       font-weight: bold;
       height: 48px;
+    }
+  }
+
+  #checkout-modal{
+    position:absolute;
+    z-index: 100;
+    inset:0;
+    background-color:rgba($color: #000000, $alpha: 0.4);
+    display:flex;
+    align-items: center;
+    //modal-content
+    &>div{
+      background-color: white;
+      width:540px;
+      padding:48px;
+      margin:0 auto;
+      border-radius: 8px;
+
+      img{
+        margin-bottom: 33px;
+      }
+
+      #tnx{
+        font-weight: bold;
+        font-size:32px;
+        letter-spacing: 1px;
+        margin:0 0 24px 0;
+      }
+
+      #confirmation{
+        font-weight: 500;
+        font-size:15px;
+        opacity:0.5;
+        margin:0 0 33px 0;
+      }
+
+      #recap{
+        display: flex;
+        margin-bottom: 46px;
+        justify-content: center;
+
+        #recap-items{
+          display: flex;
+          flex-direction: column;
+          // align-items: center;
+          padding:24px;
+          justify-content: center;
+          background-color: #F1F1F1;
+          // min-width: 55.5%;
+          border-radius:  8px 0 0 8px;
+
+          div:first-child{
+            align-items: flex-start;
+            img{margin:0 16px 0 0;width:50px;}
+            .name-price{margin-top: 5px;}
+            .checkout-item-quantity{
+              margin: 8px 10px 0 auto;
+              font-weight: bold;
+              opacity: 0.5;
+              white-space:nowrap;
+              & span{
+                padding-left: 30px;
+              }
+
+            }
+          }
+
+        }
+
+        #grand-total-container{
+          display: flex;
+          flex-direction: column;
+          padding:32px;
+          justify-content: center;
+          gap:15px;
+          background-color: black;
+          max-width:44.5%;
+          border-radius: 0 8px 8px 0;
+          p{color:white;margin:0;}
+
+          //Grand total word
+          p:first-child{
+            opacity: 0.5;
+            font-weight: 500;
+            font-size:15px;
+          }
+
+          //it's value
+          p:last-child{
+            font-weight: bold;
+            font-size: 18px;
+          }
+
+        }
+      }
+
+      .button{
+        width:100%;
+        height: 48px;
+        font-weight: bold;
+      }
     }
   }
 }

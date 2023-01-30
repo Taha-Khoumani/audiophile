@@ -1,11 +1,17 @@
 //redux
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 
 //imgs
 import { cartImgs } from "../components/Cart";
 
+//components
+import CheckoutModal from "../components/CheckoutModal"
+
+//reducers
+import { toggleModal } from "../features/cartSlice";
+
 export default function Checkout() {
-  let { items } = useSelector((store) => store.cart);
+  let { items,isModalOpen } = useSelector((store) => store.cart);
   items = [...items].reverse();
   const cartItemsEls = items.map((item, index) => (
     <div className="cart-item" key={index}>
@@ -24,6 +30,8 @@ export default function Checkout() {
     (total, item) => total + item.itemPrice * item.itemQuantity,
     0
   );
+
+  const dispatch = useDispatch()
 
   return (
     <div id="checkout-page">
@@ -146,8 +154,22 @@ export default function Checkout() {
             <span> $ {(total + 50).toLocaleString()}</span>
           </p>
         </div>
-        <button className="button">CONTINUE & PAY</button>
+        <button 
+          className="button"
+          onClick={()=>dispatch(toggleModal(true))}
+        >
+          CONTINUE & PAY
+        </button>
       </section>
+      {
+        isModalOpen 
+          &&
+        <CheckoutModal
+          grandTotal={(total+50).toLocaleString()}
+          firstItem={cartItemsEls[0]}
+          xOthers={items.length-1}
+        />
+      }
     </div>
   );
 }
