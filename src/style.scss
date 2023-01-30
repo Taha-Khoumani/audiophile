@@ -1910,16 +1910,23 @@ footer {
     background-color:rgba($color: #000000, $alpha: 0.4);
     display:flex;
     align-items: center;
-    //modal-content
+    justify-content: center;
+
+    //the modal minimum padding placeholder
     &>div{
+      padding:0 20px;
+    }
+
+    //modal-content
+    #checkout-modal-content{
       background-color: white;
-      // width:540px;
       padding:48px;
-      margin:0 auto;
       border-radius: 8px;
+      @include media($mobile){padding:30px;}
 
       img{
         margin-bottom: 11px;
+        @include media($mobile){width:57px;}
       }
 
       #tnx{
@@ -1927,6 +1934,9 @@ footer {
         font-size:32px;
         letter-spacing: 1px;
         margin:0 0 24px 0;
+        @include media($mobile){font-size: 28px;width:auto;margin-bottom: 10px;}
+        @include media(365px){font-size: 25px;width:auto}
+        @include media(339px){font-size: 22px;width:auto}
       }
 
       #confirmation{
@@ -1934,22 +1944,24 @@ footer {
         font-size:15px;
         opacity:0.5;
         margin:0 0 33px 0;
+        @include media($mobile){margin-bottom:22px;}
       }
 
       #recap{
         display: flex;
         margin-bottom: 46px;
         justify-content: center;
+        @include media ($mobile){flex-direction: column;margin-bottom: 25px;}
 
         #recap-items{
           display: flex;
           flex-direction: column;
-          // align-items: center;
           padding:24px;
           justify-content: center;
           background-color: #F1F1F1;
-          // min-width: 55.5%;
           border-radius:  8px 0 0 8px;
+          @include media ($mobile){max-width:100%;border-radius:8px 8px 0 0;padding:15px 25px;}
+          @include media (340px){padding:15px 20px;}
 
           div:first-child{
             align-items: center;
@@ -1962,6 +1974,7 @@ footer {
               white-space:nowrap;
               & span{
                 padding-left: 30px;
+                @include media($mobile){padding-left: 20px;}
               }
 
             }
@@ -1992,6 +2005,7 @@ footer {
           max-width:44.5%;
           border-radius: 0 8px 8px 0;
           p{color:white;margin:0;}
+          @include media ($mobile){max-width:100%;border-radius: 0 0 8px 8px;padding:20px 25px;gap:8px;}
 
           //Grand total word
           p:first-child{

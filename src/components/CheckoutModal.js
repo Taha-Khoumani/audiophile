@@ -15,6 +15,7 @@ export default function CheckoutModal(props) {
     return(
         <div id="checkout-modal">
             <div>
+            <div id="checkout-modal-content">
                 <img src="assets/checkout/icon-order-confirmation.svg" alt="orange-checkMark" />
                 <p id="tnx">THANK YOU<br></br> FOR YOUR ORDER</p>
                 <p id="confirmation">You will receive an email confirmation shortly.</p>
@@ -45,6 +46,7 @@ export default function CheckoutModal(props) {
                         BACK TO HOME
                     </button>
                 </Link>
+            </div>
             </div>
         </div>
     )

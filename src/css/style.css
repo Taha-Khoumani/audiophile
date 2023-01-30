@@ -2304,34 +2304,77 @@ footer #footer-about #footer-about-contacts > i:hover {
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #checkout-page #checkout-modal > div {
+  padding: 0 20px;
+}
+#checkout-page #checkout-modal #checkout-modal-content {
   background-color: white;
   padding: 48px;
-  margin: 0 auto;
   border-radius: 8px;
 }
-#checkout-page #checkout-modal > div img {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content {
+    padding: 30px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content img {
   margin-bottom: 11px;
 }
-#checkout-page #checkout-modal > div #tnx {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content img {
+    width: 57px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #tnx {
   font-weight: bold;
   font-size: 32px;
   letter-spacing: 1px;
   margin: 0 0 24px 0;
 }
-#checkout-page #checkout-modal > div #confirmation {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #tnx {
+    font-size: 28px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 365px) {
+  #checkout-page #checkout-modal #checkout-modal-content #tnx {
+    font-size: 25px;
+    width: auto;
+  }
+}
+@media (max-width: 339px) {
+  #checkout-page #checkout-modal #checkout-modal-content #tnx {
+    font-size: 22px;
+    width: auto;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #confirmation {
   font-weight: 500;
   font-size: 15px;
   opacity: 0.5;
   margin: 0 0 33px 0;
 }
-#checkout-page #checkout-modal > div #recap {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #confirmation {
+    margin-bottom: 22px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #recap {
   display: flex;
   margin-bottom: 46px;
   justify-content: center;
 }
-#checkout-page #checkout-modal > div #recap #recap-items {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #recap {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items {
   display: flex;
   flex-direction: column;
   padding: 24px;
@@ -2339,36 +2382,53 @@ footer #footer-about #footer-about-contacts > i:hover {
   background-color: #F1F1F1;
   border-radius: 8px 0 0 8px;
 }
-#checkout-page #checkout-modal > div #recap #recap-items div:first-child {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #recap #recap-items {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding: 15px 25px;
+  }
+}
+@media (max-width: 340px) {
+  #checkout-page #checkout-modal #checkout-modal-content #recap #recap-items {
+    padding: 15px 20px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child {
   align-items: center;
 }
-#checkout-page #checkout-modal > div #recap #recap-items div:first-child img {
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child img {
   margin: 0 15px 0 0;
 }
-#checkout-page #checkout-modal > div #recap #recap-items div:first-child .name-price {
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child .name-price {
   margin-top: 5px;
 }
-#checkout-page #checkout-modal > div #recap #recap-items div:first-child .checkout-item-quantity {
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child .checkout-item-quantity {
   margin: 8px 10px 0 auto;
   font-weight: bold;
   opacity: 0.5;
   white-space: nowrap;
 }
-#checkout-page #checkout-modal > div #recap #recap-items div:first-child .checkout-item-quantity span {
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child .checkout-item-quantity span {
   padding-left: 30px;
 }
-#checkout-page #checkout-modal > div #recap #recap-items hr {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #recap #recap-items div:first-child .checkout-item-quantity span {
+    padding-left: 20px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items hr {
   width: 100%;
   opacity: 0.4;
 }
-#checkout-page #checkout-modal > div #recap #recap-items #others {
+#checkout-page #checkout-modal #checkout-modal-content #recap #recap-items #others {
   margin: 0;
   font-weight: bold;
   opacity: 0.5;
   font-size: 14px;
   text-align: center;
 }
-#checkout-page #checkout-modal > div #recap #grand-total-container {
+#checkout-page #checkout-modal #checkout-modal-content #recap #grand-total-container {
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -2378,20 +2438,28 @@ footer #footer-about #footer-about-contacts > i:hover {
   max-width: 44.5%;
   border-radius: 0 8px 8px 0;
 }
-#checkout-page #checkout-modal > div #recap #grand-total-container p {
+#checkout-page #checkout-modal #checkout-modal-content #recap #grand-total-container p {
   color: white;
   margin: 0;
 }
-#checkout-page #checkout-modal > div #recap #grand-total-container p:first-child {
+@media (max-width: 480px) {
+  #checkout-page #checkout-modal #checkout-modal-content #recap #grand-total-container {
+    max-width: 100%;
+    border-radius: 0 0 8px 8px;
+    padding: 20px 25px;
+    gap: 8px;
+  }
+}
+#checkout-page #checkout-modal #checkout-modal-content #recap #grand-total-container p:first-child {
   opacity: 0.5;
   font-weight: 500;
   font-size: 15px;
 }
-#checkout-page #checkout-modal > div #recap #grand-total-container p:last-child {
+#checkout-page #checkout-modal #checkout-modal-content #recap #grand-total-container p:last-child {
   font-weight: bold;
   font-size: 18px;
 }
-#checkout-page #checkout-modal > div .button {
+#checkout-page #checkout-modal #checkout-modal-content .button {
   width: 100%;
   height: 48px;
   font-weight: bold;
