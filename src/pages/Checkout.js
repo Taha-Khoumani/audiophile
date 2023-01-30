@@ -14,7 +14,9 @@ export default function Checkout() {
         <p>{item.itemName}</p>
         <p>$ {item.itemPrice.toLocaleString()}</p>
       </div>
-      <p className="checkout-item-quantity">x {item.itemQuantity}</p>
+      <p className="checkout-item-quantity">
+        <span>x {item.itemQuantity}</span>
+      </p>
     </div>
   ));
 
@@ -129,7 +131,7 @@ export default function Checkout() {
         <div id="total-review">
           <p id="total">
             TOTAL
-            <span>{` $ ${total}`}</span>
+            <span>{` $ ${total.toLocaleString()}`}</span>
           </p>
           <p id="shipping">
             SHIPPING

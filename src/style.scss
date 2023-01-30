@@ -1696,7 +1696,7 @@ footer {
     border-radius: 8px;
     padding: 30px 40px;
     box-sizing: border-box;
-    width: 70%;
+    width: 65%;
     @include media(1070px){padding: 25px ;}
     @include media(800px){width: 100%;}
     .checkout-header {
@@ -1801,8 +1801,8 @@ footer {
           border-color: #CFCFCF;
           border-width: 1px;
           border-style: solid;
-          @media (max-width:840px) and (min-width:800px){
-            padding:18px 20px;
+          @media (min-width:800px){
+            padding:15px 10px;
           }
           @include media($mobile){padding: 15px 20px;}
 
@@ -1824,7 +1824,10 @@ footer {
     background-color: white;
     border-radius: 8px;
     padding:32px;
-    @include media(800px){width: 100%;}
+    @include media(1044px){padding:20px;}
+    @include media(800px){width: 100%;box-sizing: border-box;padding: 45px;}
+    @include media(640px){padding:32px;}
+    @include media($mobile){padding:25px;}
 
     //the SUMMARY title
     &>p{
@@ -1835,14 +1838,32 @@ footer {
 
     .cart-items{
       max-height:none;
-      margin:0;
+      margin:32px 0;
       padding:0;
+      // @include media(1044px) {padding: 10px 20px;}
+      img{
+        @include media(1044px){width:55px;}
+      }
+
+      .name-price {
+        p{white-space: nowrap;}
+        p:first-child {
+          @include media(1044px){font-size:15px;}
+        }
+        p:last-child {
+          @include media(1044px){font-size:13px;}
+        }
+      }
+
       .checkout-item-quantity{
         margin-right: 10px;
         font-weight: bold;
         opacity: 0.5;
         margin-left:auto;
         white-space:nowrap;
+        & span{
+          padding-left: 30px;
+        }
       }
 
     }
@@ -1854,6 +1875,8 @@ footer {
         display: flex;
         justify-content: space-between;
         color: rgba($color: #000000, $alpha:0.5);
+        font-size: 15px;
+        margin:0 0 8px 0;
       }
 
       //value
@@ -1865,6 +1888,7 @@ footer {
       }
 
       //grand total
+      p:last-child{margin-block:24px 32px;}
       p:last-child span{
         color:$primaryBrown;
       }
@@ -1873,6 +1897,8 @@ footer {
 
     .button{
       width: 100%;
+      font-weight: bold;
+      height: 48px;
     }
   }
 }

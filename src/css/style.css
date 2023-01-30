@@ -2046,7 +2046,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-radius: 8px;
   padding: 30px 40px;
   box-sizing: border-box;
-  width: 70%;
+  width: 65%;
 }
 @media (max-width: 1070px) {
   #checkout-page #checkout {
@@ -2176,9 +2176,9 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-width: 1px;
   border-style: solid;
 }
-@media (max-width: 840px) and (min-width: 800px) {
+@media (min-width: 800px) {
   #checkout-page #checkout .form .input-container input {
-    padding: 18px 20px;
+    padding: 15px 10px;
   }
 }
 @media (max-width: 480px) {
@@ -2211,9 +2211,26 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-radius: 8px;
   padding: 32px;
 }
+@media (max-width: 1044px) {
+  #checkout-page #summary {
+    padding: 20px;
+  }
+}
 @media (max-width: 800px) {
   #checkout-page #summary {
     width: 100%;
+    box-sizing: border-box;
+    padding: 45px;
+  }
+}
+@media (max-width: 640px) {
+  #checkout-page #summary {
+    padding: 32px;
+  }
+}
+@media (max-width: 480px) {
+  #checkout-page #summary {
+    padding: 25px;
   }
 }
 #checkout-page #summary > p {
@@ -2223,8 +2240,26 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 #checkout-page #summary .cart-items {
   max-height: none;
-  margin: 0;
+  margin: 32px 0;
   padding: 0;
+}
+@media (max-width: 1044px) {
+  #checkout-page #summary .cart-items img {
+    width: 55px;
+  }
+}
+#checkout-page #summary .cart-items .name-price p {
+  white-space: nowrap;
+}
+@media (max-width: 1044px) {
+  #checkout-page #summary .cart-items .name-price p:first-child {
+    font-size: 15px;
+  }
+}
+@media (max-width: 1044px) {
+  #checkout-page #summary .cart-items .name-price p:last-child {
+    font-size: 13px;
+  }
 }
 #checkout-page #summary .cart-items .checkout-item-quantity {
   margin-right: 10px;
@@ -2233,11 +2268,16 @@ footer #footer-about #footer-about-contacts > i:hover {
   margin-left: auto;
   white-space: nowrap;
 }
+#checkout-page #summary .cart-items .checkout-item-quantity span {
+  padding-left: 30px;
+}
 #checkout-page #summary #total-review > p {
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  margin: 0 0 8px 0;
 }
 #checkout-page #summary #total-review span {
   color: black;
@@ -2245,9 +2285,14 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: bold;
   font-size: 18px;
 }
+#checkout-page #summary #total-review p:last-child {
+  margin-block: 24px 32px;
+}
 #checkout-page #summary #total-review p:last-child span {
   color: #d87d4a;
 }
 #checkout-page #summary .button {
   width: 100%;
+  font-weight: bold;
+  height: 48px;
 }/*# sourceMappingURL=style.css.map */
