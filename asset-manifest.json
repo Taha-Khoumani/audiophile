@@ -1,22 +1,35 @@
 {
   "files": {
-    "main.css": "/audiophile/static/css/main.f5db8089.css",
-    "main.js": "/audiophile/static/js/main.965f5310.js",
+    "main.css": "/audiophile/static/css/main.584336d6.css",
+    "main.js": "/audiophile/static/js/main.3666ac31.js",
+    "static/media/image-speaker-d.png": "/audiophile/static/media/image-speaker-d.87b433cd7c2ded3f6075.png",
+    "static/media/image-speaker-t.png": "/audiophile/static/media/image-speaker-t.a87e71019e980edb7f81.png",
+    "static/media/image-speaker-m.png": "/audiophile/static/media/image-speaker-m.f56a6a9a99785a8b320e.png",
+    "static/media/image-hero-t.jpg": "/audiophile/static/media/image-hero-t.ac6e50d096511789b6e7.jpg",
     "static/media/bob-tablet.jpg": "/audiophile/static/media/bob-tablet.37743784743ba76b4130.jpg",
+    "static/media/yx1D.png": "/audiophile/static/media/yx1D.4447178a842cc3308a31.png",
+    "static/media/image-hero-m.jpg": "/audiophile/static/media/image-hero-m.d1cda464d48fb0919b17.jpg",
     "static/media/bob-mobile.jpg": "/audiophile/static/media/bob-mobile.28ded79e4776ecd29f87.jpg",
     "static/media/bob-desktop.jpg": "/audiophile/static/media/bob-desktop.4d4a28e9e7c9ab158dd8.jpg",
+    "static/media/image-hero-d.jpg": "/audiophile/static/media/image-hero-d.df663a1a3607cb0d5542.jpg",
+    "static/media/zx7D.jpg": "/audiophile/static/media/zx7D.3d4940e89ebadd9beb50.jpg",
+    "static/media/yx1T.jpg": "/audiophile/static/media/yx1T.21404fad8d187f84fc6f.jpg",
     "static/media/headphones-img.png": "/audiophile/static/media/headphones-img.171a9fc40b02acb256be.png",
+    "static/media/zx7M.jpg": "/audiophile/static/media/zx7M.82dc33d645ab18cf1ac1.jpg",
     "static/media/earphones-img.png": "/audiophile/static/media/earphones-img.c0c522234579f08c9f0c.png",
+    "static/media/yx1M.jpg": "/audiophile/static/media/yx1M.48e16a44bd58ed3be41e.jpg",
     "static/media/speakers-img.png": "/audiophile/static/media/speakers-img.6eed8eef0ebe70dc26c5.png",
+    "static/media/zx7T.jpg": "/audiophile/static/media/zx7T.173a4cb5c7acfc7f300c.jpg",
     "static/media/logo.svg": "/audiophile/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
     "index.html": "/audiophile/index.html",
     "static/media/icon-cart.svg": "/audiophile/static/media/icon-cart.5e1893a62995fc7b443abe7bee68063e.svg",
+    "static/media/pattern-circles.svg": "/audiophile/static/media/pattern-circles.f4df3610b83b818abbbecd009a5b11d3.svg",
     "static/media/icon-arrow-right.svg": "/audiophile/static/media/icon-arrow-right.357b9db81a798d76397efa2f4ad3409f.svg",
-    "main.f5db8089.css.map": "/audiophile/static/css/main.f5db8089.css.map",
-    "main.965f5310.js.map": "/audiophile/static/js/main.965f5310.js.map"
+    "main.584336d6.css.map": "/audiophile/static/css/main.584336d6.css.map",
+    "main.3666ac31.js.map": "/audiophile/static/js/main.3666ac31.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5db8089.css",
-    "static/js/main.965f5310.js"
+    "static/css/main.584336d6.css",
+    "static/js/main.3666ac31.js"
   ]
 }
