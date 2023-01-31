@@ -29,7 +29,7 @@ export default function Navbar() {
   const { isMenuOpen, isMenuCollapsed, winWidth, isCartCliked } = useSelector(
     (store) => store.nav
   );
-  const { items } = useSelector((store) => store.cart);
+  const { items ,isModalOpen} = useSelector((store) => store.cart);
   const [scrollWidth, setScrollWidth] = useState(0);
 
   const padding = () => {
@@ -61,7 +61,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen || isCartCliked) {
+    if (isMenuOpen || isCartCliked || isModalOpen) {
       document.querySelector("#navbar").style.paddingRight = `${
         padding() + scrollWidth
       }px`;
@@ -71,7 +71,7 @@ export default function Navbar() {
       document.querySelector("#root").style.position = "fixed";
     }
     // eslint-disable-next-line
-  }, [isMenuOpen, isCartCliked, winWidth]);
+  }, [isMenuOpen, isCartCliked, winWidth,isModalOpen]);
 
   function closeCart() {
     if (isCartCliked) {

@@ -1911,12 +1911,29 @@ footer {
     display:flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 
     //the modal minimum padding placeholder
-    &>div{
+    #checkout-modal-content-container{
+      position:relative;
       padding:0 20px;
+      animation-fill-mode: forwards;
+      animation-duration: 500ms;
+      @keyframes modalup {
+        0%{top:100%}
+        100%{top:0;}
+      }
+      @keyframes modaldown {
+        0%{top:0;}
+        100%{top:100%;}
+      }
     }
-
+    .modalup{
+      animation-name: modalup;
+    }
+    .modaldown{
+      animation-name:modaldown;
+    }
     //modal-content
     #checkout-modal-content{
       background-color: white;

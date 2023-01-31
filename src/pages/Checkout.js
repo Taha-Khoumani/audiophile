@@ -11,6 +11,9 @@ import CheckoutModal from "../components/CheckoutModal"
 import { toggleModal } from "../features/cartSlice";
 
 export default function Checkout() {
+
+  const {winWidth} = useSelector(store=>store.nav)
+
   let { items,isModalOpen } = useSelector((store) => store.cart);
   items = [...items].reverse();
   const cartItemsEls = items.map((item, index) => (
@@ -32,6 +35,36 @@ export default function Checkout() {
   );
 
   const dispatch = useDispatch()
+
+  const padding = () => {
+    if (winWidth > 1195) {
+      return 165;
+    } else if (winWidth > 980) {
+      return 120;
+    } else if (winWidth > 870) {
+      return 90;
+    } else if (winWidth > 767) {
+      return 60;
+    } else if (winWidth < 767) {
+      return 40;
+    }
+};
+
+  function animateModal() {
+    if (isModalOpen) {
+      document.querySelector("#navbar").style.paddingRight = ``;
+      document.querySelector(
+        ".cart-container-1"
+      ).style.right = `${padding()}px`;
+      document.querySelector("#root").style.position = "static";
+      // document.querySelector(".cart").style.backgroundColor = "transparent";
+      // document.querySelector(".cart-content").classList.remove("cart-content-down");
+      // document.querySelector(".cart-content").classList.add("cart-content-up");
+      setTimeout(() => dispatch(toggleModal(false)), 500);
+    } else {
+      dispatch(toggleModal(true));
+    }
+}
 
   return (
     <div id="checkout-page">
@@ -156,7 +189,9 @@ export default function Checkout() {
         </div>
         <button 
           className="button"
-          onClick={()=>dispatch(toggleModal(true))}
+          onClick={()=>{
+            animateModal()
+          }}
         >
           CONTINUE & PAY
         </button>

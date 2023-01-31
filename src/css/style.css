@@ -2305,9 +2305,55 @@ footer #footer-about #footer-about-contacts > i:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
-#checkout-page #checkout-modal > div {
+#checkout-page #checkout-modal #checkout-modal-content-container {
+  position: relative;
   padding: 0 20px;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+@-webkit-keyframes modalup {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes modalup {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes modaldown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes modaldown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+#checkout-page #checkout-modal .modalup {
+  -webkit-animation-name: modalup;
+          animation-name: modalup;
+}
+#checkout-page #checkout-modal .modaldown {
+  -webkit-animation-name: modaldown;
+          animation-name: modaldown;
 }
 #checkout-page #checkout-modal #checkout-modal-content {
   background-color: white;
