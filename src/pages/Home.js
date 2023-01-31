@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import About from "../components/About"
 import NavLinks from "../components/NavLinks"
 import { useSelector } from "react-redux"
-import { wichImg } from "../components/ProductView"
 
 //imgs
 import heroD from "../imgs/image-hero-d.jpg"
@@ -22,7 +21,19 @@ import yx1D from "../imgs/yx1D.png"
 import yx1T from "../imgs/yx1T.jpg"
 import yx1M from "../imgs/yx1M.jpg"
 export default function Home(){
+
     const {winWidth} = useSelector(store=>store.nav)
+
+    function wichImg(width, img) {
+        if (width > 767) {
+          return `${img.desktop}`;
+        } else if (width > 480) {
+          return `${img.tablet}`;
+        } else {
+          return `${img.mobile}`;
+        }
+    }
+
     let landingItemImgs = {
         desktop:heroD,
         tablet:heroT,
@@ -45,7 +56,6 @@ export default function Home(){
     }
     return(
         <div id="home">
-                {/* <div style={{position: relative; width: 0; height: 0}}> */}
                 <div className="hr-container-2"><hr className="hr" /></div>        
                 <section className="landing-item-0" style={{backgroundImage:`url("${wichImg(winWidth,landingItemImgs)}")`}}>
                     <div className="category-product-text-con">

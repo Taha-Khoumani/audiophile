@@ -34,7 +34,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/audiophile" element={<Home />} />
+        <Route path="/audiophile/" element={<Home />} />
         <Route path="/audiophile/headphones" element={<Headphones />} />
         <Route
           path="/audiophile/headphones/:productSlug"

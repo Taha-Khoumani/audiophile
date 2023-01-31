@@ -119,7 +119,7 @@ export default function Navbar() {
     <div
       id="navbar-container"
       style={
-        location.pathname === "/audiophile"
+        location.pathname === "/audiophile/"
           ? { backgroundColor: "#191919" }
           : {}
       }
@@ -127,7 +127,7 @@ export default function Navbar() {
       <nav
         id="navbar"
         style={
-          location.pathname === "/audiophile"
+          location.pathname === "/audiophile/"
             ? { backgroundColor: "#191919" }
             : {}
         }
@@ -148,7 +148,7 @@ export default function Navbar() {
             onClick={() => closeMenu()}
           ></i>
         )}
-        <Link to="/audiophile">
+        <Link to="/audiophile/">
           <img id="logo" src={audiophile} alt="audiophile-logo" />
         </Link>
         {!isMenuCollapsed && <NavLinks isText={true} />}

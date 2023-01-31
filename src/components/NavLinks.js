@@ -99,13 +99,14 @@ export default function NavLinks(props){
                                 </div>
                             </Link>
                         </div>)
+                        console.log(location.pathname)
 
     return(
         <div className="navlinks" id={props.id ? props.id : ""}>
             {   isText 
                 ?
                 <div className="navlinks-text">
-                    <Link style={location.pathname === "/audiophile" ? {color:"#D87D4A"}:{}} to="audiophile">HOME</Link>
+                    <Link style={location.pathname === "/audiophile/" ? {color:"#D87D4A"}:{}} to="/audiophile/">HOME</Link>
                     <NavLink to="audiophile/headphones" >HEADPHONES</NavLink>
                     <NavLink to="audiophile/speakers" >SPEAKERS</NavLink>
                     <NavLink to="audiophile/earphones" >EARPHONES</NavLink>
