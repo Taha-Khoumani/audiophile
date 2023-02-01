@@ -1772,19 +1772,27 @@ footer {
           margin:0 0 1px 0;
         }
 
+        #e-money,#cash-on-delivery{
+          background-color:$primaryBrown;
+
+        }
+
         label{
           font-weight: bold;
           font-size: 14px;
-
           padding:18px 24px;
           border-radius: 8px;
           border-color: #CFCFCF;
+          // border-color: #CFCFCF;
           border-width: 1px;
           border-style: solid;
           display: flex;
           align-items: center;
           gap:15px;
-          
+        }
+        label:focus-within{
+          border-color: $primaryBrown;
+          border-width: 2px;
         }
 
         [for=cash-on-delivery]{
@@ -1831,6 +1839,11 @@ footer {
             opacity: 0.4;
             color:black;
             font-size: 14px;
+          }
+
+          &:focus{
+            outline-color:$primaryBrown;
+            outline-width: 1px;
           }
         }
       }

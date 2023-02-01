@@ -2156,6 +2156,9 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-size: 12px;
   margin: 0 0 1px 0;
 }
+#checkout-page #checkout .form .input-container-radio #e-money, #checkout-page #checkout .form .input-container-radio #cash-on-delivery {
+  background-color: #d87d4a;
+}
 #checkout-page #checkout .form .input-container-radio label {
   font-weight: bold;
   font-size: 14px;
@@ -2167,6 +2170,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+#checkout-page #checkout .form .input-container-radio label:focus-within {
+  border-color: #d87d4a;
+  border-width: 2px;
 }
 #checkout-page #checkout .form .input-container-radio [for=cash-on-delivery] {
   grid-area: 2/2/2/2;
@@ -2232,6 +2239,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   opacity: 0.4;
   color: black;
   font-size: 14px;
+}
+#checkout-page #checkout .form .input-container input:focus {
+  outline-color: #d87d4a;
+  outline-width: 1px;
 }
 #checkout-page #summary {
   width: 30%;
