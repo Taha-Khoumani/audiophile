@@ -7,7 +7,7 @@ const savedData = localStorage.getItem("userData")
 const initialState = savedData;
 
 const userDataSlice = createSlice({
-  name: "useData",
+  name: "userData",
   initialState,
   reducers: {
     setData: (state, { payload }) => {

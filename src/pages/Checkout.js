@@ -10,10 +10,13 @@ import GoBack from "../components/GoBack";
 
 //reducers
 import { toggleModal } from "../features/cartSlice";
+import { setData } from "../features/userDataSlice";
 
 export default function Checkout() {
 
   const {winWidth} = useSelector(store=>store.nav)
+
+  const {userData} = useSelector(store=>store)
 
   let { items,isModalOpen } = useSelector((store) => store.cart);
   items = [...items].reverse();
@@ -67,6 +70,11 @@ export default function Checkout() {
     }
 }
 
+function handleChange(e){
+  const {name,value} = e.target
+  dispatch(setData({name,value}))
+}
+
   return (
     <>
       <GoBack style={{backgroundColor:"#F2F2F2"}} />
@@ -79,15 +87,25 @@ export default function Checkout() {
               <div className="input-group-1">
                 <div className="input-container">
                   <label htmlFor="name">Name</label>
-                  <input type="text" id="name" placeholder="Taha.K" />
+                  <input 
+                    type="text" 
+                    id="name" 
+                    placeholder="Taha.K"
+                    name="name"
+                    onChange={(e)=>handleChange(e)}
+                    value={userData.name}
+                  />
                 </div>
 
                 <div className="input-container">
                   <label htmlFor="email-address">Email Address</label>
                   <input
                     type="text"
+                    name="emailAddress"
                     id="email-address"
                     placeholder="khoumanitaha23@gmail.com"
+                    onChange={(e)=>handleChange(e)}
+                    value={userData.emailAddress}
                   />
                 </div>
 
@@ -97,6 +115,9 @@ export default function Checkout() {
                     type="text"
                     id="phone-number"
                     placeholder="+1 111-111-111"
+                    name="phoneNumber"
+                    value={userData.phoneNumber}
+                    onChange={(e)=>handleChange(e)}
                   />
                 </div>
               </div>
@@ -110,22 +131,46 @@ export default function Checkout() {
                     type="text"
                     id="address"
                     placeholder="2023 Silicon-Valey Avenu"
+                    name="address"
+                    value={userData.address}
+                    onChange={(e)=>handleChange(e)}
                   />
                 </div>
 
                 <div className="input-container">
                   <label htmlFor="zip-code">ZIP Code</label>
-                  <input type="text" id="zip-code" placeholder="X1Z K6N" />
+                  <input 
+                    type="text" 
+                    id="zip-code" 
+                    placeholder="X1Z K6N" 
+                    name="zipCode"
+                    value={userData.zipCode}
+                    onChange={(e)=>handleChange(e)}
+                  />
                 </div>
 
                 <div className="input-container">
                   <label htmlFor="city">City</label>
-                  <input type="text" id="city" placeholder="Montreal" />
+                  <input 
+                    type="text" 
+                    id="city" 
+                    placeholder="Montreal" 
+                    name="city"
+                    value={userData.city}
+                    onChange={(e)=>handleChange(e)}  
+                  />
                 </div>
 
                 <div className="input-container">
                   <label htmlFor="country">Country</label>
-                  <input type="text" id="country" placeholder="Canada" />
+                  <input 
+                    type="text" 
+                    id="country" 
+                    placeholder="Canada" 
+                    name="country"
+                    value={userData.country}
+                    onChange={(e)=>handleChange(e)}
+                  />
                 </div>
               </div>
             </div>
@@ -137,35 +182,56 @@ export default function Checkout() {
                   <label htmlFor="e-money">
                     <input
                       type="radio"
-                      name="payment-method"
-                      value="e-money"
+                      name="paymentMethod"
+                      value="eMoney"
                       id="e-money"
+                      checked={userData.paymentMethod === "eMoney"}
+                      onChange={(e)=>handleChange(e)}
                     />
                     e-Money
                   </label>
                   <label htmlFor="cash-on-delivery">
                     <input
                       type="radio"
-                      name="payment-method"
-                      value="cash-on-delivery"
+                      name="paymentMethod"
+                      value="cashOnDelivery"
                       id="cash-on-delivery"
+                      checked={userData.paymentMethod === "cashOnDelivery"}
+                      onChange={(e)=>handleChange(e)}
                     />
                     Cash on Delivery
                   </label>
                 </div>
                 <div className="input-container"></div>
               </div>
-              <div className="input-group-4">
-                <div className="input-container">
-                  <label htmlFor="e-money-number">e-Money Number</label>
-                  <input type="text" id="e-money-number" placeholder="01010101" />
-                </div>
+              {
+                userData.paymentMethod === "eMoney" &&
+                <div className="input-group-4">
+                  <div className="input-container">
+                    <label htmlFor="e-money-number">e-Money Number</label>
+                    <input 
+                      type="text" 
+                      id="e-money-number" 
+                      placeholder="01010101" 
+                      name="eMoneyNumber"
+                      value={userData.eMoneyNumber}
+                      onChange={(e)=>handleChange(e)}  
+                    />
+                  </div>
 
-                <div className="input-container">
-                  <label htmlFor="e-money-pin">e-Money PIN</label>
-                  <input type="text" id="e-money-pin" placeholder="0000" />
+                  <div className="input-container">
+                    <label htmlFor="e-money-pin">e-Money PIN</label>
+                    <input 
+                      type="text" 
+                      id="e-money-pin" 
+                      placeholder="0000" 
+                      name="eMoneyPin"
+                      value={userData.eMoneyPin}
+                      onChange={(e)=>handleChange(e)}
+                    />
+                  </div>
                 </div>
-              </div>
+              }
             </div>
           </form>
         </section>

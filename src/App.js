@@ -25,10 +25,15 @@ import Product from "./components/Product";
 
 function App() {
   const { items } = useSelector((store) => store.cart);
+  const {userData} = useSelector(store=>store)
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
+
+  useEffect(()=>{
+    localStorage.setItem("userData",JSON.stringify(userData))
+  },[userData])
 
   return (
     <>
