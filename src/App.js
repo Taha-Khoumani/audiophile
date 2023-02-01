@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 //react-router
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 //css
 import "./css/style.css";

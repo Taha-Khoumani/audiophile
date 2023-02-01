@@ -164,10 +164,10 @@ body {
       }
       @include media($mobile) {
         box-sizing: border-box;
-        padding-top: 65px !important;
+        padding-top: 35px;
         bottom: $bMenu;
         animation-duration: 0.8s;
-        max-height: calc(100vh - 135px);
+        max-height: calc(100vh - 96px);
         .category-img {
           filter: none !important;
         }
@@ -265,7 +265,7 @@ body {
     @include media($mobile) {
       flex-direction: column;
       height: auto;
-      gap: 68px;
+      gap: 0;
       align-items: center;
       padding: 84px 24px 35px 24px;
     }
@@ -297,8 +297,12 @@ body {
         gap: 9px;
       }
       @include media($mobile) {
-        width: 85%;
+        margin-top: 5%;
+        height: auto;
+        padding-top:10%;
+        width: 70%;
       }
+      // @include media(340px){margin-top: 5%;}
       .category-img {
         position: absolute;
         margin: auto;
@@ -310,6 +314,11 @@ body {
           filter: drop-shadow(0px 15px 8px gray);
           height: 80px;
           top: -40px;
+        }
+        @include media($mobile){
+          $a:60%;
+          height: $a;
+          top:calc($a / -2)
         }
       }
       p {
@@ -323,10 +332,19 @@ body {
         gap: 13px;
         margin-bottom: 22px;
         box-sizing: border-box;
+        @include media($mobile){margin-bottom: 15px;}
         p {
           opacity: 0.5;
           color: black;
         }
+      }
+    }
+    .category:nth-child(2),.category:nth-child(3){
+      @include media($mobile){
+        margin-top: 15%;
+      }
+      @include media(340px){
+        margin-top: 20%;
       }
     }
     a:visited,
@@ -906,6 +924,7 @@ footer {
 }
 .product {
   @extend .productsListElContainer;
+  margin-top: 10px;
 }
 .category-product {
   display: flex;
@@ -1685,7 +1704,7 @@ footer {
 //CHECKOUT:
 #checkout-page {
   @extend #all-padding-checkout;
-  padding-block: 40px;
+  padding-block:0 40px;
   background-color: #f2f2f2;
   display: flex;
   justify-content: space-between;
@@ -2049,3 +2068,17 @@ footer {
   }
 }
 //
+
+//GO-BACK
+  .go-back{
+    @extend #all-padding;
+    padding-block:40px 30px;
+    margin:0;
+    font-weight: 500;
+    color: rgba($color: #000000, $alpha:0.5);
+    font-size: 15px;
+    display:block;
+    &:hover{
+      cursor: pointer;
+    }
+  }

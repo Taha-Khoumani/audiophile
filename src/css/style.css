@@ -41,26 +41,26 @@ body {
   }
 }
 
-#all-padding, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+#all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
   padding: 0 165px;
 }
 @media (max-width: 1195px) {
-  #all-padding, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 120px;
   }
 }
 @media (max-width: 980px) {
-  #all-padding, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 90px;
   }
 }
 @media (max-width: 870px) {
-  #all-padding, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 60px;
   }
 }
 @media (max-width: 767px) {
-  #all-padding, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 40px;
   }
 }
@@ -177,11 +177,11 @@ body {
 @media (max-width: 480px) {
   .navlinks #navlink-img-container .sliding-menu {
     box-sizing: border-box;
-    padding-top: 65px !important;
+    padding-top: 35px;
     bottom: 675px;
     -webkit-animation-duration: 0.8s;
             animation-duration: 0.8s;
-    max-height: calc(100vh - 135px);
+    max-height: calc(100vh - 96px);
   }
   .navlinks #navlink-img-container .sliding-menu .category-img {
     filter: none !important;
@@ -329,7 +329,7 @@ body {
   .navlinks .navlinks-img, .navlinks .notNav {
     flex-direction: column;
     height: auto;
-    gap: 68px;
+    gap: 0;
     align-items: center;
     padding: 84px 24px 35px 24px;
   }
@@ -374,7 +374,10 @@ body {
 }
 @media (max-width: 480px) {
   .navlinks .navlinks-img .category, .navlinks .notNav .category {
-    width: 85%;
+    margin-top: 5%;
+    height: auto;
+    padding-top: 10%;
+    width: 70%;
   }
 }
 .navlinks .navlinks-img .category .category-img, .navlinks .notNav .category .category-img {
@@ -392,6 +395,12 @@ body {
     top: -40px;
   }
 }
+@media (max-width: 480px) {
+  .navlinks .navlinks-img .category .category-img, .navlinks .notNav .category .category-img {
+    height: 60%;
+    top: -30%;
+  }
+}
 .navlinks .navlinks-img .category p, .navlinks .notNav .category p {
   font-weight: 700;
   font-size: 15px;
@@ -404,9 +413,24 @@ body {
   margin-bottom: 22px;
   box-sizing: border-box;
 }
+@media (max-width: 480px) {
+  .navlinks .navlinks-img .category .shop, .navlinks .notNav .category .shop {
+    margin-bottom: 15px;
+  }
+}
 .navlinks .navlinks-img .category .shop p, .navlinks .notNav .category .shop p {
   opacity: 0.5;
   color: black;
+}
+@media (max-width: 480px) {
+  .navlinks .navlinks-img .category:nth-child(2), .navlinks .notNav .category:nth-child(2), .navlinks .navlinks-img .category:nth-child(3), .navlinks .notNav .category:nth-child(3) {
+    margin-top: 15%;
+  }
+}
+@media (max-width: 340px) {
+  .navlinks .navlinks-img .category:nth-child(2), .navlinks .notNav .category:nth-child(2), .navlinks .navlinks-img .category:nth-child(3), .navlinks .notNav .category:nth-child(3) {
+    margin-top: 20%;
+  }
 }
 .navlinks .navlinks-img a:visited, .navlinks .notNav a:visited,
 .navlinks .navlinks-img a:link,
@@ -1090,6 +1114,10 @@ footer #footer-about #footer-about-contacts > i:hover {
     margin-block: 60px 130px;
     gap: 120px;
   }
+}
+
+.product {
+  margin-top: 10px;
 }
 
 .category-product, .category-product-2 {
@@ -2030,7 +2058,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 #checkout-page {
-  padding-block: 40px;
+  padding-block: 0 40px;
   background-color: #f2f2f2;
   display: flex;
   justify-content: space-between;
@@ -2509,4 +2537,16 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 100%;
   height: 48px;
   font-weight: bold;
+}
+
+.go-back {
+  padding-block: 40px 30px;
+  margin: 0;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  display: block;
+}
+.go-back:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

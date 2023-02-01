@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 //components
 import ProductView from "./ProductView.js";
 import Also from "./Also.js";
+import GoBack from "./GoBack";
 
 //reducers
 import { addItem } from "../features/cartSlice.js";
@@ -47,53 +48,60 @@ export default function Product() {
   function handleClickAdd(slug, name, price, quantity) {
     dispatch(addItem({ slug, name, price, quantity }));
   }
-  return allProductsList.some((product) => product.slug === productSlug) ? (
-    <div className="product">
-      <ProductView
-        data={{
-          image,
-          isNew,
-          description,
-          name,
-          price,
-          slug,
-          shortName,
-        }}
-        isCat={false}
-        functions={{
-          handleClickAdd,
-        }}
-      />
-      <section className="product-details">
-        <div className="features">
-          <p className="details-headings">FEATURES</p>
-          <p className="details-text">{features}</p>
-        </div>
-        <div className="in-box">
-          <p className="details-headings">IN THE BOX</p>
-          <div className="includes">{inBox}</div>
-        </div>
-      </section>
-      <section className="gallery">
-        <img
-          className="gallery-first"
-          src={wichImg(winWidth, gallery.first)}
-          alt="gallery-imgs"
-        />
-        <img
-          className="gallery-second"
-          src={wichImg(winWidth, gallery.second)}
-          alt="gallery-imgs"
-        />
-        <img
-          className="gallery-third"
-          src={wichImg(winWidth, gallery.third)}
-          alt="gallery-imgs"
-        />
-      </section>
-      <Also data={others} />
-    </div>
-  ) : (
-    <h1>error 404 :/</h1>
-  );
+  return(
+    <>
+      <GoBack/>
+      {
+        allProductsList.some((product) => product.slug === productSlug) ? (
+          <div className="product">
+            <ProductView
+              data={{
+                image,
+                isNew,
+                description,
+                name,
+                price,
+                slug,
+                shortName,
+              }}
+              isCat={false}
+              functions={{
+                handleClickAdd,
+              }}
+            />
+            <section className="product-details">
+              <div className="features">
+                <p className="details-headings">FEATURES</p>
+                <p className="details-text">{features}</p>
+              </div>
+              <div className="in-box">
+                <p className="details-headings">IN THE BOX</p>
+                <div className="includes">{inBox}</div>
+              </div>
+            </section>
+            <section className="gallery">
+              <img
+                className="gallery-first"
+                src={wichImg(winWidth, gallery.first)}
+                alt="gallery-imgs"
+              />
+              <img
+                className="gallery-second"
+                src={wichImg(winWidth, gallery.second)}
+                alt="gallery-imgs"
+              />
+              <img
+                className="gallery-third"
+                src={wichImg(winWidth, gallery.third)}
+                alt="gallery-imgs"
+              />
+            </section>
+            <Also data={others} />
+          </div>
+        ) : (
+          <h1>error 404 :/</h1>
+        )
+      }
+    </>
+  )
 }
