@@ -149,6 +149,10 @@ body {
   line-height: 25px;
   font-size: 13px;
 }
+.navlinks .navlinks-text a {
+  transition-duration: 250ms;
+  transition-property: color;
+}
 .navlinks .navlinks-text a:hover {
   color: #d87d4a;
 }
@@ -440,6 +444,8 @@ body {
 .navlinks .navlinks-img a:hover .shop > p, .navlinks .notNav a:hover .shop > p {
   opacity: 1;
   color: #d87d4a;
+  transition-duration: 250ms;
+  transition-property: color;
 }
 .navlinks .notNav {
   padding: 0px 0 0 0;
@@ -728,6 +734,8 @@ footer #footer-about #footer-about-contacts > i {
 }
 footer #footer-about #footer-about-contacts > i:hover {
   color: #d87d4a;
+  transition-duration: 250ms;
+  transition-property: color;
 }
 
 .about {
@@ -1235,6 +1243,8 @@ footer #footer-about #footer-about-contacts > i:hover {
 
 .button:hover {
   background-color: #fbaf85;
+  transition-duration: 250ms;
+  transition-property: background-color;
 }
 
 .category-product-text .category-product-text-new, #home .landing-products .landing-item-1 .category-product-text-1 .category-product-text-new {
@@ -1450,6 +1460,8 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 40px;
   opacity: 0.5;
   font-size: 13px;
+  transition-duration: 250ms;
+  transition-property: color;
 }
 @media (max-width: 600px) {
   .product-nums button, .cart-item .product-nums-cart button {
@@ -1464,8 +1476,8 @@ footer #footer-about #footer-about-contacts > i:hover {
   }
 }
 .product-nums button:hover, .cart-item .product-nums-cart button:hover {
-  color: #d87d4a;
   opacity: 1;
+  color: #d87d4a;
 }
 
 .gallery {
@@ -1681,6 +1693,8 @@ footer #footer-about #footer-about-contacts > i:hover {
   letter-spacing: 1px;
   font-size: 13px;
   height: 48px;
+  transition-duration: 250ms;
+  transition-property: color;
 }
 #home .landing-item-0 .category-product-text-con .category-product-text .button:hover, #home .landing-item-0 .category-product-text-con .landing-products .landing-item-1 .category-product-text-1 .button:hover, #home .landing-products .landing-item-1 .landing-item-0 .category-product-text-con .category-product-text-1 .button:hover {
   background-color: #fbaf85;
@@ -1936,6 +1950,8 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-size: 13px;
   height: 48px;
   font-weight: bold;
+  transition-duration: 350ms;
+  transition-property: color;
 }
 #home .landing-products .landing-item-2 .item-2-text button:hover {
   background-color: black;
@@ -2041,6 +2057,8 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-size: 13px;
   height: 48px;
   font-weight: bold;
+  transition-duration: 350ms;
+  transition-property: color;
 }
 #home .landing-products .landing-item-3 div button:hover {
   background-color: black;
@@ -2171,12 +2189,36 @@ footer #footer-about #footer-about-contacts > i:hover {
   align-items: center;
   gap: 15px;
 }
-#checkout-page #checkout .form .input-container-radio label:focus-within {
-  border-color: #d87d4a;
-  border-width: 2px;
-}
 #checkout-page #checkout .form .input-container-radio [for=cash-on-delivery] {
   grid-area: 2/2/2/2;
+}
+#checkout-page #checkout .form .input-container-radio input[type=radio]:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+  outline: 1px solid #CFCFCF;
+}
+#checkout-page #checkout .form .input-container-radio input[type=radio]:checked:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d87d4a;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+  outline: 1px solid #CFCFCF;
 }
 #checkout-page #checkout .form .input-group-4 {
   display: flex;

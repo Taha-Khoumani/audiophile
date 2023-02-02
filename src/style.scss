@@ -138,6 +138,10 @@ body {
       line-height: 25px;
       font-size: 13px;
     }
+    a{
+      transition-duration: 250ms;
+      transition-property: color;
+    }
     a:hover {
       color: $primaryBrown;
     }
@@ -354,6 +358,8 @@ body {
     a:hover .shop > p {
       opacity: 1;
       color: #d87d4a;
+      transition-duration:250ms;
+      transition-property: color;
     }
   }
 
@@ -593,6 +599,8 @@ footer {
         font-size: 24px;
         &:hover {
           color: $primaryBrown;
+          transition-duration: 250ms;
+          transition-property: color;
         }
       }
     }
@@ -1011,6 +1019,8 @@ footer {
 }
 .button:hover {
   background-color: #fbaf85;
+  transition-duration: 250ms;
+  transition-property: background-color;
 }
 //needed globaly
 .category-product-text {
@@ -1179,6 +1189,8 @@ footer {
     width: 40px;
     opacity: 0.5;
     font-size: 13px;
+    transition-duration: 250ms;
+    transition-property: color;
     @include media(600px) {
       width: 30px;
     }
@@ -1186,13 +1198,14 @@ footer {
   }
   p,
   button {
+
     @include media($mobile) {
       width: 35px;
     }
   }
   button:hover {
-    color: $primaryBrown;
     opacity: 1;
+    color: $primaryBrown;
   }
 }
 //
@@ -1384,6 +1397,8 @@ footer {
           letter-spacing: 1px;
           font-size: 13px;
           height: 48px;
+          transition-duration: 250ms;
+          transition-property: color;
         }
         .button:hover {
           background-color: #fbaf85;
@@ -1596,7 +1611,8 @@ footer {
           letter-spacing: 1px;
           font-size: 13px;
           height: 48px;
-          font-weight: bold;
+          font-weight: bold;    transition-duration: 350ms;
+          transition-property: color;
           // @include media($mobile){padding:8px 10px;height: 40px;}
         }
         button:hover {
@@ -1683,6 +1699,8 @@ footer {
           font-size: 13px;
           height: 48px;
           font-weight: bold;
+              transition-duration: 350ms;
+    transition-property: color;
         }
         button:hover {
           background-color: black;
@@ -1790,15 +1808,42 @@ footer {
           align-items: center;
           gap:15px;
         }
-        label:focus-within{
-          border-color: $primaryBrown;
-          border-width: 2px;
-        }
+
 
         [for=cash-on-delivery]{
           grid-area: 2/2/2/2;
         }
 
+        input[type="radio"]:after {
+          width: 10px;
+          height: 10px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: #d1d3d1;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid white;
+          outline: 1px solid #CFCFCF;
+
+        }
+  
+        input[type='radio']:checked:after {
+          width: 10px;
+          height: 10px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: $primaryBrown;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid white;
+          outline: 1px solid #CFCFCF;
+        }
       }
 
       //e-Money info

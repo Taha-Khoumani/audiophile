@@ -179,7 +179,10 @@ function handleChange(e){
               <div className="input-grou-3">
                 <div className="input-container-radio">
                   <p id="payment-method">Payment Method</p>
-                  <label htmlFor="e-money">
+                  <label 
+                    htmlFor="e-money"
+                    style={userData.paymentMethod === "eMoney" ? {borderColor: "#d87d4a",borderWidth: "2px"} :{}}
+                  >
                     <input
                       type="radio"
                       name="paymentMethod"
@@ -190,7 +193,10 @@ function handleChange(e){
                     />
                     e-Money
                   </label>
-                  <label htmlFor="cash-on-delivery">
+                  <label 
+                    htmlFor="cash-on-delivery"
+                    style={userData.paymentMethod === "cashOnDelivery" ? {borderColor: "#d87d4a",borderWidth: "2px"} :{}}
+                  >
                     <input
                       type="radio"
                       name="paymentMethod"
