@@ -100,7 +100,7 @@ function handleChange(e){
                 <div className="input-container">
                   <label htmlFor="email-address">Email Address</label>
                   <input
-                    type="text"
+                    type="email"
                     name="emailAddress"
                     id="email-address"
                     placeholder="khoumanitaha23@gmail.com"

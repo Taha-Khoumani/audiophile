@@ -367,16 +367,16 @@ body {
   .notNav {
     @extend .navlinks-img;
     padding: 0px 0 0 0;
-    margin: 0 165px;
-    margin-bottom: $m-d;
+    margin: 0  165px $m-d;
+    // margin-bottom: $m-d;
     @include media($mdesktop) {
-      margin: 0 120px;
+      margin: 0 120px 50px;
     }
     @include media($sdesktop) {
-      margin: 0 90px;
+      margin: 0 90px 50px;
     }
     @include media($ssdesktop) {
-      margin: 0 50px;
+      margin: 0 50px 50px;
     }
     @include media($tablet) {
       margin: 0 40px;
@@ -918,16 +918,20 @@ footer {
 //category-products-list
 .productsListElContainer {
   @extend #all;
-  margin-block: 100px 160px;
+  margin-block: 100px 55px;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 100px;
   @include media($sdesktop) {
     margin-block: 100px 145px;
   }
   @include media($tablet) {
     margin-block: 60px 130px;
     gap: 120px;
+  }
+  @include media($mobile){
+    margin-block:50px;
+    gap:50px;
   }
 }
 .product {
@@ -988,7 +992,7 @@ footer {
     }
     // @include media($tablet){max-width: 245px;}
     @include media(655px) {
-      max-width: 30%;
+      max-width: 35%;
     }
     @include media($mobile) {
       min-width: 100%;
@@ -1061,6 +1065,7 @@ footer {
       font-size: 10px;
       letter-spacing: 5px;
     }
+
     // @include media($mtablet){margin:0 0 5px 0;font-size: 10px;letter-spacing: 5px;}
   }
   .category-product-text-name {
@@ -1139,7 +1144,7 @@ footer {
     }
     @include media(550px) {
       margin: 0 0 10px 0;
-      font-size: 14px;
+      font-size: 13px;
     }
     // @include media($mtablet){margin:0 0 10px 0;font-size: 14px;}
   }
@@ -1152,8 +1157,12 @@ footer {
     margin-top: 0;
     margin-bottom: 15px;
     @include media(600px) {
+      font-size: 14px;
       margin-bottom: 10px;
     }
+    // @include media($mobile){
+    //   font-size: 15px;
+    // }
   }
 }
 //add&minus-buttons
@@ -1309,8 +1318,10 @@ footer {
         font-weight: bold;
         font-size: 22px;
         margin-block: 15px 20px;
+        white-space: nowrap;
         @include media($tablet) {
           margin-block: 10px 15px;
+          font-size: 19px;
         }
       }
       .also-img {
@@ -2138,5 +2149,8 @@ footer {
     display:block;
     &:hover{
       cursor: pointer;
+    }
+    @include media($mobile){
+      padding-block: 25px 20px;
     }
   }

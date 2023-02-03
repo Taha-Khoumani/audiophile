@@ -449,22 +449,21 @@ body {
 }
 .navlinks .notNav {
   padding: 0px 0 0 0;
-  margin: 0 165px;
-  margin-bottom: 50px;
+  margin: 0 165px 50px;
 }
 @media (max-width: 1195px) {
   .navlinks .notNav {
-    margin: 0 120px;
+    margin: 0 120px 50px;
   }
 }
 @media (max-width: 980px) {
   .navlinks .notNav {
-    margin: 0 90px;
+    margin: 0 90px 50px;
   }
 }
 @media (max-width: 870px) {
   .navlinks .notNav {
-    margin: 0 50px;
+    margin: 0 50px 50px;
   }
 }
 @media (max-width: 767px) {
@@ -1107,10 +1106,10 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .productsListElContainer, .product {
-  margin-block: 100px 160px;
+  margin-block: 100px 55px;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 100px;
 }
 @media (max-width: 980px) {
   .productsListElContainer, .product {
@@ -1121,6 +1120,12 @@ footer #footer-about #footer-about-contacts > i:hover {
   .productsListElContainer, .product {
     margin-block: 60px 130px;
     gap: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .productsListElContainer, .product {
+    margin-block: 50px;
+    gap: 50px;
   }
 }
 
@@ -1206,7 +1211,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 @media (max-width: 655px) {
   .category-product-2 .category-product-img {
-    max-width: 30%;
+    max-width: 35%;
   }
 }
 @media (max-width: 480px) {
@@ -1403,7 +1408,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 @media (max-width: 550px) {
   .category-product-text .category-product-text-description-2, #home .landing-products .landing-item-1 .category-product-text-1 .category-product-text-description-2 {
     margin: 0 0 10px 0;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 @media (max-width: 767px) {
@@ -1419,6 +1424,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 @media (max-width: 600px) {
   .category-product-text .price, #home .landing-products .landing-item-1 .category-product-text-1 .price {
+    font-size: 14px;
     margin-bottom: 10px;
   }
 }
@@ -1599,10 +1605,12 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: bold;
   font-size: 22px;
   margin-block: 15px 20px;
+  white-space: nowrap;
 }
 @media (max-width: 767px) {
   .also-con .also .also-product .also-name {
     margin-block: 10px 15px;
+    font-size: 19px;
   }
 }
 .also-con .also .also-product .also-img {
@@ -2602,4 +2610,9 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 .go-back:hover {
   cursor: pointer;
+}
+@media (max-width: 480px) {
+  .go-back {
+    padding-block: 25px 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

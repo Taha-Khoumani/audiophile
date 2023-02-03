@@ -63,7 +63,12 @@ export default function NavLinks(props){
                                 className="category"
                                 to="/audiophile/headphones"
                                 style={{textDecoration: "none",}}
-                                onClick={()=>closeMenu()}
+                                onClick={()=>{
+                                    if(isNav){
+                                        closeMenu()
+                                    }
+                                }
+                            }
                             >
                                 <img className="category-img" src={headphonesCat} alt="headphones-cat" />
                                 <p style={{}}>HEADPHONES</p>
@@ -76,7 +81,11 @@ export default function NavLinks(props){
                                 className="category"
                                 to="/audiophile/speakers" 
                                 style={{textDecoration: "none",}}
-                                onClick={()=>closeMenu()}
+                                onClick={()=>{
+                                    if(isNav){
+                                        closeMenu()
+                                    }
+                                }}
                             >
                                 <img className="category-img" src={speakersCat} alt="speakers-cat" />
                                 <p>SPEAKERS</p>
@@ -89,7 +98,11 @@ export default function NavLinks(props){
                                 className="category" 
                                 to="/audiophile/earphones" 
                                 style={{textDecoration: "none",}}
-                                onClick={()=>closeMenu()}
+                                onClick={()=>{
+                                    if(isNav){
+                                        closeMenu()
+                                    }
+                                }}
                             >
                                 <img className="category-img" src={earphonesCat} alt="earphones-cat" />
                                 <p>EARPHONES</p>
