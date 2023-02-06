@@ -127,6 +127,7 @@ export default function ProductView(props) {
                   currentQuantity
                 );
                 setCurrentQuantity(1);
+                window.scrollTo(0,0)
               }}
             >
               ADD TO CART

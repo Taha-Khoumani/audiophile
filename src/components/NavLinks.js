@@ -112,7 +112,6 @@ export default function NavLinks(props){
                                 </div>
                             </Link>
                         </div>)
-                        console.log(location.pathname)
 
     return(
         <div className="navlinks" id={props.id ? props.id : ""}>

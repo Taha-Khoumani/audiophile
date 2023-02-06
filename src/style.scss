@@ -422,12 +422,11 @@ body {
   @extend #all-padding;
   background-color: black;
   display: flex;
-  position: relative;
   z-index: 10;
   align-items: center;
   justify-content: center;
   height: 96px;
-
+  position:relative;
   @include media($mdesktop) {
     justify-content: space-between;
   }
@@ -1803,7 +1802,7 @@ footer {
 
         #e-money,#cash-on-delivery{
           background-color:$primaryBrown;
-
+          height: 0;
         }
 
         label{
@@ -1829,7 +1828,7 @@ footer {
           width: 10px;
           height: 10px;
           border-radius: 15px;
-          top: -2px;
+          top: -8px;
           left: -1px;
           position: relative;
           background-color: #d1d3d1;
@@ -1845,7 +1844,7 @@ footer {
           width: 10px;
           height: 10px;
           border-radius: 15px;
-          top: -2px;
+          top: -8px;
           left: -1px;
           position: relative;
           background-color: $primaryBrown;

@@ -516,11 +516,11 @@ body {
 #navbar {
   background-color: black;
   display: flex;
-  position: relative;
   z-index: 10;
   align-items: center;
   justify-content: center;
   height: 96px;
+  position: relative;
 }
 @media (max-width: 1195px) {
   #navbar {
@@ -2184,6 +2184,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 #checkout-page #checkout .form .input-container-radio #e-money, #checkout-page #checkout .form .input-container-radio #cash-on-delivery {
   background-color: #d87d4a;
+  height: 0;
 }
 #checkout-page #checkout .form .input-container-radio label {
   font-weight: bold;
@@ -2204,7 +2205,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 10px;
   height: 10px;
   border-radius: 15px;
-  top: -2px;
+  top: -8px;
   left: -1px;
   position: relative;
   background-color: #d1d3d1;
@@ -2218,7 +2219,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 10px;
   height: 10px;
   border-radius: 15px;
-  top: -2px;
+  top: -8px;
   left: -1px;
   position: relative;
   background-color: #d87d4a;
