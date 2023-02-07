@@ -2255,6 +2255,9 @@ footer #footer-about #footer-about-contacts > i:hover {
 #checkout-page #checkout .form .input-container label {
   font-weight: bold;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 #checkout-page #checkout .form .input-container input {
   padding: 18px 24px;
@@ -2294,6 +2297,19 @@ footer #footer-about #footer-about-contacts > i:hover {
 #checkout-page #checkout .form .input-container input:focus {
   outline-color: #d87d4a;
   outline-width: 1px;
+}
+#checkout-page .invalid-input {
+  border-width: 2px !important;
+  border-color: #CD2C2C !important;
+  outline: none;
+}
+#checkout-page .invalid-label {
+  color: #CD2C2C;
+}
+#checkout-page .invalid-message {
+  display: inline !important;
+  color: #CD2C2C;
+  font-weight: 500;
 }
 #checkout-page #summary {
   width: 30%;

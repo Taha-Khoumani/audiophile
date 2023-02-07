@@ -1811,7 +1811,6 @@ footer {
           padding:18px 24px;
           border-radius: 8px;
           border-color: #CFCFCF;
-          // border-color: #CFCFCF;
           border-width: 1px;
           border-style: solid;
           display: flex;
@@ -1876,7 +1875,12 @@ footer {
         label{
           font-weight: bold;
           font-size: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
+
+
   
         input{
           padding:18px 24px;
@@ -1902,8 +1906,22 @@ footer {
           }
         }
       }
-
     }
+  }
+
+  //error-styling:
+  .invalid-input{
+    border-width: 2px !important;
+    border-color: #CD2C2C !important;
+    outline: none;
+  }
+  .invalid-label{
+    color: #CD2C2C;
+  }
+  .invalid-message{
+    display: inline !important;
+    color: #CD2C2C;
+    font-weight: 500;
   }
 
   #summary {
