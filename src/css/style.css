@@ -2164,6 +2164,9 @@ footer #footer-about #footer-about-contacts > i:hover {
 #checkout-page #checkout .form .input-group-2 #address-container {
   grid-area: 1/1/2/3;
 }
+#checkout-page #checkout .form .input-group-2 #country-container {
+  grid-area: 3/1/4/3;
+}
 #checkout-page #checkout .form .input-container-radio {
   display: grid;
   grid-template: repeat(2, 56px)/repeat(2, 1fr);
@@ -2259,7 +2262,19 @@ footer #footer-about #footer-about-contacts > i:hover {
   align-items: center;
   justify-content: space-between;
 }
-#checkout-page #checkout .form .input-container input {
+#checkout-page #checkout .form .input-container select {
+  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+  background-position: calc(100% - 0.75rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+}
+#checkout-page #checkout .form .input-container select option {
+  font-weight: 500;
+  font-size: 15px;
+}
+#checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
   padding: 18px 24px;
   border-radius: 8px;
   border-color: #CFCFCF;
@@ -2267,34 +2282,34 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-style: solid;
 }
 @media (min-width: 800px) {
-  #checkout-page #checkout .form .input-container input {
+  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
     padding: 15px 10px;
   }
 }
 @media (max-width: 480px) {
-  #checkout-page #checkout .form .input-container input {
+  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
     padding: 15px 20px;
   }
 }
-#checkout-page #checkout .form .input-container input::-moz-placeholder {
+#checkout-page #checkout .form .input-container input::-moz-placeholder, #checkout-page #checkout .form .input-container select::-moz-placeholder {
   font-weight: bold;
   opacity: 0.4;
   color: black;
   font-size: 14px;
 }
-#checkout-page #checkout .form .input-container input:-ms-input-placeholder {
+#checkout-page #checkout .form .input-container input:-ms-input-placeholder, #checkout-page #checkout .form .input-container select:-ms-input-placeholder {
   font-weight: bold;
   opacity: 0.4;
   color: black;
   font-size: 14px;
 }
-#checkout-page #checkout .form .input-container input::placeholder {
+#checkout-page #checkout .form .input-container input::placeholder, #checkout-page #checkout .form .input-container select::placeholder {
   font-weight: bold;
   opacity: 0.4;
   color: black;
   font-size: 14px;
 }
-#checkout-page #checkout .form .input-container input:focus {
+#checkout-page #checkout .form .input-container input:focus, #checkout-page #checkout .form .input-container select:focus {
   outline-color: #d87d4a;
   outline-width: 1px;
 }
