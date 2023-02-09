@@ -2,7 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const savedData = localStorage.getItem("userData")
   ? JSON.parse(localStorage.getItem("userData"))
-  : {};
+  : {
+    address:"",
+    city: "",
+    country: "",
+    eMoneyNumber: "",
+    eMoneyPin: "",
+    emailAddress: "",
+    name: "",
+    paymentMethod: "",
+    phoneNumber: "",
+    zipCode: "",
+  };
 
 const initialState = savedData;
 

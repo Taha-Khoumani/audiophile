@@ -1467,7 +1467,7 @@ footer {
         background-size: 75%;
         background-position: left -55px bottom 80%;
       }
-      @media (min-width: 871px) and(max-width:899px) {
+      @media (min-width: 871px) and (max-width:899px) {
         background-size: 90%;
         background-position: left -115px bottom 80%;
       }
@@ -1784,7 +1784,48 @@ footer {
 
         #address-container{
           grid-area: 1/1/2/3;
+          #addreess-autocomplete-container{
+            position:relative;
+
+            input{
+              box-sizing: border-box;
+              width:100%;
+            }
+
+            #address-autocomplete-container:focus #address-autocomplete{
+              display: inline;
+            }
+            
+            #address-autocomplete{
+              box-sizing: border-box;
+              width: 100%;
+              background-color: white;
+              position:absolute;
+              z-index:99;
+              inset: 100% 0 auto 0;
+              padding:0;
+              p{
+                padding:10px 24px;
+                margin:0;
+                border-bottom: solid 1px #CFCFCF;
+                cursor: pointer;
+              }
+              p:last-child{
+                border:none;
+              }
+              p:hover{
+                background-color: #e9e9e9;
+              }
+
+              &:focus{
+
+              }
+            }
+
+          }
         }
+        
+
         #country-container{
           grid-area: 3/1/4/3;
         }
@@ -1801,6 +1842,12 @@ footer {
           font-weight: bold;
           font-size: 12px;
           margin:0 0 1px 0;
+          display: flex;
+          // align-items: center;
+          justify-content: space-between;
+          span{
+            padding-right: 10px;
+          }
         }
 
         #e-money,#cash-on-delivery{
@@ -1875,7 +1922,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap:8px;
-        label{
+        label,#payment-method{
           font-weight: bold;
           font-size: 12px;
           display: flex;
@@ -1896,7 +1943,7 @@ footer {
           }
         }
   
-        input,select{
+        input,select,#address-autocomplete{
           padding:18px 24px;
           border-radius: 8px;
           border-color: #CFCFCF;
@@ -1919,6 +1966,27 @@ footer {
             outline-width: 1px;
           }
         }
+      }
+    }
+    #cash-on-delivery-details{
+      display: flex;
+      align-items: center;
+      gap:32px;
+      @include media($mtablet){gap:17px;}
+      @include media($mobile){gap:15px;}
+      @include media(400px){gap:10px}
+      // @include media(350px){gap:10px}
+      img{
+        @include media(400px){width:40px;}
+      }
+      p{
+        opacity: 0.5;
+        font-size: 15px;
+        font-weight: 500;
+        @include media($mtablet){font-size: 12px;}
+        @include media($mobile){font-size: 12px;}
+        @include media(437px){font-size: 10px;}
+        @include media(350px){font-size: 9px;}
       }
     }
   }
@@ -2166,6 +2234,10 @@ footer {
       }
     }
   }
+}
+
+#address:focus ~ #address-autocomplete{
+  display: block !important;
 }
 //
 

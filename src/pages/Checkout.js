@@ -2,7 +2,7 @@
 import { useSelector,useDispatch } from "react-redux";
 
 //react-hooks
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 
 //imgs
 import { cartImgs } from "../components/Cart";
@@ -81,6 +81,8 @@ export default function Checkout() {
     let inputs = Array.from(document.querySelectorAll("[type='text'],[type='email'],[type='tel']"))
     inputs.forEach(input=>{
 
+      document.querySelector(`[for="${input.id}"] span`).innerText = userData[input.name].length > 0 ? "Wrong Format" : "Required"
+
       //if the input is valid: set normal styling
       if(input.validity.valid && input.classList.contains("invalid-input")){
         input.classList.remove("invalid-input")
@@ -93,6 +95,8 @@ export default function Checkout() {
         input.classList.add("invalid-input")
         document.querySelector(`[for="${input.id}"]`).classList.add("invalid-label")
         document.querySelector(`[for="${input.id}"] span`).classList.add("invalid-message")
+        
+        // document.querySelector(`[for="${input.id}"] span`).innerText = userData[input.name].length > 0 ? "Wrong Format" : "Required"
       }
 
     })
@@ -114,19 +118,85 @@ export default function Checkout() {
     }
   }
 
+  function styleErrorsRadio(){
+    let header = document.querySelector("#payment-method")
+    let eMoney = document.querySelector("[for='e-money']")
+    let cashOnDelivery = document.querySelector("[for='cash-on-delivery']")
+    let required = document.querySelector("#payment-method span")
+
+    if(userData.paymentMethod && header.classList.contains("invalid-label")){
+      header.classList.remove("invalid-label")
+      eMoney.classList.remove("invalid-input")
+      cashOnDelivery.classList.remove("invalid-input")
+      required.classList.remove("invalid-message")
+    }
+
+    //if the input is invalid: set red styling
+    else if(userData.paymentMethod === "" && !header.classList.contains("invalid-label")){
+      header.classList.add("invalid-label")
+      eMoney.classList.add("invalid-input")
+      cashOnDelivery.classList.add("invalid-input")
+      required.classList.add("invalid-message")
+    }
+  }
+
+  const [autocomplete,setAutocomplete] = useState([])
+
   useEffect(()=>{
-    var requestOptions = {
-      method: 'GET'
-    };
-    
-    fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${userData.address}&apiKey=b414fc770853448288f2b7b9331d17b4`, requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(
-        result.features.map(result=>`${result.properties.address_line1} ${result.properties.address_line2}`)
-      ))
-      .catch(error => console.log('error', error));
+    if(userData.address.length > 0){
+      var requestOptions = {
+        method: 'GET'
+      };
+      
+      fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${userData.address}&apiKey=b414fc770853448288f2b7b9331d17b4`, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          setAutocomplete((
+            result.features.map(place=>{
+              return {
+                address:`${place.properties.address_line1} ${place.properties.address_line2}`,
+                country:place.properties.country,
+                city:place.properties.city,
+              }
+            })
+          ))
+
+        })
+        .catch(error => console.log('error', error));
+    } else{
+      setAutocomplete([])
+    }
 
   },[userData.address])
+
+  const addressAutoEls = autocomplete.map((option,index)=>
+    <p 
+      key={index}
+      onClick={()=>{
+        dispatch(setData({name:"address",value:option.address}))
+        dispatch(setData({name:"country",value:option.country}))
+        dispatch(setData({name:"city",value:option.city}))
+      }}
+    >
+      {option.address}
+    </p>  
+  )
+
+  const [addressStyle,setaddressStyle] = useState(
+    document.activeElement === document.getElementById("address") ? 
+    {display:"block"} :
+    {display:"none"} 
+  )
+
+  useEffect(()=>{
+    setaddressStyle(
+      document.activeElement === document.getElementById("address") ? 
+      {display:"block"} :
+      {display:"none"}
+    )
+    // eslint-disable-next-line
+  },[document.activeElement])
 
   return (
     <>
@@ -141,7 +211,7 @@ export default function Checkout() {
                 <div className="input-container">
                   <label htmlFor="name">
                     Name
-                    <span style={{display:"none"}}>required</span> 
+                    <span style={{display:"none"}}></span> 
                   </label>
                   <input 
                     required
@@ -157,20 +227,32 @@ export default function Checkout() {
                 </div>
 
                 <div className="input-container">
-                  <label htmlFor="email-address">Email Address<span style={{display:"none"}}>required</span></label>
-                  <input
-                    required
-                    type="email"
-                    name="emailAddress"
-                    id="email-address"
-                    placeholder="khoumanitaha23@gmail.com"
-                    onChange={(e)=>handleChange(e)}
-                    value={userData.emailAddress}
-                  />
+                    <label htmlFor="email-address">
+                      Email Address
+                      <span style={{display:"none"}}>                      
+                          {
+                            document.getElementById("email-address")?
+                            "Wrong format" :
+                            "required"
+                          }
+                        </span>
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      name="emailAddress"
+                      id="email-address"
+                      placeholder="khoumanitaha23@gmail.com"
+                      onChange={(e)=>handleChange(e)}
+                      value={userData.emailAddress}
+                    />
                 </div>
 
                 <div className="input-container">
-                  <label htmlFor="phone-number">Phone Number<span style={{display:"none"}}>required</span></label>
+                  <label htmlFor="phone-number">
+                    Phone Number
+                    <span style={{display:"none"}}></span>
+                  </label>
                   <input
                     required
                     type="tel"
@@ -189,15 +271,27 @@ export default function Checkout() {
               <div className="input-group-2">
                 <div className="input-container" id="address-container">
                   <label htmlFor="address">Address<span style={{display:"none"}}>required</span></label>
-                  <input
-                    required
-                    type="text"
-                    id="address"
-                    placeholder="2023 Silicon-Valey Avenu"
-                    name="address"
-                    value={userData.address}
-                    onChange={(e)=>handleChange(e)}
-                  />
+                  <div id="addreess-autocomplete-container">
+                    <input
+                      autoComplete="new-user-street-address"
+                      required
+                      type="text"
+                      id="address"
+                      placeholder="2023 Silicon-Valey Avenu"
+                      name="address"
+                      value={userData.address}
+                      onChange={(e)=>handleChange(e)}
+                    />
+                    {
+                      autocomplete.length > 0 && userData.address.length > 0 &&
+                      <div 
+                        id="address-autocomplete" 
+                        style={addressStyle}
+                      >
+                        {addressAutoEls}
+                      </div>
+                    }
+                  </div>
                 </div>
 
                 <div className="input-container">
@@ -489,7 +583,7 @@ export default function Checkout() {
               <p className="sub-form-title">PAYMENT DETAILS</p>
               <div className="input-grou-3">
                 <div className="input-container-radio">
-                  <p id="payment-method">Payment Method</p>
+                  <p id="payment-method">Payment Method <span style={{display:"none"}}>Required</span></p>
                   <label 
                     htmlFor="e-money"
                     style={userData.paymentMethod === "eMoney" ? {borderColor: "#d87d4a",borderWidth: "2px"} :{}}
@@ -557,6 +651,13 @@ export default function Checkout() {
               }
             </div>
           </form>
+          {
+            userData.paymentMethod === "cashOnDelivery" &&
+            <div id="cash-on-delivery-details">
+              <img src="./assets/checkout/icon-cash-on-delivery.svg" alt="cash-on-delivery-icon" />
+              <p>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+            </div>
+          }
         </section>
         <section id="summary">
           <p>SUMMARY</p>
@@ -588,6 +689,7 @@ export default function Checkout() {
               else
                 styleErrors()
                 styleErrorsSelect(document.querySelector("select"))
+                styleErrorsRadio()
             }}
             value="CONTINUE & PAY"
             form="checkout-form"

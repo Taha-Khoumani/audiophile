@@ -167,10 +167,8 @@ body {
 .navlinks #navlink-img-container .sliding-menu {
   position: relative;
   bottom: 340px;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
   border-radius: 0 0 8px 8px;
 }
 @media (max-width: 625px) {
@@ -183,8 +181,7 @@ body {
     box-sizing: border-box;
     padding-top: 35px;
     bottom: 675px;
-    -webkit-animation-duration: 0.8s;
-            animation-duration: 0.8s;
+    animation-duration: 0.8s;
     max-height: calc(100vh - 96px);
   }
   .navlinks #navlink-img-container .sliding-menu .category-img {
@@ -192,13 +189,7 @@ body {
   }
 }
 .navlinks #navlink-img-container .sliding-menu-open {
-  -webkit-animation-name: slide-open;
-          animation-name: slide-open;
-}
-@-webkit-keyframes slide-open {
-  100% {
-    bottom: 0;
-  }
+  animation-name: slide-open;
 }
 @keyframes slide-open {
   100% {
@@ -206,11 +197,6 @@ body {
   }
 }
 @media (max-width: 625px) {
-  @-webkit-keyframes slide-open {
-    100% {
-      bottom: 0;
-    }
-  }
   @keyframes slide-open {
     100% {
       bottom: 0;
@@ -218,11 +204,6 @@ body {
   }
 }
 @media (max-width: 480px) {
-  @-webkit-keyframes slide-open {
-    100% {
-      bottom: 0;
-    }
-  }
   @keyframes slide-open {
     100% {
       bottom: 0;
@@ -230,16 +211,7 @@ body {
   }
 }
 .navlinks #navlink-img-container .sliding-menu-close {
-  -webkit-animation-name: slide-close;
-          animation-name: slide-close;
-}
-@-webkit-keyframes slide-close {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 340px;
-  }
+  animation-name: slide-close;
 }
 @keyframes slide-close {
   0% {
@@ -250,14 +222,6 @@ body {
   }
 }
 @media (max-width: 625px) {
-  @-webkit-keyframes slide-close {
-    0% {
-      bottom: 0;
-    }
-    100% {
-      bottom: 240px;
-    }
-  }
   @keyframes slide-close {
     0% {
       bottom: 0;
@@ -268,14 +232,6 @@ body {
   }
 }
 @media (max-width: 480px) {
-  @-webkit-keyframes slide-close {
-    0% {
-      bottom: 0;
-    }
-    100% {
-      bottom: 675px;
-    }
-  }
   @keyframes slide-close {
     0% {
       bottom: 0;
@@ -855,28 +811,13 @@ footer #footer-about #footer-about-contacts > i:hover {
   min-height: 100px;
   background-color: white;
   margin-left: auto;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
   bottom: calc(100% + 32px);
-}
-@-webkit-keyframes down {
-  to {
-    bottom: 0;
-  }
 }
 @keyframes down {
   to {
     bottom: 0;
-  }
-}
-@-webkit-keyframes up {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: calc(0px - 100% - 32px);
   }
 }
 @keyframes up {
@@ -928,8 +869,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: 500;
   display: inline;
   opacity: 0.5;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .cart-content .cart-top .remove-all:hover {
   cursor: pointer;
@@ -1064,13 +1004,11 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart-content-down {
-  -webkit-animation-name: down;
-          animation-name: down;
+  animation-name: down;
 }
 
 .cart-content-up {
-  -webkit-animation-name: up;
-          animation-name: up;
+  animation-name: up;
 }
 
 .hr-container, #home .hr-container-2 {
@@ -1476,8 +1414,8 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 @media (max-width: 480px) {
   .product-nums p, .cart-item .product-nums-cart p,
-.product-nums button,
-.cart-item .product-nums-cart button {
+  .product-nums button,
+  .cart-item .product-nums-cart button {
     width: 35px;
   }
 }
@@ -2078,7 +2016,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 @media (max-width: 480px) {
   #home .landing-products .landing-item-3 img,
-#home .landing-products .landing-item-3 div {
+  #home .landing-products .landing-item-3 div {
     width: 100%;
   }
 }
@@ -2164,6 +2102,37 @@ footer #footer-about #footer-about-contacts > i:hover {
 #checkout-page #checkout .form .input-group-2 #address-container {
   grid-area: 1/1/2/3;
 }
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container {
+  position: relative;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container input {
+  box-sizing: border-box;
+  width: 100%;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete-container:focus #address-autocomplete {
+  display: inline;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 99;
+  inset: 100% 0 auto 0;
+  padding: 0;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p {
+  padding: 10px 24px;
+  margin: 0;
+  border-bottom: solid 1px #CFCFCF;
+  cursor: pointer;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p:last-child {
+  border: none;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p:hover {
+  background-color: #e9e9e9;
+}
 #checkout-page #checkout .form .input-group-2 #country-container {
   grid-area: 3/1/4/3;
 }
@@ -2184,6 +2153,11 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: bold;
   font-size: 12px;
   margin: 0 0 1px 0;
+  display: flex;
+  justify-content: space-between;
+}
+#checkout-page #checkout .form .input-container-radio #payment-method span {
+  padding-right: 10px;
 }
 #checkout-page #checkout .form .input-container-radio #e-money, #checkout-page #checkout .form .input-container-radio #cash-on-delivery {
   background-color: #d87d4a;
@@ -2255,7 +2229,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   flex-direction: column;
   gap: 8px;
 }
-#checkout-page #checkout .form .input-container label {
+#checkout-page #checkout .form .input-container label, #checkout-page #checkout .form .input-container #payment-method {
   font-weight: bold;
   font-size: 12px;
   display: flex;
@@ -2274,7 +2248,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: 500;
   font-size: 15px;
 }
-#checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
+#checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select, #checkout-page #checkout .form .input-container #address-autocomplete {
   padding: 18px 24px;
   border-radius: 8px;
   border-color: #CFCFCF;
@@ -2282,36 +2256,80 @@ footer #footer-about #footer-about-contacts > i:hover {
   border-style: solid;
 }
 @media (min-width: 800px) {
-  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
+  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select, #checkout-page #checkout .form .input-container #address-autocomplete {
     padding: 15px 10px;
   }
 }
 @media (max-width: 480px) {
-  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select {
+  #checkout-page #checkout .form .input-container input, #checkout-page #checkout .form .input-container select, #checkout-page #checkout .form .input-container #address-autocomplete {
     padding: 15px 20px;
   }
 }
-#checkout-page #checkout .form .input-container input::-moz-placeholder, #checkout-page #checkout .form .input-container select::-moz-placeholder {
+#checkout-page #checkout .form .input-container input::-moz-placeholder, #checkout-page #checkout .form .input-container select::-moz-placeholder, #checkout-page #checkout .form .input-container #address-autocomplete::-moz-placeholder {
   font-weight: bold;
   opacity: 0.4;
   color: black;
   font-size: 14px;
 }
-#checkout-page #checkout .form .input-container input:-ms-input-placeholder, #checkout-page #checkout .form .input-container select:-ms-input-placeholder {
+#checkout-page #checkout .form .input-container input::placeholder, #checkout-page #checkout .form .input-container select::placeholder, #checkout-page #checkout .form .input-container #address-autocomplete::placeholder {
   font-weight: bold;
   opacity: 0.4;
   color: black;
   font-size: 14px;
 }
-#checkout-page #checkout .form .input-container input::placeholder, #checkout-page #checkout .form .input-container select::placeholder {
-  font-weight: bold;
-  opacity: 0.4;
-  color: black;
-  font-size: 14px;
-}
-#checkout-page #checkout .form .input-container input:focus, #checkout-page #checkout .form .input-container select:focus {
+#checkout-page #checkout .form .input-container input:focus, #checkout-page #checkout .form .input-container select:focus, #checkout-page #checkout .form .input-container #address-autocomplete:focus {
   outline-color: #d87d4a;
   outline-width: 1px;
+}
+#checkout-page #checkout #cash-on-delivery-details {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 625px) {
+  #checkout-page #checkout #cash-on-delivery-details {
+    gap: 17px;
+  }
+}
+@media (max-width: 480px) {
+  #checkout-page #checkout #cash-on-delivery-details {
+    gap: 15px;
+  }
+}
+@media (max-width: 400px) {
+  #checkout-page #checkout #cash-on-delivery-details {
+    gap: 10px;
+  }
+}
+@media (max-width: 400px) {
+  #checkout-page #checkout #cash-on-delivery-details img {
+    width: 40px;
+  }
+}
+#checkout-page #checkout #cash-on-delivery-details p {
+  opacity: 0.5;
+  font-size: 15px;
+  font-weight: 500;
+}
+@media (max-width: 625px) {
+  #checkout-page #checkout #cash-on-delivery-details p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  #checkout-page #checkout #cash-on-delivery-details p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 437px) {
+  #checkout-page #checkout #cash-on-delivery-details p {
+    font-size: 10px;
+  }
+}
+@media (max-width: 350px) {
+  #checkout-page #checkout #cash-on-delivery-details p {
+    font-size: 9px;
+  }
 }
 #checkout-page .invalid-input {
   border-width: 2px !important;
@@ -2431,18 +2449,8 @@ footer #footer-about #footer-about-contacts > i:hover {
 #checkout-page #checkout-modal #checkout-modal-content-container {
   position: relative;
   padding: 0 20px;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-}
-@-webkit-keyframes modalup {
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: 0;
-  }
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
 }
 @keyframes modalup {
   0% {
@@ -2450,14 +2458,6 @@ footer #footer-about #footer-about-contacts > i:hover {
   }
   100% {
     top: 0;
-  }
-}
-@-webkit-keyframes modaldown {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 100%;
   }
 }
 @keyframes modaldown {
@@ -2469,12 +2469,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   }
 }
 #checkout-page #checkout-modal .modalup {
-  -webkit-animation-name: modalup;
-          animation-name: modalup;
+  animation-name: modalup;
 }
 #checkout-page #checkout-modal .modaldown {
-  -webkit-animation-name: modaldown;
-          animation-name: modaldown;
+  animation-name: modaldown;
 }
 #checkout-page #checkout-modal #checkout-modal-content {
   background-color: white;
@@ -2630,6 +2628,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 100%;
   height: 48px;
   font-weight: bold;
+}
+
+#address:focus ~ #address-autocomplete {
+  display: block !important;
 }
 
 .go-back {
