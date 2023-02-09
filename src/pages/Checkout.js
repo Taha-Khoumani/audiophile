@@ -151,11 +151,12 @@ export default function Checkout() {
       fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${userData.address}&apiKey=b414fc770853448288f2b7b9331d17b4`, requestOptions)
         .then(response => response.json())
         .then(result => {
-          console.log(result)
+          // console.log(result)
           setAutocomplete((
             result.features.map(place=>{
               return {
-                address:`${place.properties.address_line1} ${place.properties.address_line2}`,
+                address:place.properties.address_line1,
+                state:place.properties.state,
                 country:place.properties.country,
                 city:place.properties.city,
               }
@@ -179,7 +180,11 @@ export default function Checkout() {
         dispatch(setData({name:"city",value:option.city}))
       }}
     >
-      {option.address}
+      <i className="fa-solid fa-location-dot"></i>
+      <span>
+        {`${option.address}`}
+        <span className="span">{` ${option.state && option.state !== option.address ? ", "+option.state:""} ${", " + option.country && option.country !== option.address? ", "+option.country:""}`}</span>
+      </span>
     </p>  
   )
 
@@ -189,19 +194,27 @@ export default function Checkout() {
     {display:"none"} 
   )
 
-  useEffect(()=>{
-    setaddressStyle(
-      document.activeElement === document.getElementById("address") ? 
-      {display:"block"} :
-      {display:"none"}
-    )
-    // eslint-disable-next-line
-  },[document.activeElement])
+  // useEffect(()=>{
+  //   setaddressStyle(
+  //     document.activeElement === document.getElementById("address") ? 
+  //     {display:"block"} :
+  //     {display:"none"}
+  //   )
+  //   // eslint-disable-next-line
+  // },[document.activeElement])
 
   return (
     <>
       <GoBack style={{backgroundColor:"#F2F2F2"}} />
-      <div id="checkout-page">
+      <div id="checkout-page"
+        onClick={()=>{
+          setaddressStyle(
+            document.activeElement === document.getElementById("address") ? 
+            {display:"block"} :
+            {display:"none"}
+          )
+        }}
+      >
         <section id="checkout">
           <p className="checkout-header">CHECKOUT</p>
           <form action="" className="form" id="checkout-form" onSubmit={(e)=>e.preventDefault()}>

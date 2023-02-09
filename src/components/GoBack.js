@@ -5,14 +5,15 @@ export default function GoBack(props){
     const navigate = useNavigate()
 
     return(
-        <p  
-            style={props.style}
-            className="go-back"
-            onClick={()=>{
-                navigate(-1)
-            }}
-        >
-            Go Back
-        </p>
+        <div id="go-back-container" style={props.style?props.style:{}}>
+            <p  
+                className="go-back"
+                onClick={()=>{
+                    navigate(-1)
+                }}
+            >
+                Go Back
+            </p>
+        </div>
     )
 }

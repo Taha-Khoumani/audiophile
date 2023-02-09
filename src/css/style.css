@@ -41,26 +41,26 @@ body {
   }
 }
 
-#all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+#all-padding, #go-back-container, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
   padding: 0 165px;
 }
 @media (max-width: 1195px) {
-  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, #go-back-container, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 120px;
   }
 }
 @media (max-width: 980px) {
-  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, #go-back-container, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 90px;
   }
 }
 @media (max-width: 870px) {
-  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, #go-back-container, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 60px;
   }
 }
 @media (max-width: 767px) {
-  #all-padding, .go-back, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
+  #all-padding, #go-back-container, #home .landing-item-0 .category-product-text-con, .cart, #navbar {
     padding: 0 40px;
   }
 }
@@ -2125,13 +2125,25 @@ footer #footer-about #footer-about-contacts > i:hover {
   padding: 10px 24px;
   margin: 0;
   border-bottom: solid 1px #CFCFCF;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p .span {
+  opacity: 0.5;
+  font-size: 12px;
 }
 #checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p:last-child {
   border: none;
 }
 #checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete p:hover {
   background-color: #e9e9e9;
+}
+#checkout-page #checkout .form .input-group-2 #address-container #addreess-autocomplete-container #address-autocomplete i {
+  font-size: 17px;
+  color: #d87d4a;
+  padding-right: 15px;
 }
 #checkout-page #checkout .form .input-group-2 #country-container {
   grid-area: 3/1/4/3;
@@ -2630,17 +2642,16 @@ footer #footer-about #footer-about-contacts > i:hover {
   font-weight: bold;
 }
 
-#address:focus ~ #address-autocomplete {
-  display: block !important;
+#go-back-container {
+  padding-block: 40px 30px;
 }
 
 .go-back {
-  padding-block: 40px 30px;
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.5);
   font-size: 15px;
-  display: block;
+  display: inline;
 }
 .go-back:hover {
   cursor: pointer;
