@@ -778,7 +778,7 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart {
-  z-index: 5;
+  z-index: 9;
   padding-block: 20px;
   position: absolute;
   top: 96px;
@@ -1103,7 +1103,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   }
 }
 .category-product .category-product-img, .category-product-2 .category-product-img {
-  width: 50%;
+  width: 100%;
   border-radius: 8px;
 }
 @media (max-width: 767px) {
@@ -1139,7 +1139,7 @@ footer #footer-about #footer-about-contacts > i:hover {
   }
 }
 .category-product-2 .category-product-img {
-  width: 50%;
+  width: 100%;
   border-radius: 8px;
 }
 @media (max-width: 767px) {

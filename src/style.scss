@@ -672,7 +672,7 @@ footer {
 }
 //cart:
 .cart {
-  z-index: 5;
+  z-index: 9;
   @extend #all-padding;
   padding-block: 20px;
   position: absolute;
@@ -958,7 +958,7 @@ footer {
     gap: 25px;
   }
   .category-product-img {
-    width: 50%;
+    width: 100%;
     border-radius: 8px;
     @include media($tablet) {
       width: 100%;
@@ -984,7 +984,7 @@ footer {
     flex-direction: column;
   }
   .category-product-img {
-    width: 50%;
+    width: 100%;
     border-radius: 8px;
     @include media($tablet) {
       max-width: 35%;

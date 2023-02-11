@@ -55,15 +55,17 @@ export default function ProductView(props) {
       className={props.isCat ? "category-product" : "category-product-2"}
       style={reverse(winWidth)}
     >
-      <img
-        className="category-product-img"
-        src={
-          props.isCat
-            ? wichCatImg(winWidth, categoryImage)
-            : wichImg(winWidth, image)
-        }
-        alt="product-img"
-      />
+      <div className="img-container">
+        <img
+          className="category-product-img"
+          src={
+            props.isCat
+              ? wichCatImg(winWidth, categoryImage)
+              : wichImg(winWidth, image)
+          }
+          alt="product-img"
+        />
+      </div>
       <div className="category-product-text">
         {isNew && (
           <p

@@ -7,9 +7,9 @@ import NavLinks from "../components/NavLinks"
 import { useSelector } from "react-redux"
 
 //imgs
-import heroD from "../imgs/image-hero-d.jpg"
-import heroT from "../imgs/image-hero-t.jpg"
-import heroM from "../imgs/image-hero-m.jpg"
+import heroD from "../imgs/image-hero-d.png"
+import heroT from "../imgs/image-hero-t.png"
+import heroM from "../imgs/image-hero-m.png"
 import circle from "../imgs/pattern-circles.svg"
 import speakerD from "../imgs/image-speaker-d.png"
 import speakerT from "../imgs/image-speaker-t.png"
