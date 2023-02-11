@@ -90,11 +90,13 @@ export default function Cart() {
       document.querySelector(".cart-content").classList.add("cart-content-up");
       setTimeout(() => dispatch(clickCart(!isCartCliked)), 500);
     } else {
+      // document.querySelector("#home").style.display = "99"
       dispatch(clickCart(!isCartCliked));
     }
   }
 
   return (
+    <div className="cartZ">
     <section className="cart" onClick={() => closeCart()}>
       <div
         className={`cart-content ${isCartCliked ? "cart-content-down" : ""}`}
@@ -137,5 +139,6 @@ export default function Cart() {
         )}
       </div>
     </section>
+    </div>
   );
 }

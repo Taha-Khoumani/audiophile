@@ -472,7 +472,7 @@ body {
 #navbar {
   background-color: black;
   display: flex;
-  z-index: 10;
+  z-index: 11;
   align-items: center;
   justify-content: center;
   height: 96px;
@@ -778,10 +778,9 @@ footer #footer-about #footer-about-contacts > i:hover {
 }
 
 .cart {
-  z-index: 9;
+  z-index: 10;
   padding-block: 20px;
   position: absolute;
-  top: 96px;
   height: calc(100vh - 96px);
   box-sizing: border-box;
   right: 0;
@@ -933,6 +932,10 @@ footer #footer-about #footer-about-contacts > i:hover {
   .cart-items {
     padding: 10px 20px;
   }
+}
+
+.lowerZ {
+  z-index: 1;
 }
 
 .cart-item {
@@ -2659,5 +2662,12 @@ footer #footer-about #footer-about-contacts > i:hover {
 @media (max-width: 480px) {
   .go-back {
     padding-block: 25px 20px;
+  }
+}
+
+@-moz-document url-prefix() {
+  .cartZ {
+    position: relative;
+    z-index: 10;
   }
 }/*# sourceMappingURL=style.css.map */

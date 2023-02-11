@@ -133,7 +133,7 @@ export default function NavLinks(props){
                             {LinkImgs}
                         </div> 
                     :
-                    <div>
+                    <div style={{zIndex:"1"}}>
                         {LinkImgs}
                     </div>
                 
