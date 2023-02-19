@@ -1145,21 +1145,6 @@ footer #footer-about #footer-about-contacts > i:hover {
   width: 100%;
   border-radius: 8px;
 }
-@media (max-width: 767px) {
-  .category-product-2 .category-product-img {
-    max-width: 35%;
-  }
-}
-@media (max-width: 655px) {
-  .category-product-2 .category-product-img {
-    max-width: 35%;
-  }
-}
-@media (max-width: 480px) {
-  .category-product-2 .category-product-img {
-    min-width: 100%;
-  }
-}
 .category-product-2 .category-product-text, .category-product-2 #home .landing-products .landing-item-1 .category-product-text-1, #home .landing-products .landing-item-1 .category-product-2 .category-product-text-1 {
   text-align: left;
 }

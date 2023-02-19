@@ -989,16 +989,6 @@ footer {
   .category-product-img {
     width: 100%;
     border-radius: 8px;
-    @include media($tablet) {
-      max-width: 35%;
-    }
-    // @include media($tablet){max-width: 245px;}
-    @include media(655px) {
-      max-width: 35%;
-    }
-    @include media($mobile) {
-      min-width: 100%;
-    }
   }
   .category-product-text {
     text-align: left;
